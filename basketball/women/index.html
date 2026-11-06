@@ -740,9 +740,9 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       var w = Math.max.apply(null, outs.map(function (e) { return e.w; }));
       var tops = outs.filter(function (e) { return e.w === w; }).map(function (e) { return shortName(e.s); }).sort();
       var who = tops.length === 1 ? tops[0] : tops.length <= 3 ? tops.slice(0, -1).join(", ") + " and " + tops[tops.length - 1] : tops.length + " teammates";
-      parts.push(shortName(h1) + "'s assists go most often to " + who + (tops.length === 1 ? " (" + plural(w, "assist", "assists") + ")." : ", " + w + " each."));
+      parts.push(shortName(h1) + "'s mapped assists go most often to " + who + (tops.length === 1 ? " (" + plural(w, "assist", "assists") + ")." : ", " + w + " each."));
     }
-    if (st.te != null) parts.push("Team entropy, where 1 means every player on the map makes the same number of assists, is " + fmtScore(st.te, 2) + ".");
+    if (st.te != null) parts.push("Team entropy, where 1 means every player on the map makes the same number of mapped assists, is " + fmtScore(st.te, 2) + ".");
     return parts.join(" ");
   }
 
