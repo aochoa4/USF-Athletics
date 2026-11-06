@@ -18,6 +18,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(HERE, "data")
 TEMPLATE = os.path.join(HERE, "page", "assist_network_template.html")
 OUT = os.path.join(HERE, "page", "assist_network.html")
+TEMPLATE_3D = os.path.join(HERE, "page", "assist_network_3d_template.html")
+OUT_3D = os.path.join(HERE, "page", "assist_network_3d.html")
 MARKER = "/*__DATA__*/null"
 LABELS = {"mens": "Men's Basketball", "womens": "Women's Basketball"}
 
@@ -186,6 +188,15 @@ def main():
     if args.combined != "none":
         with open(args.combined, "w", encoding="utf-8") as f:
             f.write(fill(data))
+        # the private 3D preview takes the same data block (local builds only; the site repo has no 3D template)
+        if os.path.exists(TEMPLATE_3D):
+            with open(TEMPLATE_3D, encoding="utf-8") as f:
+                page3d = f.read()
+            if page3d.count(MARKER) != 1:
+                raise SystemExit(f"3D template must contain {MARKER} exactly once")
+            with open(OUT_3D, "w", encoding="utf-8") as f:
+                f.write(page3d.replace(MARKER, json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")))
+            print(f"wrote {OUT_3D}")
 
     for league, (rel, title) in SITE_PAGES.items():
         if league not in data["teams"]:
