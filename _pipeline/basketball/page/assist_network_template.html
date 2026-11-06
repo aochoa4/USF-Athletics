@@ -94,9 +94,10 @@ section { display: flex; flex-direction: column; gap: 14px; }
 .mapbar .spacer { flex: 1; }
 .btn.small { font-size: 0.78rem; padding: 4px 10px; min-width: 0; }
 .empty { padding: 40px 16px; text-align: center; color: var(--muted); }
-.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.8rem; color: var(--muted); }
-.legend span { display: inline-flex; align-items: center; gap: 6px; }
-.legend svg { flex: none; }
+.key { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; }
+.key p { display: flex; gap: 8px; align-items: baseline; }
+.key .glyph { flex: none; width: 34px; display: inline-flex; justify-content: center; align-self: center; }
+.key .term { font-weight: 600; flex: none; }
 .focusinfo { font-size: 0.88rem; min-height: 2.6em; border-top: 1px solid var(--line); padding-top: 8px; }
 .focusinfo strong { font-weight: 600; }
 
@@ -146,14 +147,15 @@ th[aria-sort="descending"] button.sort::after { content: " \2193"; }
 button:focus-visible, input:focus-visible, tr:focus-visible, .node:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
 /* map marks */
-.edge { fill: none; stroke: var(--edge); stroke-linecap: round; opacity: 0.45; transition: opacity 0.3s; }
-.edge.new { stroke: var(--gold); opacity: 0.95; }
+/* one color for every line and one for every circle; only fading changes */
+.edge { fill: none; stroke: var(--edge); stroke-linecap: round; opacity: 0.55; transition: opacity 0.3s; }
 .edge.entering { opacity: 0; }
+.edge.off { display: none; }            /* the game view hides connections without an assist that game */
 .arrowhead { fill: var(--edge); }
-.arrowhead.new { fill: var(--gold); }
 .node { cursor: grab; transition: opacity 0.2s; }
 .node circle { fill: var(--green); stroke: var(--panel); stroke-width: 1.5; }
-.node.new circle { stroke: var(--gold); stroke-width: 3; }
+.node.faded circle { fill: var(--line); }
+.node.faded text { fill: var(--muted); }
 .node text { font: 500 12px var(--font-body); fill: var(--ink); paint-order: stroke; stroke: var(--panel); stroke-width: 3.5px; stroke-linejoin: round; pointer-events: none; }
 .node:focus { outline: none; }
 .node:focus-visible circle { stroke: var(--gold); stroke-width: 3; }
@@ -198,7 +200,8 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
   <div class="mapgrid">
     <div class="card">
       <div class="mapbar">
-        <span class="small muted">Circle size</span>
+        <div class="seg small" role="group" aria-label="Show" id="modeSeg"></div>
+        <span class="small muted" id="sizeLabel">Circle size</span>
         <div class="seg small" role="group" aria-label="Circle size" id="sizeSeg"></div>
         <span class="spacer"></span>
         <button class="btn ghost small" id="resetView" type="button">Reset view</button>
@@ -207,12 +210,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
         <svg id="map" role="img" aria-label="Assist network map"></svg>
         <div class="empty" id="mapEmpty" hidden></div>
       </div>
-      <div class="legend">
-        <span><svg width="34" height="10" aria-hidden="true"><line x1="2" y1="5" x2="25" y2="5" stroke="var(--edge)" stroke-width="3" stroke-linecap="round"/><path d="M24,1 L32,5 L24,9 z" fill="var(--edge)"/></svg>Passer to scorer, thicker is more assists</span>
-        <span><svg width="34" height="10" aria-hidden="true"><line x1="2" y1="5" x2="25" y2="5" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/><path d="M24,1 L32,5 L24,9 z" fill="var(--gold)"/></svg>This game</span>
-        <span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="var(--green)"/></svg><span id="legendSize">Bigger circle, more assists made and received</span></span>
-      </div>
-      <p class="small muted">Drag a player to move them. Drag the background to pan; pinch or Ctrl+scroll to zoom.</p>
+      <div class="key" id="key"></div>
       <p class="focusinfo" id="focusinfo"></p>
     </div>
 
@@ -297,16 +295,18 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
   // ---- view state ----
   var teams = Object.keys(D.teams);
   STORE += "." + teams.join("-");   // the men's and women's pages share a site, so each keeps its own view
-  var view = { team: teams[0], season: null, step: 0, size: "inv", sort: "out" };
+  // mode "season": the network through the selected game; "game": only the selected game's assists
+  var view = { team: teams[0], season: null, step: 0, size: "inv", sort: "out", mode: "season" };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "null");
     if (saved && D.teams[saved.team]) { view.team = saved.team; view.season = saved.season; }
     if (saved && ["inv", "hub", "auth"].indexOf(saved.size) >= 0) view.size = saved.size;
     if (saved && ["out", "in", "hub", "auth", "box"].indexOf(saved.sort) >= 0) view.sort = saved.sort;
+    if (saved && ["season", "game"].indexOf(saved.mode) >= 0) view.mode = saved.mode;
   } catch (e) {}
   var seasonsOf = function (t) { return Object.keys(D.teams[t].seasons).sort().reverse(); };
   if (!view.season || !D.teams[view.team].seasons[view.season]) view.season = seasonsOf(view.team)[0];
-  var remember = function () { try { localStorage.setItem(STORE, JSON.stringify({ team: view.team, season: view.season, size: view.size, sort: view.sort })); } catch (e) {} };
+  var remember = function () { try { localStorage.setItem(STORE, JSON.stringify({ team: view.team, season: view.season, size: view.size, sort: view.sort, mode: view.mode })); } catch (e) {} };
 
   // ---- per team-season: cumulative steps and a layout that carries over game to game ----
   var cache = {};
@@ -436,7 +436,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
   // ---- map ----
   var svg = d3.select("#map");
   var defs = svg.append("defs");
-  [["arrow", "arrowhead"], ["arrow-new", "arrowhead new"]].forEach(function (m) {
+  [["arrow", "arrowhead"]].forEach(function (m) {
     defs.append("marker").attr("id", m[0]).attr("viewBox", "0 0 10 10").attr("refX", 9).attr("refY", 5)
       .attr("markerWidth", 9).attr("markerHeight", 9).attr("markerUnits", "userSpaceOnUse").attr("orient", "auto")
       .append("path").attr("d", "M0,0 L10,5 L0,10 z").attr("class", m[1]);
@@ -505,7 +505,15 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     return "M" + (a.x + sx / sl * ra) + "," + (a.y + sy / sl * ra) + " Q" + cx + "," + cy + " " + (b.x - ex / elen * rb) + "," + (b.y - ey / elen * rb);
   }
 
-  function sizeValue(st, n) {
+  function isGame() { return view.mode === "game"; }
+  // this game's assists made and scored off, by player
+  function gameCounts(st) {
+    var out = new Map(), inn = new Map();
+    st.gameEdges.forEach(function (n, k) { var ps = k.split(">"); out.set(ps[0], (out.get(ps[0]) || 0) + n); inn.set(ps[1], (inn.get(ps[1]) || 0) + n); });
+    return { out: out, in: inn, of: function (id) { return (out.get(id) || 0) + (inn.get(id) || 0); } };
+  }
+  function sizeValue(st, n, gc) {
+    if (isGame()) return gc.of(n.id);
     return view.size === "hub" ? hubOf(st, n.id) : view.size === "auth" ? authOf(st, n.id) : n.out + n.in;
   }
 
@@ -525,22 +533,22 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     geo = G;
     svg.attr("viewBox", "0 0 " + G.w + " " + G.h).attr("height", G.h);
 
-    var vmax = 0, wmax = 1;
-    st.nodes.forEach(function (n) { vmax = Math.max(vmax, sizeValue(st, n)); });
-    st.edges.forEach(function (e) { wmax = Math.max(wmax, e.w); });
+    // both views keep the season layout, so players hold their places; the game view hides the rest
+    var game = isGame(), gc = gameCounts(st), vmax = 0, wmax = 1;
+    st.nodes.forEach(function (n) { vmax = Math.max(vmax, sizeValue(st, n, gc)); });
+    st.edges.forEach(function (e) { wmax = Math.max(wmax, game ? (st.gameEdges.get(e.k) || 0) : e.w); });
     vmax = vmax || 1;
-    var inGame = new Set();
-    st.gameEdges.forEach(function (n, k) { var ps = k.split(">"); inGame.add(ps[0]); inGame.add(ps[1]); });
 
     var ndata = Array.from(st.nodes.values()).map(function (n) {
       var p = moved.get(n.id) || pos.get(n.id);
-      return { id: n.id, out: n.out, in: n.in, isNew: inGame.has(n.id),
-               t: { x: G.X(p.x), y: G.Y(p.y), r: 5 + 12 * Math.sqrt(sizeValue(st, n) / vmax) }, f: shown.get(n.id) || null };
+      return { id: n.id, out: n.out, in: n.in, faded: game && !gc.of(n.id),
+               t: { x: G.X(p.x), y: G.Y(p.y), r: 5 + 12 * Math.sqrt(sizeValue(st, n, gc) / vmax) }, f: shown.get(n.id) || null };
     });
     var byId = new Map(ndata.map(function (d) { return [d.id, d]; }));
     var edata = Array.from(st.edges.values()).map(function (e) {
-      return { k: e.k, p: e.p, s: e.s, w: e.w, isNew: st.gameEdges.has(e.k), sw: 1 + 5.5 * Math.sqrt(e.w / wmax) };
-    }).sort(function (a, b) { return (a.isNew - b.isNew) || (a.w - b.w); });
+      var g = st.gameEdges.get(e.k) || 0, w = game ? g : e.w;
+      return { k: e.k, p: e.p, s: e.s, w: e.w, g: g, on: !game || g > 0, sw: 1 + 5.5 * Math.sqrt(w / wmax) };
+    }).sort(function (a, b) { return a.sw - b.sw; });
 
     var nodeSel = gNodes.selectAll("g.node").data(ndata, function (d) { return d.id; }).join(function (enter) {
       var g = enter.append("g").attr("class", "node").attr("tabindex", 0).attr("role", "button");
@@ -548,7 +556,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       g.append("text").attr("text-anchor", "middle");
       return g;
     });
-    nodeSel.classed("new", function (d) { return d.isNew; })
+    nodeSel.classed("faded", function (d) { return d.faded; })
       .attr("aria-label", function (d) {
         return player(d.id).n + ": " + plural(d.out, "assist", "assists") + ", " + d.in + " scored off assists, hub " +
           fmtScore(hubOf(st, d.id), 3) + ", authority " + fmtScore(authOf(st, d.id), 3);
@@ -563,9 +571,9 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     var edgeSel = gEdges.selectAll("path.edge").data(edata, function (d) { return d.k; }).join(function (enter) {
       return enter.append("path").attr("class", "edge entering");
     });
-    edgeSel.classed("new", function (d) { return d.isNew; })
+    edgeSel.classed("off", function (d) { return !d.on; })
       .attr("stroke-width", function (d) { return d.sw; })
-      .attr("marker-end", function (d) { return d.isNew ? "url(#arrow-new)" : "url(#arrow)"; })
+      .attr("marker-end", "url(#arrow)")
       .order();
     live = { nodeSel: nodeSel, edgeSel: edgeSel, byId: byId };
 
@@ -605,8 +613,11 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       focusInfo(null);
       return;
     }
-    var nb = new Set();
-    st.edges.forEach(function (e) { if (e.p === id) nb.add(e.s); if (e.s === id) nb.add(e.p); });
+    var nb = new Set(), game = isGame();
+    st.edges.forEach(function (e) {
+      if (game && !st.gameEdges.has(e.k)) return;   // in the game view, only that game's connections count
+      if (e.p === id) nb.add(e.s); if (e.s === id) nb.add(e.p);
+    });
     svg.classed("focusing", true);
     gNodes.selectAll("g.node").classed("me", function (d) { return d.id === id; }).classed("nbr", function (d) { return nb.has(d.id); });
     gEdges.selectAll("path.edge").classed("inc", function (d) { return d.p === id || d.s === id; });
@@ -635,17 +646,19 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     var box = $("focusinfo"), st = curStep(), c = cur();
     box.textContent = "";
     if (!st) return;
-    if (!id) { box.appendChild(el("span", "muted", "Tap or hover a player to see who they pass to and who feeds them.")); return; }
+    if (!id) { box.appendChild(el("span", "muted", "No player selected.")); return; }
     var n = st.nodes.get(id), p = player(id), prev = view.step > 1 ? c.steps[view.step - 2] : null;
     var outs = [], ins = [];
     st.edges.forEach(function (e) { if (e.p === id) outs.push(e); if (e.s === id) ins.push(e); });
     box.appendChild(el("strong", null, p.n + (p.j ? " #" + p.j : "")));
-    var bits = [
-      plural(n.out, "assist", "assists") + " to " + plural(outs.length, "teammate", "teammates"),
+    var gc = gameCounts(st);
+    var bits = isGame() ? ["game " + st.idx + ": " + plural(gc.out.get(id) || 0, "assist", "assists") + ", " + (gc.in.get(id) || 0) + " scored off assists"] : [];
+    bits = bits.concat([
+      (isGame() ? "season so far: " : "") + plural(n.out, "assist", "assists") + " to " + plural(outs.length, "teammate", "teammates"),
       n.in + " scored off assists from " + plural(ins.length, "teammate", "teammates"),
       "hub " + fmtScore(hubOf(st, id), 3) + (prev ? change(hubOf(st, id), id in prev.hub ? prev.hub[id] : null, 3) : ""),
       "authority " + fmtScore(authOf(st, id), 3) + (prev ? change(authOf(st, id), id in prev.auth ? prev.auth[id] : null, 3) : "")
-    ];
+    ]);
     if (outs.length) bits.push("most to " + topLabel(outs, function (e) { return shortName(e.s); }));
     if (ins.length) bits.push("most from " + topLabel(ins, function (e) { return shortName(e.p); }));
     box.appendChild(document.createTextNode(" · " + bits.join(" · ") + (prev ? " (changes since game " + prev.idx + ")" : "")));
@@ -787,7 +800,35 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     });
   }
 
-  var SIZES = [["inv", "Assists", "Bigger circle, more assists made and received"], ["hub", "Hub", "Bigger circle, higher hub score"], ["auth", "Authority", "Bigger circle, higher authority score"]];
+  var SIZES = [["inv", "Assists"], ["hub", "Hub"], ["auth", "Authority"]];
+
+  // ---- the key, rewritten for the view so every size and line on screen is named ----
+  var GLYPH_CIRCLE = '<svg width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="var(--green)"/></svg>';
+  var GLYPH_LINE = '<svg width="34" height="10" aria-hidden="true"><line x1="2" y1="5" x2="25" y2="5" stroke="var(--edge)" stroke-width="3" stroke-linecap="round"/><path d="M24,1 L32,5 L24,9 z" fill="var(--edge)"/></svg>';
+  function keyLine(glyph, term, text) {
+    var p = el("p"), g = el("span", "glyph");
+    if (glyph) g.innerHTML = glyph;   // fixed markup above, never data
+    p.appendChild(g); p.appendChild(el("span", "term", term)); p.appendChild(el("span", null, text));
+    $("key").appendChild(p);
+  }
+  function renderKey() {
+    var st = curStep();
+    $("key").textContent = "";
+    if (!st) return;
+    var k = "game " + st.idx;
+    if (isGame()) {
+      keyLine(GLYPH_CIRCLE, "Circle", "one player, sized by assists made and received in " + k + ". Players with no assist in that game are faded.");
+      keyLine(GLYPH_LINE, "Line", "one player's assists to a teammate in " + k + ". The arrow points to the scorer; thicker means more assists.");
+    } else {
+      var by = view.size === "hub" ? "hub score" : view.size === "auth" ? "authority score" : "assists made and received";
+      keyLine(GLYPH_CIRCLE, "Circle", "one player, sized by " + by + " through " + k + ".");
+      keyLine(GLYPH_LINE, "Line", "one player's assists to a teammate through " + k + ". The arrow points to the scorer; thicker means more assists.");
+      if (view.size === "hub") keyLine(null, "Hub score", "assists made, each weighted by the receiver's authority score.");
+      if (view.size === "auth") keyLine(null, "Authority score", "baskets scored off assists, each weighted by the passer's hub score.");
+    }
+    keyLine(null, "Click a player", "to show only their connections. Click empty space to show everyone again.");
+    keyLine(null, "Move the map", "by dragging the background; pinch or Ctrl+scroll to zoom. Dragging a player moves them.");
+  }
   function renderControls() {
     var tseg = $("teamSeg"); tseg.textContent = "";
     // a one-team page has no team switch
@@ -805,14 +846,23 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       b.addEventListener("click", function () { if (view.season === s) return; view.season = s; switchView(); });
       sseg.appendChild(b);
     });
+    var mseg = $("modeSeg"); mseg.textContent = "";
+    [["season", "Season so far"], ["game", "This game"]].forEach(function (m) {
+      var b = el("button", null, m[1]);
+      b.type = "button"; b.id = "mode-" + m[0]; b.setAttribute("aria-pressed", String(m[0] === view.mode));
+      b.addEventListener("click", function () { if (view.mode === m[0]) return; view.mode = m[0]; remember(); renderControls(); drawMap(true); });
+      mseg.appendChild(b);
+    });
     var zseg = $("sizeSeg"); zseg.textContent = "";
     SIZES.forEach(function (z) {
       var b = el("button", null, z[1]);
       b.type = "button"; b.id = "size-" + z[0]; b.setAttribute("aria-pressed", String(z[0] === view.size));
       b.addEventListener("click", function () { if (view.size === z[0]) return; view.size = z[0]; remember(); renderControls(); drawMap(true); });
       zseg.appendChild(b);
-      if (z[0] === view.size) $("legendSize").textContent = z[2];
     });
+    // the game view always sizes by that game's assists, so the size switch steps aside
+    zseg.hidden = isGame(); $("sizeLabel").hidden = isGame();
+    renderKey();
     var c = cur(), S = c.S, n = c.steps.length;
     $("eyebrow").textContent = "USF " + D.teams[view.team].label + " · " + S.label;
     $("status").textContent = n ? plural(n, "game", "games") + " through " + fmtDate(S.games[n - 1].date) + " · built " + fmtDate(D.built) : "No games yet · built " + fmtDate(D.built);
