@@ -96,7 +96,11 @@ section { display: flex; flex-direction: column; gap: 14px; }
 .card h3 { margin: 0; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .mapbar { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
 .mapbox { position: relative; width: 100%; }
-#map { display: block; width: 100%; touch-action: manipulation; }
+/* one finger still scrolls the page; two fingers pan and zoom the map */
+#map { display: block; width: 100%; touch-action: pan-x pan-y; cursor: grab; }
+#map.dragging, #map.dragging .node { cursor: grabbing; }
+.mapbar .spacer { flex: 1; }
+.btn.small { font-size: 0.78rem; padding: 4px 10px; min-width: 0; }
 .empty { padding: 40px 16px; text-align: center; color: var(--muted); }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.8rem; color: var(--muted); }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
@@ -155,7 +159,7 @@ button:focus-visible, input:focus-visible, tr:focus-visible, .node:focus-visible
 .edge.entering { opacity: 0; }
 .arrowhead { fill: var(--edge); }
 .arrowhead.new { fill: var(--gold); }
-.node { cursor: pointer; transition: opacity 0.2s; }
+.node { cursor: grab; transition: opacity 0.2s; }
 .node circle { fill: var(--green); stroke: var(--panel); stroke-width: 1.5; }
 .node.new circle { stroke: var(--gold); stroke-width: 3; }
 .node text { font: 500 12px var(--font-body); fill: var(--ink); paint-order: stroke; stroke: var(--panel); stroke-width: 3.5px; stroke-linejoin: round; pointer-events: none; }
@@ -204,6 +208,8 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       <div class="mapbar">
         <span class="small muted">Circle size</span>
         <div class="seg small" role="group" aria-label="Circle size" id="sizeSeg"></div>
+        <span class="spacer"></span>
+        <button class="btn ghost small" id="resetView" type="button">Reset view</button>
       </div>
       <div class="mapbox" id="mapbox">
         <svg id="map" role="img" aria-label="Assist network map"></svg>
@@ -214,6 +220,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
         <span><svg width="34" height="10" aria-hidden="true"><line x1="2" y1="5" x2="25" y2="5" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/><path d="M24,1 L32,5 L24,9 z" fill="var(--gold)"/></svg>This game</span>
         <span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="var(--green)"/></svg><span id="legendSize">Bigger circle, more assists made and received</span></span>
       </div>
+      <p class="small muted">Drag a player to move them. Drag the background to pan; pinch or Ctrl+scroll to zoom.</p>
       <p class="focusinfo" id="focusinfo"></p>
     </div>
 
@@ -442,9 +449,46 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       .attr("markerWidth", 9).attr("markerHeight", 9).attr("markerUnits", "userSpaceOnUse").attr("orient", "auto")
       .append("path").attr("d", "M0,0 L10,5 L0,10 z").attr("class", m[1]);
   });
-  var gEdges = svg.append("g"), gNodes = svg.append("g");
+  var gView = svg.append("g");   // pan and zoom move this group
+  var gEdges = gView.append("g"), gNodes = gView.append("g");
   var shown = new Map();   // id -> drawn {x, y, r}, so the next draw starts where this one is
-  var anim = null, hoverId = null, pinId = null;
+  var moved = new Map();   // id -> layout {x, y} for players the viewer dragged; kept across games
+  var anim = null, hoverId = null, pinId = null, live = null, geo = null;
+
+  var zoom = d3.zoom().scaleExtent([0.5, 4])
+    .filter(function (ev) {
+      if (ev.type === "wheel") return ev.ctrlKey || ev.metaKey;      // plain scrolling keeps scrolling the page
+      if (ev.type === "touchstart") return ev.touches.length > 1;   // one finger scrolls, two pan and zoom
+      return !ev.button;
+    })
+    .on("zoom", function (ev) { gView.attr("transform", ev.transform); });
+  svg.call(zoom).on("dblclick.zoom", null);
+
+  // redraw marks where they stand now, without animating (used while dragging)
+  function redraw() {
+    if (!live) return;
+    live.nodeSel.attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
+    live.edgeSel.attr("d", function (d) { return edgePath(live.byId.get(d.p), live.byId.get(d.s)); });
+  }
+
+  var drag = d3.drag().clickDistance(4)
+    .on("start", function () {
+      if (anim) { cancelAnimationFrame(anim); anim = null; }
+      svg.classed("dragging", true);
+    })
+    .on("drag", function (ev, d) {
+      d.x = d.t.x = ev.x; d.y = d.t.y = ev.y;
+      if (geo) moved.set(d.id, { x: geo.ix(ev.x), y: geo.iy(ev.y) });
+      shown.set(d.id, { x: d.x, y: d.y, r: d.r });
+      redraw();
+    })
+    .on("end", function () { svg.classed("dragging", false); });
+
+  $("resetView").addEventListener("click", function () {
+    moved.clear();
+    svg.transition().duration(reduceMotion ? 0 : 400).call(zoom.transform, d3.zoomIdentity);
+    drawMap(true);
+  });
 
   function geometry(c) {
     var w = Math.max(280, $("mapbox").clientWidth);
@@ -453,7 +497,8 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     var bw = Math.max(1, bb.x1 - bb.x0), bh = Math.max(1, bb.y1 - bb.y0);
     var k = Math.min((w - 2 * pad) / bw, (h - 2 * pad - 16) / bh, 1.5);
     var cx = (bb.x0 + bb.x1) / 2, cy = (bb.y0 + bb.y1) / 2;
-    return { w: w, h: h, X: function (x) { return w / 2 + (x - cx) * k; }, Y: function (y) { return h / 2 - 6 + (y - cy) * k; } };
+    return { w: w, h: h, X: function (x) { return w / 2 + (x - cx) * k; }, Y: function (y) { return h / 2 - 6 + (y - cy) * k; },
+             ix: function (px) { return (px - w / 2) / k + cx; }, iy: function (py) { return (py - h / 2 + 6) / k + cy; } };
   }
 
   function edgePath(a, b) {
@@ -484,6 +529,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     }
     $("mapEmpty").hidden = true;
     var G = geometry(c), pos = c.pos[view.step - 1];
+    geo = G;
     svg.attr("viewBox", "0 0 " + G.w + " " + G.h).attr("height", G.h);
 
     var vmax = 0, wmax = 1;
@@ -494,7 +540,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     st.gameEdges.forEach(function (n, k) { var ps = k.split(">"); inGame.add(ps[0]); inGame.add(ps[1]); });
 
     var ndata = Array.from(st.nodes.values()).map(function (n) {
-      var p = pos.get(n.id);
+      var p = moved.get(n.id) || pos.get(n.id);
       return { id: n.id, out: n.out, in: n.in, isNew: inGame.has(n.id),
                t: { x: G.X(p.x), y: G.Y(p.y), r: 5 + 12 * Math.sqrt(sizeValue(st, n) / vmax) }, f: shown.get(n.id) || null };
     });
@@ -515,6 +561,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
           fmtScore(hubOf(st, d.id), 3) + ", authority " + fmtScore(authOf(st, d.id), 3);
       });
     nodeSel.select("text").text(function (d) { return shortName(d.id); }).attr("dy", function (d) { return d.t.r + 13; });
+    nodeSel.call(drag);
     nodeSel.on("pointerenter", function (ev, d) { hoverId = d.id; applyFocus(); })
       .on("pointerleave", function () { hoverId = null; applyFocus(); })
       .on("click", function (ev, d) { ev.stopPropagation(); pinId = pinId === d.id ? null : d.id; applyFocus(); })
@@ -527,6 +574,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       .attr("stroke-width", function (d) { return d.sw; })
       .attr("marker-end", function (d) { return d.isNew ? "url(#arrow-new)" : "url(#arrow)"; })
       .order();
+    live = { nodeSel: nodeSel, edgeSel: edgeSel, byId: byId };
 
     if (anim) cancelAnimationFrame(anim);
     var dur = animate && !reduceMotion ? 650 : 0, t0 = performance.now();
@@ -803,7 +851,8 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
 
   function switchView() {
     stopPlay(); remember();
-    hoverId = null; pinId = null; shown = new Map();
+    hoverId = null; pinId = null; shown = new Map(); moved.clear();
+    svg.call(zoom.transform, d3.zoomIdentity);
     gNodes.selectAll("*").remove(); gEdges.selectAll("*").remove();
     view.step = cur().steps.length;
     render(true);
