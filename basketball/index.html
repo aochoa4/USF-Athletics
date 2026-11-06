@@ -484,10 +484,11 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     })
     .on("end", function () { svg.classed("dragging", false); });
 
+  // reset snaps back at once, so it never depends on animation frames running
   $("resetView").addEventListener("click", function () {
     moved.clear();
-    svg.transition().duration(reduceMotion ? 0 : 400).call(zoom.transform, d3.zoomIdentity);
-    drawMap(true);
+    svg.call(zoom.transform, d3.zoomIdentity);
+    drawMap(false);
   });
 
   function geometry(c) {
@@ -578,8 +579,9 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
 
     if (anim) cancelAnimationFrame(anim);
     var dur = animate && !reduceMotion ? 650 : 0, t0 = performance.now();
-    function frame(now) {
-      var t = dur ? Math.min(1, (now - t0) / dur) : 1, e = d3.easeCubicInOut(t);
+    function frame() {
+      // one clock for start and now, clamped, so a frame stamped before t0 can't push marks off the map
+      var t = dur ? Math.max(0, Math.min(1, (performance.now() - t0) / dur)) : 1, e = d3.easeCubicInOut(t);
       ndata.forEach(function (d) {
         var f = d.f || { x: d.t.x, y: d.t.y, r: 0 };
         d.x = f.x + (d.t.x - f.x) * e; d.y = f.y + (d.t.y - f.y) * e; d.r = f.r + (d.t.r - f.r) * e;
