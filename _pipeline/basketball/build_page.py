@@ -23,12 +23,13 @@ OUT_3D = os.path.join(HERE, "page", "assist_network_3d.html")
 MARKER = "/*__DATA__*/null"
 LABELS = {"mens": "Men's Basketball", "womens": "Women's Basketball"}
 
-# One page per team for the public site in aochoa4/USF-Athletics: basketball/ is the men's page and
-# basketball/women/ the women's. Neither links to the other (Alex, 2026-11-06).
-SITE_DIR = os.path.join(HERE, "site", "basketball")
+# One page per team for the public site in aochoa4/USF-Athletics, each at the top of the site:
+# basketball/ is the men's page and womensbasketball/ the women's (Alex, 2026-11-06: "make the women
+# their own page womensbasketball not under basektball"). Neither links to the other (Alex, 2026-11-06).
+SITE_DIR = os.path.join(HERE, "site")
 SITE_PAGES = {
-    "mens": ("index.html", "USF Men's Assist Network"),
-    "womens": (os.path.join("women", "index.html"), "USF Women's Assist Network"),
+    "mens": (os.path.join("basketball", "index.html"), "USF Men's Assist Network"),
+    "womens": (os.path.join("womensbasketball", "index.html"), "USF Women's Assist Network"),
 }
 # the same document shell the soccer pages use on GitHub Pages
 SHELL_HEAD = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
@@ -153,7 +154,7 @@ def season_block(league, season):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--site-dir", default=SITE_DIR, help="where basketball/index.html and women/index.html go")
+    ap.add_argument("--site-dir", default=SITE_DIR, help="the site root: basketball/index.html and womensbasketball/index.html go here")
     ap.add_argument("--combined", default=OUT, help="the two-team page, or 'none' to skip it")
     ap.add_argument("--metrics", default=os.path.join(HERE, "page", "metrics_by_game.csv"), help="score table, or 'none'")
     ap.add_argument("--built", default=time.strftime("%Y-%m-%d"), help="date shown as 'built' on the pages")
