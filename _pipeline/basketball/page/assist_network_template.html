@@ -702,15 +702,25 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     return Object.keys(scores).filter(function (id) { return scores[id] > 0; })
       .sort(function (a, b) { return (scores[b] - scores[a]) || shortName(a).localeCompare(shortName(b)); });
   }
+  function nameList(ids) {
+    var n = ids.map(shortName);
+    return n.length === 1 ? n[0] : n.length <= 3 ? n.slice(0, -1).join(", ") + " and " + n[n.length - 1] : n.length + " players";
+  }
+  // ties at the top or in second place are named, never hidden
   function leadSentence(scores, label) {
     var r = rankedIds(scores);
     if (!r.length) return "";
-    var a = r[0], b = r[1], top = fmtScore(scores[a], 3);
-    if (b && Math.abs(scores[a] - scores[b]) < 1e-9) return shortName(a) + " and " + shortName(b) + " share the top " + label + " score, " + top + ".";
-    if (!b) return shortName(a) + " has the top " + label + " score, " + top + ".";
+    var same = function (x, y) { return Math.abs(scores[x] - scores[y]) < 1e-9; };
+    var top = r.filter(function (id) { return same(id, r[0]); }), rest = r.slice(top.length);
+    var second = rest.filter(function (id) { return same(id, rest[0]); });
+    var s1 = fmtScore(scores[r[0]], 3);
+    if (top.length > 1) return nameList(top) + " share the top " + label + " score, " + s1 + ".";
+    if (!second.length) return shortName(r[0]) + " has the top " + label + " score, " + s1 + ".";
+    var s2 = fmtScore(scores[second[0]], 3);
     return label === "hub"
-      ? shortName(a) + " has the top hub score, " + top + ", " + (scores[a] / scores[b]).toFixed(1) + " times " + shortName(b) + "'s " + fmtScore(scores[b], 3) + "."
-      : shortName(a) + " has the top authority score, " + top + ", with " + shortName(b) + " next at " + fmtScore(scores[b], 3) + ".";
+      ? shortName(r[0]) + " has the top hub score, " + s1 + ", " + (scores[r[0]] / scores[second[0]]).toFixed(1) + " times " +
+        (second.length === 1 ? shortName(second[0]) + "'s " + s2 : "the next score, " + s2 + " (" + nameList(second) + ")") + "."
+      : shortName(r[0]) + " has the top authority score, " + s1 + ", with " + nameList(second) + " next at " + s2 + ".";
   }
   function narrative(st) {
     var hub = leadSentence(st.hub, "hub");

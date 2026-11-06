@@ -99,8 +99,8 @@ def add_metrics(games):
             continue
         hub, auth = hits(edges, ids)
         te = team_entropy(edges, ids)
-        g["m"] = {"h": {i: round(hub[i], 4) for i in ids}, "au": {i: round(auth[i], 4) for i in ids},
-                  "te": round(te, 4)}
+        # unrounded, so the page rounds once, at display (rounding here first moved 19 shown scores by .001)
+        g["m"] = {"h": {i: hub[i] for i in ids}, "au": {i: auth[i] for i in ids}, "te": te}
         for i in ids:
             rows.append((k, g["date"], i, hub[i], auth[i], te))
     return rows
