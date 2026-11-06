@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-/* Layout: the Playoff Watch column. Team and season switches, the game stepper, summary tiles,
+/* Layout: the Playoff Watch column. Team and season switches, the game stepper, a stat sheet,
    the map (2D or 3D) with the selected game beside it, hub and authority rankings, then players and the game log. */
 :root {
   --bg: #f4f6f2;
@@ -46,7 +46,7 @@ h1, h2, .num, .display { font-family: var(--font-display); }
 h1 { font-size: clamp(2.2rem, 6vw, 3.2rem); line-height: 1; margin: 0; font-weight: 700; letter-spacing: 0.01em; text-wrap: balance; }
 h2 { font-size: 1.55rem; margin: 0; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase; }
 p { margin: 0; }
-.eyebrow { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); font-weight: 600; }
+.eyebrow { font-size: 0.95rem; color: var(--green); font-weight: 600; }
 .muted { color: var(--muted); }
 .small { font-size: 0.85rem; }
 header { display: flex; flex-direction: column; gap: 8px; }
@@ -72,20 +72,21 @@ section { display: flex; flex-direction: column; gap: 14px; }
 .btn.ghost { background: transparent; color: var(--green); min-width: 2.4rem; padding: 6px 10px; }
 .btn:disabled { opacity: 0.45; cursor: default; }
 
-.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-@media (max-width: 760px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.tile .label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
-.tile .num { font-size: 2.6rem; line-height: 1; font-weight: 700; font-variant-numeric: tabular-nums; }
-.tile .num.text { font-size: 1.55rem; line-height: 1.1; overflow-wrap: anywhere; }
-.tile .sub { font-size: 0.85rem; color: var(--muted); }
-.tile.lead { background: var(--green); border-color: var(--green); color: var(--bg); }
-.tile.lead .label, .tile.lead .sub { color: var(--bg); opacity: 0.85; }
+/* the stat sheet: one row per number, label, value, then a plain note under the value */
+.stats { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 2px 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
+@media (max-width: 760px) { .stats { grid-template-columns: minmax(0, 1fr); } }
+.stat { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 2px 12px; align-items: baseline; align-content: start; padding: 9px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.stat:nth-last-child(-n+2) { border-bottom: 0; }
+@media (max-width: 760px) { .stat:nth-last-child(2) { border-bottom: 1px solid var(--line); } }
+.stat .k { font-weight: 600; font-size: 0.9rem; }
+.stat .v { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; line-height: 1.15; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.stat .note { grid-column: 2; font-size: 0.85rem; color: var(--muted); }
+.stat .block { display: block; }
 
 .mapgrid { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); gap: 20px; align-items: start; }
 @media (max-width: 900px) { .mapgrid { grid-template-columns: minmax(0, 1fr); } }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
-.card h3 { margin: 0; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.card h3 { margin: 0; font-family: var(--font-display); font-size: 1.15rem; color: var(--ink); font-weight: 600; }
 .mapbar { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
 .mapbox { position: relative; width: 100%; }
 /* one finger still scrolls the page; two fingers pan and zoom the map */
@@ -114,10 +115,9 @@ section { display: flex; flex-direction: column; gap: 14px; }
 .matchup { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; line-height: 1.1; }
 .result { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; font-variant-numeric: tabular-nums; }
 .result.W { color: var(--good); }
-.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap; }
-.pill.ok { background: var(--green-soft); color: var(--green); }
-.pill.gap { background: var(--gold-soft); color: var(--gold); border: 1px solid var(--gold); }
-.pill.new { background: var(--gold-soft); color: var(--gold); }
+/* notes after a count are plain words; a gap between the two counts is set in gold */
+.flag { color: var(--muted); }
+.flag.gap { color: var(--gold); font-weight: 600; }
 .pairs { display: flex; flex-direction: column; }
 .pair { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
 .pair:last-child { border-bottom: 0; }
@@ -144,7 +144,7 @@ section { display: flex; flex-direction: column; gap: 14px; }
 
 .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
-th { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { font-size: 0.82rem; color: var(--muted); font-weight: 600; text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
 td { padding: 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
 th.r, td.r { text-align: right; }
 th button.sort { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
@@ -199,13 +199,13 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     <p class="steplabel" id="steplabel" aria-live="polite"></p>
   </div>
 
-  <div class="tiles" id="tiles">
-    <div class="tile lead"><span class="label">Assists mapped</span><span class="num" id="tAst">0</span><span class="sub" id="tAstSub"></span></div>
-    <div class="tile"><span class="label">Connections</span><span class="num" id="tCon">0</span><span class="sub" id="tConSub"></span></div>
-    <div class="tile"><span class="label">Team entropy</span><span class="num" id="tEnt"></span><span class="sub" id="tEntSub"></span><span id="tEntSpark"></span></div>
-    <div class="tile"><span class="label">Top hub</span><span class="num text" id="tHub"></span><span class="sub" id="tHubSub"></span></div>
-    <div class="tile"><span class="label">Top authority</span><span class="num text" id="tAuth"></span><span class="sub" id="tAuthSub"></span></div>
-    <div class="tile"><span class="label">Top connection</span><span class="num text" id="tPair"></span><span class="sub" id="tPairSub"></span></div>
+  <div class="stats" id="tiles">
+    <div class="stat"><span class="k">Assists mapped</span><span class="v" id="tAst">0</span><span class="note" id="tAstSub"></span></div>
+    <div class="stat"><span class="k">Connections</span><span class="v" id="tCon">0</span><span class="note" id="tConSub"></span></div>
+    <div class="stat"><span class="k">Team entropy</span><span class="v" id="tEnt"></span><span class="note"><span id="tEntSub"></span><span class="block" id="tEntChg"></span><span class="block" id="tEntSpark"></span></span></div>
+    <div class="stat"><span class="k">Top hub</span><span class="v" id="tHub"></span><span class="note" id="tHubSub"></span></div>
+    <div class="stat"><span class="k">Top authority</span><span class="v" id="tAuth"></span><span class="note" id="tAuthSub"></span></div>
+    <div class="stat"><span class="k">Top connection</span><span class="v" id="tPair"></span><span class="note" id="tPairSub"></span></div>
   </div>
 
   <div class="mapgrid">
@@ -419,7 +419,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
   function player(id) { return cur().S.players[id] || { n: "Player " + id, s: "Player " + id }; }
   function shortName(id) { var p = player(id); return p.s || p.n; }
   function where(g) { return (g.site === "A" ? "at " : "vs ") + g.opp; }
-  function tags(g) { return (g.site === "N" ? " · neutral" : "") + (g.conf ? " · WCC" : "") + (g.post ? " · postseason" : ""); }
+  function tags(g) { return (g.site === "N" ? ", neutral" : "") + (g.conf ? ", WCC" : "") + (g.post ? ", postseason" : ""); }
   function plural(n, one, many) { return n + " " + (n === 1 ? one : many); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
   function maxBy(arr, f) { var best = null, bv = -Infinity; arr.forEach(function (x) { var v = f(x); if (v > bv) { bv = v; best = x; } }); return best; }
@@ -661,7 +661,10 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     ]);
     if (outs.length) bits.push("most to " + topLabel(outs, function (e) { return shortName(e.s); }));
     if (ins.length) bits.push("most from " + topLabel(ins, function (e) { return shortName(e.p); }));
-    box.appendChild(document.createTextNode(" · " + bits.join(" · ") + (prev ? " (changes since game " + prev.idx + ")" : "")));
+    // the name on one line, the facts under it
+    var facts = bits.join("; ") + (prev ? " (changes since game " + prev.idx + ")" : "");
+    box.appendChild(el("br"));
+    box.appendChild(document.createTextNode(facts.charAt(0).toUpperCase() + facts.slice(1)));
   }
 
   // ---- the 3D map: the same steps, sizes and fading as the 2D map, loaded the first time it is picked ----
@@ -772,9 +775,9 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       .nodeLabel(function (n) {
         var box = el("div");
         box.appendChild(el("strong", null, player(n.id).n));
-        if (isGame()) box.appendChild(el("div", null, "This game: " + plural(n.gameOut, "assist", "assists") + " · " + n.gameIn + " scored off assists"));
-        box.appendChild(el("div", null, "Season so far: " + plural(n.out, "assist", "assists") + " · " + n.in + " scored off assists"));
-        box.appendChild(el("div", null, "hub " + fmtScore(n.hub, 3) + " · authority " + fmtScore(n.auth, 3)));
+        if (isGame()) box.appendChild(el("div", null, "This game: " + plural(n.gameOut, "assist", "assists") + ", " + n.gameIn + " scored off assists"));
+        box.appendChild(el("div", null, "Season so far: " + plural(n.out, "assist", "assists") + ", " + n.in + " scored off assists"));
+        box.appendChild(el("div", null, "Hub " + fmtScore(n.hub, 3) + ", authority " + fmtScore(n.auth, 3)));
         return box;
       });
     var byId = new Map(data.nodes.map(function (n) { return [n.id, n]; }));
@@ -875,18 +878,18 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     $("tConSub").textContent = "passer-to-scorer pairs among " + st.nodes.size + " players";
     var prev = view.step > 1 ? c.steps[view.step - 2] : null;
     $("tEnt").textContent = fmtScore(st.te, 2);
-    $("tEntSub").textContent = "how evenly " + st.nodes.size + " players share the assists made; 1 is even" +
-      (prev && prev.te != null && st.te != null ? " · " + change(st.te, prev.te, 3).slice(2) + " since game " + prev.idx : "");
+    $("tEntSub").textContent = "how evenly " + st.nodes.size + " players share the assists made; 1 is even";
+    $("tEntChg").textContent = prev && prev.te != null && st.te != null ? change(st.te, prev.te, 3).slice(2) + " since game " + prev.idx : "";
     var es = $("tEntSpark"); es.textContent = "";
     es.appendChild(spark(c.steps.map(function (s) { return s.te; }), view.step - 1, 160, 26));
     var nodes = Array.from(st.nodes.values());
     if (!nodes.length) { ["tHub", "tHubSub", "tAuth", "tAuthSub", "tPair", "tPairSub"].forEach(function (id) { $(id).textContent = "-"; }); return; }
     var th = maxBy(nodes, function (n) { return hubOf(st, n.id); }), ta = maxBy(nodes, function (n) { return authOf(st, n.id); });
     $("tHub").textContent = shortName(th.id);
-    $("tHubSub").textContent = "hub " + fmtScore(hubOf(st, th.id), 3) + " · " + plural(th.out, "assist", "assists") +
+    $("tHubSub").textContent = "hub " + fmtScore(hubOf(st, th.id), 3) + ", " + plural(th.out, "assist", "assists") +
       tied(nodes, th, function (n) { return hubOf(st, n.id); }, function (n) { return shortName(n.id); });
     $("tAuth").textContent = shortName(ta.id);
-    $("tAuthSub").textContent = "authority " + fmtScore(authOf(st, ta.id), 3) + " · " + ta.in + " scored off assists" +
+    $("tAuthSub").textContent = "authority " + fmtScore(authOf(st, ta.id), 3) + ", " + ta.in + " scored off assists" +
       tied(nodes, ta, function (n) { return authOf(st, n.id); }, function (n) { return shortName(n.id); });
     var edges = Array.from(st.edges.values()), pair = maxBy(edges, function (e) { return e.w; });
     $("tPair").textContent = shortName(pair.p) + " → " + shortName(pair.s);
@@ -898,28 +901,28 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
   function tied(items, top, val, label) {
     var others = items.filter(function (x) { return x !== top && Math.abs(val(x) - val(top)) < 1e-9; });
     if (!others.length) return "";
-    return others.length === 1 ? " · tied with " + label(others[0]) : " · tied with " + others.length + " others";
+    return others.length === 1 ? ", tied with " + label(others[0]) : ", tied with " + others.length + " others";
   }
 
   function renderGame(st, total) {
     var g = st.game;
-    $("gEyebrow").textContent = "Game " + st.idx + " of " + total + " · " + fmtDate(g.date) + tags(g);
+    $("gEyebrow").textContent = "Game " + st.idx + " of " + total + ", " + fmtDate(g.date) + tags(g);
     $("gMatch").textContent = where(g);
     var r = $("gResult");
     r.className = "result " + (g.res || "");
     r.textContent = (g.res || "") + " " + g.us + "-" + g.them;
     var check = $("gCheck"); check.textContent = "";
     var mapped = g.a.length, box = g.box == null ? null : g.box;
-    check.appendChild(document.createTextNode(plural(mapped, "assist", "assists") + " mapped" + (box == null ? "" : " · box score " + box) + " "));
-    if (box != null) check.appendChild(el("span", box === mapped ? "pill ok" : "pill gap", box === mapped ? "counts match"
-      : Math.abs(box - mapped) + (box > mapped ? " fewer" : " more") + " than box score"));
+    check.appendChild(document.createTextNode(plural(mapped, "assist", "assists") + " mapped" + (box == null ? "" : ", box score " + box) + " "));
+    if (box != null) check.appendChild(el("span", box === mapped ? "flag" : "flag gap", "(" + (box === mapped ? "counts match"
+      : Math.abs(box - mapped) + (box > mapped ? " fewer" : " more") + " than box score") + ")"));
     $("gNew").textContent = plural(st.newPairs.length, "new connection", "new connections") + " this game";
     var list = $("gPairs"); list.textContent = "";
     var newSet = new Set(st.newPairs);
     Array.from(st.gameEdges).sort(function (a, b) { return (b[1] - a[1]) || shortName(a[0].split(">")[0]).localeCompare(shortName(b[0].split(">")[0])); })
       .forEach(function (kv) {
         var ps = kv[0].split(">"), row = el("div", "pair"), who = el("span", null, shortName(ps[0]) + " → " + shortName(ps[1]) + " ");
-        if (newSet.has(kv[0])) who.appendChild(el("span", "pill new", "new"));
+        if (newSet.has(kv[0])) who.appendChild(el("span", "flag", "(new)"));
         row.appendChild(who); row.appendChild(el("span", "n", String(kv[1])));
         list.appendChild(row);
       });
@@ -988,7 +991,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
           list.appendChild(b);
         });
     });
-    $("ranksNote").textContent = "Through game " + st.idx + " · top six, with ties at sixth · tap a player to show them on the map";
+    $("ranksNote").textContent = "Through game " + st.idx + ". Top six, with ties at sixth. Tap a player to show them on the map.";
   }
 
   function renderPlayers(st, c) {
@@ -1020,7 +1023,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     document.querySelectorAll("#players th[data-key]").forEach(function (th) {
       if (th.dataset.key === view.sort) th.setAttribute("aria-sort", "descending"); else th.removeAttribute("aria-sort");
     });
-    $("playersNote").textContent = "Players with a mapped assist made or received, or a box-score assist · through game " + st.idx;
+    $("playersNote").textContent = "Players with a mapped assist made or received, or a box-score assist, through game " + st.idx;
   }
 
   function renderLog(c) {
@@ -1120,8 +1123,8 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     $("spin").hidden = !is3d();
     renderKey();
     var c = cur(), S = c.S, n = c.steps.length;
-    $("eyebrow").textContent = "USF " + D.teams[view.team].label + " · " + S.label;
-    $("status").textContent = n ? plural(n, "game", "games") + " through " + fmtDate(S.games[n - 1].date) + " · built " + fmtDate(D.built) : "No games yet · built " + fmtDate(D.built);
+    $("eyebrow").textContent = "USF " + D.teams[view.team].label + ", " + S.label;
+    $("status").textContent = n ? plural(n, "game", "games") + " through " + fmtDate(S.games[n - 1].date) + ", built " + fmtDate(D.built) : "No games yet, built " + fmtDate(D.built);
     var range = $("game");
     range.max = String(Math.max(1, n)); range.value = String(Math.max(1, view.step)); range.disabled = n <= 1;
     $("prev").disabled = view.step <= 1; $("next").disabled = view.step >= n; $("play").disabled = n <= 1;
@@ -1132,7 +1135,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     renderControls();
     $("tiles").hidden = !st; $("gamecard").hidden = !st; $("rankSection").hidden = !st;
     if (st) {
-      $("steplabel").textContent = "Through game " + st.idx + " of " + n + " · " + fmtDate(st.game.date) + " " + where(st.game);
+      $("steplabel").textContent = "Through game " + st.idx + " of " + n + ", " + fmtDate(st.game.date) + " " + where(st.game);
       renderTiles(st, c); renderGame(st, n); renderRanks(st); renderPlayers(st, c);
       $("narrative").textContent = narrative(st);
     } else {
