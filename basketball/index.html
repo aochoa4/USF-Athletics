@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
 /* Layout: the Playoff Watch column. Team and season switches, the game stepper, summary tiles,
-   the map with the selected game beside it, hub and authority rankings, then players and the game log. */
+   the map (2D or 3D) with the selected game beside it, hub and authority rankings, then players and the game log. */
 :root {
   --bg: #f4f6f2;
   --panel: #ffffff;
@@ -100,7 +100,17 @@ section { display: flex; flex-direction: column; gap: 14px; }
 #map { display: block; width: 100%; touch-action: pan-x pan-y; cursor: grab; }
 #map:active { cursor: grabbing; }
 .mapbar .spacer { flex: 1; }
+.mapbtns { display: inline-flex; gap: 6px; margin-left: auto; }   /* the buttons wrap together, still at the right */
 .btn.small { font-size: 0.78rem; padding: 4px 10px; min-width: 0; }
+.btn[aria-pressed="true"] { background: var(--green); color: var(--bg); }
+/* the 3D view: the library empties its element, so the name labels sit beside it */
+.stage { position: relative; width: 100%; height: clamp(340px, 58vh, 640px); border-radius: 6px; overflow: hidden; background: var(--panel); touch-action: none; }
+.stage .graph { position: absolute; inset: 0; }
+.stage canvas { display: block; }
+.labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.lbl { position: absolute; left: 0; top: 0; font: 500 12px var(--font-body); color: var(--ink); white-space: nowrap;
+  text-shadow: 0 0 3px var(--panel), 0 0 3px var(--panel), 0 0 4px var(--panel); will-change: transform, opacity; }
+.scene-tooltip { font: 500 12px var(--font-body) !important; background: var(--ink) !important; color: var(--panel) !important; padding: 4px 8px !important; border-radius: 4px !important; }
 .empty { padding: 40px 16px; text-align: center; color: var(--muted); }
 .key { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; }
 .key p { display: flex; gap: 8px; align-items: baseline; }
@@ -209,14 +219,22 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
   <div class="mapgrid">
     <div class="card">
       <div class="mapbar">
+        <div class="seg small" role="group" aria-label="Map view" id="dimSeg"></div>
         <div class="seg small" role="group" aria-label="Show" id="modeSeg"></div>
         <span class="small muted" id="sizeLabel">Circle size</span>
         <div class="seg small" role="group" aria-label="Circle size" id="sizeSeg"></div>
         <span class="spacer"></span>
-        <button class="btn ghost small" id="resetView" type="button">Reset view</button>
+        <span class="mapbtns">
+          <button class="btn ghost small" id="spin" type="button" aria-pressed="false" hidden>Spin</button>
+          <button class="btn ghost small" id="resetView" type="button">Reset view</button>
+        </span>
       </div>
       <div class="mapbox" id="mapbox">
         <svg id="map" role="img" aria-label="Assist network map"></svg>
+        <div class="stage" id="stage" role="img" aria-label="3D assist network map" hidden>
+          <div class="graph" id="graph"></div>
+          <div class="labels" id="labels" aria-hidden="true"></div>
+        </div>
         <div class="empty" id="mapEmpty" hidden></div>
       </div>
       <div class="key" id="key"></div>
@@ -306,7 +324,8 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
   var teams = Object.keys(D.teams);
   STORE += "." + teams.join("-");   // the men's and women's pages share a site, so each keeps its own view
   // mode "season": the network through the selected game; "game": only the selected game's assists
-  var view = { team: teams[0], season: null, step: 0, size: "inv", sort: "out", mode: "season" };
+  // dim "2d" or "3d": which map draws; every visit opens on the 2D map
+  var view = { team: teams[0], season: null, step: 0, size: "inv", sort: "out", mode: "season", dim: "2d" };
   try {
     var saved = JSON.parse(localStorage.getItem(STORE) || "null");
     if (saved && D.teams[saved.team]) { view.team = saved.team; view.season = saved.season; }
@@ -467,7 +486,10 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
 
   // players stay where the layout puts them (Alex, 2026-11-06); the map pans and zooms as a whole.
   // reset snaps back at once, so it never depends on animation frames running
-  $("resetView").addEventListener("click", function () { svg.call(zoom.transform, d3.zoomIdentity); });
+  $("resetView").addEventListener("click", function () {
+    if (is3d()) { if (Graph3D) Graph3D.zoomToFit(reduceMotion ? 0 : 600, 40); return; }
+    svg.call(zoom.transform, d3.zoomIdentity);
+  });
 
   function geometry(c) {
     var w = Math.max(280, $("mapbox").clientWidth);
@@ -501,15 +523,17 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     if (isGame()) return gc.of(n.id);
     return view.size === "hub" ? hubOf(st, n.id) : view.size === "auth" ? authOf(st, n.id) : n.out + n.in;
   }
+  function emptyText(c, st) {
+    var up = (c.S.upcoming || [])[0];
+    return st ? "No assisted baskets mapped yet." : "No games yet." + (up ? " First up: " + fmtDate(up.date) + " " + where(up) + "." : "");
+  }
 
   function drawMap(animate) {
     var c = cur(), st = curStep();
     if (!st || !st.nodes.size) {
       svg.attr("height", 0);
       $("mapEmpty").hidden = false;
-      var up = (c.S.upcoming || [])[0];
-      $("mapEmpty").textContent = st ? "No assisted baskets mapped yet."
-        : "No games yet." + (up ? " First up: " + fmtDate(up.date) + " " + where(up) + "." : "");
+      $("mapEmpty").textContent = emptyText(c, st);
       gNodes.selectAll("*").remove(); gEdges.selectAll("*").remove(); shown = new Map();
       return;
     }
@@ -593,6 +617,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       gNodes.selectAll("g.node").classed("me", false).classed("nbr", false);
       gEdges.selectAll("path.edge").classed("inc", false);
       focusInfo(null);
+      if (is3d()) style3d();
       return;
     }
     var nb = new Set(), game = isGame();
@@ -604,6 +629,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     gNodes.selectAll("g.node").classed("me", function (d) { return d.id === id; }).classed("nbr", function (d) { return nb.has(d.id); });
     gEdges.selectAll("path.edge").classed("inc", function (d) { return d.p === id || d.s === id; });
     focusInfo(id);
+    if (is3d()) style3d();
   }
 
   // a change too small to show at this precision says so; it is never reported as zero
@@ -645,6 +671,208 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     if (ins.length) bits.push("most from " + topLabel(ins, function (e) { return shortName(e.p); }));
     box.appendChild(document.createTextNode(" · " + bits.join(" · ") + (prev ? " (changes since game " + prev.idx + ")" : "")));
   }
+
+  // ---- the 3D map: the same steps, sizes and fading as the 2D map, loaded the first time it is picked ----
+  var LIB3D = "https://cdn.jsdelivr.net/npm/3d-force-graph@1.80.1/dist/3d-force-graph.min.js";
+  var Graph3D = null, lib3d = "none", fit3d = true, refitOnStop = false, labelLoop = null;
+  var objs3d = {}, labelEls = new Map(), stats3d = { vmax: 1, wmax: 1 }, C = {};
+  function is3d() { return view.dim === "3d"; }
+  // a new step redraws; a new size or view only restyles, so the 3D layout holds still
+  function redraw(animate) { if (is3d()) draw3d(); else drawMap(animate); }
+  function restyle() { if (is3d()) applyFocus(); else drawMap(true); }
+
+  function setDim(d) {
+    if (view.dim === d) return;
+    view.dim = d; hoverId = null; stopSpin();
+    $("map").style.display = d === "3d" ? "none" : "";
+    if (d === "3d") { fit3d = true; loadLib3d(); }
+    else {
+      $("stage").hidden = true;
+      if (Graph3D) Graph3D.pauseAnimation();
+      shown = new Map(); gNodes.selectAll("*").remove(); gEdges.selectAll("*").remove();
+    }
+    renderControls(); redraw(false);
+  }
+  function loadLib3d() {
+    if (lib3d === "loading" || lib3d === "ready") return;
+    lib3d = "loading";
+    var s = document.createElement("script");
+    s.src = LIB3D; s.async = true;
+    s.onload = function () { lib3d = typeof ForceGraph3D === "undefined" ? "failed" : "ready"; if (is3d()) draw3d(); };
+    s.onerror = function () { lib3d = "failed"; if (is3d()) draw3d(); };
+    document.head.appendChild(s);
+  }
+
+  // colors from the page tokens, so both themes work
+  function tok(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  function mix(a, b, t) {   // hex a toward hex b by t
+    var pa = parseInt(a.slice(1), 16), pb = parseInt(b.slice(1), 16);
+    var ch = function (p, s) { return (p >> s) & 255; };
+    var c = [16, 8, 0].map(function (s) { return Math.round(ch(pa, s) + (ch(pb, s) - ch(pa, s)) * t); });
+    return "#" + c.map(function (v) { return v.toString(16).padStart(2, "0"); }).join("");
+  }
+  function readColors() {
+    ["--panel", "--ink", "--green", "--edge"].forEach(function (n) { C[n.slice(2)] = tok(n); });
+    C.faint = mix(C.edge, C.panel, 0.93);      // lines away from the selected player
+    C.faintNode = mix(C.green, C.panel, 0.88); // players not connected to the selected player
+  }
+
+  function init3d() {
+    if (Graph3D) return Graph3D;
+    var stage = $("stage");
+    try {
+      readColors();
+      Graph3D = new ForceGraph3D($("graph"), { controlType: "orbit" })
+        .width(stage.clientWidth).height(stage.clientHeight)
+        .backgroundColor(C.panel).showNavInfo(false)
+        .nodeRelSize(1).nodeResolution(20).nodeOpacity(0.95)
+        .linkCurvature(0.22).linkResolution(8).linkOpacity(0.7).linkDirectionalArrowRelPos(1)
+        .cooldownTicks(150).d3VelocityDecay(0.35)
+        .enableNodeDrag(false);   // the view turns; players stay where the layout puts them
+    } catch (e) { Graph3D = null; lib3d = "failed"; return null; }
+    Graph3D.d3Force("charge").strength(-320);
+    Graph3D.d3Force("link").distance(function (l) { return 110 / (1 + 0.25 * Math.log1p(l.w)); });
+    Graph3D.onNodeClick(function (n) {
+      pinId = pinId === n.id ? null : n.id; applyFocus();
+      if (pinId) {
+        var d = Math.hypot(n.x, n.y, n.z) || 1, r = 1 + 140 / d;
+        Graph3D.cameraPosition({ x: n.x * r, y: n.y * r, z: n.z * r }, n, reduceMotion ? 0 : 900);
+      }
+    });
+    Graph3D.onBackgroundClick(function () { if (pinId) { pinId = null; applyFocus(); } });
+    // a fresh view fits once more when its layout comes to rest, so the network fills the stage
+    Graph3D.onEngineStop(function () { if (refitOnStop) { refitOnStop = false; Graph3D.zoomToFit(reduceMotion ? 0 : 400, 40); } });
+    // plain scrolling keeps scrolling the page; Ctrl+scroll or a trackpad pinch zooms, as on the 2D map
+    stage.addEventListener("wheel", function (ev) { if (!ev.ctrlKey && !ev.metaKey) ev.stopPropagation(); }, true);
+    if (window.ResizeObserver) new ResizeObserver(function () { if (stage.clientWidth) Graph3D.width(stage.clientWidth).height(stage.clientHeight); }).observe(stage);
+    return Graph3D;
+  }
+
+  function size3d(n) { return isGame() ? n.gameOut + n.gameIn : view.size === "hub" ? n.hub : view.size === "auth" ? n.auth : n.out + n.in; }
+  function weight3d(l) { return isGame() ? l.g : l.w; }
+  function onView3d(l) { return !isGame() || l.g > 0; }
+  function ends3d(l) { return [l.source.id || l.source, l.target.id || l.target]; }
+  // sphere radius in scene units: nodeRelSize is 1, so the library's radius is the cube root of nodeVal
+  function radius3d(n) { return 4 + 9 * Math.sqrt(size3d(n) / stats3d.vmax); }
+
+  // one color for every sphere and one for every line; only fading changes, for the game view and a selected player
+  function style3d() {
+    if (!Graph3D) return;
+    var data = Graph3D.graphData(), id = pinId, nb = new Set();
+    if (id) data.links.forEach(function (l) {
+      if (!onView3d(l)) return;
+      var e = ends3d(l);
+      if (e[0] === id) nb.add(e[1]); if (e[1] === id) nb.add(e[0]);
+    });
+    stats3d.vmax = Math.max.apply(null, data.nodes.map(size3d).concat([1e-9]));
+    stats3d.wmax = Math.max.apply(null, data.links.filter(onView3d).map(weight3d).concat([1]));
+    var faded = function (n) { return (id && n.id !== id && !nb.has(n.id)) || (isGame() && !(n.gameOut + n.gameIn)); };
+    var away = function (l) { var e = ends3d(l); return id && e[0] !== id && e[1] !== id; };
+    var lineColor = function (l) { return away(l) ? C.faint : id ? C.ink : C.edge; };
+    Graph3D
+      .nodeVal(function (n) { var r = radius3d(n); return r * r * r; })
+      .nodeColor(function (n) { return faded(n) ? C.faintNode : C.green; })
+      .linkVisibility(onView3d)
+      .linkWidth(function (l) { return away(l) ? 0.15 : 0.4 + 2.4 * Math.sqrt(weight3d(l) / stats3d.wmax); })
+      .linkColor(lineColor)
+      .linkDirectionalArrowLength(function (l) { return away(l) ? 0 : 3.5 + 3 * Math.sqrt(weight3d(l) / stats3d.wmax); })
+      .linkDirectionalArrowColor(lineColor)
+      .nodeLabel(function (n) {
+        var box = el("div");
+        box.appendChild(el("strong", null, player(n.id).n));
+        if (isGame()) box.appendChild(el("div", null, "This game: " + plural(n.gameOut, "assist", "assists") + " · " + n.gameIn + " scored off assists"));
+        box.appendChild(el("div", null, "Season so far: " + plural(n.out, "assist", "assists") + " · " + n.in + " scored off assists"));
+        box.appendChild(el("div", null, "hub " + fmtScore(n.hub, 3) + " · authority " + fmtScore(n.auth, 3)));
+        return box;
+      });
+    var byId = new Map(data.nodes.map(function (n) { return [n.id, n]; }));
+    labelEls.forEach(function (lab, lid) { lab.dataset.dim = byId.has(lid) && faded(byId.get(lid)) ? "1" : ""; });
+  }
+
+  // floating name labels: page text kept over each sphere
+  function syncLabels(nodes) {
+    var keep = new Set(nodes.map(function (n) { return n.id; }));
+    labelEls.forEach(function (lab, id) { if (!keep.has(id)) { lab.remove(); labelEls.delete(id); } });
+    nodes.forEach(function (n) {
+      var lab = labelEls.get(n.id);
+      if (!lab) { lab = el("span", "lbl"); $("labels").appendChild(lab); labelEls.set(n.id, lab); }
+      lab.textContent = shortName(n.id);
+    });
+  }
+  function placeLabels() {
+    if (!is3d() || !Graph3D) { labelLoop = null; return; }
+    var nodes = Graph3D.graphData().nodes, cam = Graph3D.camera().position, near = Infinity, far = 0;
+    var dist = nodes.map(function (n) {
+      var d = Math.hypot((n.x || 0) - cam.x, (n.y || 0) - cam.y, (n.z || 0) - cam.z);
+      near = Math.min(near, d); far = Math.max(far, d); return d;
+    });
+    nodes.forEach(function (n, i) {
+      var lab = labelEls.get(n.id);
+      if (!lab || n.x == null) return;
+      var p = Graph3D.graph2ScreenCoords(n.x, n.y, n.z);
+      var top = Graph3D.graph2ScreenCoords(n.x, n.y + radius3d(n), n.z);   // the sphere's top edge on screen
+      var lift = Math.max(6, Math.abs(p.y - top.y)) + 4;
+      var depth = far > near ? (dist[i] - near) / (far - near) : 0;   // labels fade with distance
+      lab.style.transform = "translate(" + p.x.toFixed(1) + "px," + (p.y - lift).toFixed(1) + "px) translate(-50%,-100%)";
+      lab.style.opacity = lab.dataset.dim ? 0.1 : (1 - 0.55 * depth).toFixed(2);
+    });
+    labelLoop = requestAnimationFrame(placeLabels);
+  }
+  function startLabels() { if (!labelLoop) labelLoop = requestAnimationFrame(placeLabels); }
+
+  function draw3d() {
+    var c = cur(), st = curStep(), FAIL = "The 3D view didn't load. Reload the page to try again.";
+    var msg = lib3d === "failed" ? FAIL : lib3d !== "ready" ? "Loading the 3D view." : !st || !st.nodes.size ? emptyText(c, st) : "";
+    $("stage").hidden = !!msg;   // shown before the first draw, so the library measures a real stage
+    if (!msg && !init3d()) { msg = FAIL; $("stage").hidden = true; }
+    $("mapEmpty").hidden = !msg; $("mapEmpty").textContent = msg;
+    if (msg) { if (Graph3D) { Graph3D.graphData({ nodes: [], links: [] }); syncLabels([]); } return; }
+    Graph3D.resumeAnimation();
+    var gc = gameCounts(st), key = view.team + ":" + view.season;
+    var objs = objs3d[key] || (objs3d[key] = new Map()), placed = objs.size;
+    var nodes = Array.from(st.nodes.values()).map(function (n) {
+      var o = objs.get(n.id);
+      if (!o) {   // a newcomer starts beside a teammate already on the map
+        o = { id: n.id };
+        var mate = null;
+        st.edges.forEach(function (e) {
+          if (mate) return;
+          var other = e.p === n.id ? e.s : e.s === n.id ? e.p : null;
+          if (other && objs.has(other) && objs.get(other).x != null) mate = objs.get(other);
+        });
+        if (mate) { o.x = mate.x + 15; o.y = mate.y + 15; o.z = mate.z + 15; }
+        objs.set(n.id, o);
+      }
+      o.out = n.out; o.in = n.in; o.gameOut = gc.out.get(n.id) || 0; o.gameIn = gc.in.get(n.id) || 0;
+      o.hub = hubOf(st, n.id); o.auth = authOf(st, n.id);
+      return o;
+    });
+    // every season connection stays in the layout; the game view only hides the ones without an assist that game,
+    // so players keep their places when the view switches
+    var links = Array.from(st.edges.values()).map(function (e) { return { source: e.p, target: e.s, w: e.w, g: st.gameEdges.get(e.k) || 0 }; });
+    if (pinId && !st.nodes.has(pinId)) pinId = null;
+    if (!placed) fit3d = true;
+    syncLabels(nodes);
+    // a fresh view settles its layout before the first frame, then the camera fits it;
+    // stepping between games lets the layout move, so the map visibly grows
+    Graph3D.warmupTicks(fit3d ? 120 : 0);
+    Graph3D.graphData({ nodes: nodes, links: links });
+    applyFocus();
+    if (fit3d) { fit3d = false; refitOnStop = true; setTimeout(function () { Graph3D.zoomToFit(0, 40); }, 60); }
+    startLabels();
+  }
+
+  function stopSpin() { if (Graph3D) Graph3D.controls().autoRotate = false; $("spin").setAttribute("aria-pressed", "false"); }
+  $("spin").addEventListener("click", function () {
+    if (!Graph3D) return;
+    var ctl = Graph3D.controls(), on = !ctl.autoRotate;
+    ctl.autoRotate = on; ctl.autoRotateSpeed = 0.9;
+    $("spin").setAttribute("aria-pressed", String(on));
+  });
+  function retheme3d() { if (!Graph3D) return; readColors(); Graph3D.backgroundColor(C.panel); style3d(); }
+  var darkQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  if (darkQuery && darkQuery.addEventListener) darkQuery.addEventListener("change", retheme3d);
+  new MutationObserver(retheme3d).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 
   // ---- panels ----
   function renderTiles(st, c) {
@@ -838,19 +1066,22 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     var st = curStep();
     $("key").textContent = "";
     if (!st) return;
-    var k = "game " + st.idx;
+    var k = "game " + st.idx, mark = is3d() ? "Sphere" : "Circle";
     if (isGame()) {
-      keyLine(GLYPH_CIRCLE, "Circle", "one player, sized by assists made and received in " + k + ". Players with no assist in that game are faded.");
+      keyLine(GLYPH_CIRCLE, mark, "one player, sized by assists made and received in " + k + ". Players with no assist in that game are faded.");
       keyLine(GLYPH_LINE, "Line", "one player's assists to a teammate in " + k + ". The arrow points to the scorer; thicker means more assists.");
     } else {
       var by = view.size === "hub" ? "hub score" : view.size === "auth" ? "authority score" : "assists made and received";
-      keyLine(GLYPH_CIRCLE, "Circle", "one player, sized by " + by + " through " + k + ".");
+      keyLine(GLYPH_CIRCLE, mark, "one player, sized by " + by + " through " + k + ".");
       keyLine(GLYPH_LINE, "Line", "one player's assists to a teammate through " + k + ". The arrow points to the scorer; thicker means more assists.");
       if (view.size === "hub") keyLine(null, "Hub score", "assists made, each weighted by the receiver's authority score.");
       if (view.size === "auth") keyLine(null, "Authority score", "baskets scored off assists, each weighted by the passer's hub score.");
     }
     keyLine(null, "Click a player", "to show only their connections. Click empty space to show everyone again.");
-    keyLine(null, "Move the map", "by dragging it; pinch or Ctrl+scroll to zoom.");
+    if (is3d()) {
+      keyLine(null, "Turn the map", "by dragging it; pinch or Ctrl+scroll to zoom.");
+      keyLine(null, "Depth", "a sphere or line farther from you looks smaller, so compare sizes with the view turned to face them.");
+    } else keyLine(null, "Move the map", "by dragging it; pinch or Ctrl+scroll to zoom.");
   }
   function renderControls() {
     var tseg = $("teamSeg"); tseg.textContent = "";
@@ -869,22 +1100,32 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       b.addEventListener("click", function () { if (view.season === s) return; view.season = s; switchView(); });
       sseg.appendChild(b);
     });
+    var dseg = $("dimSeg"); dseg.textContent = "";
+    [["2d", "2D"], ["3d", "3D"]].forEach(function (m) {
+      var b = el("button", null, m[1]);
+      b.type = "button"; b.id = "dim-" + m[0]; b.setAttribute("aria-pressed", String(m[0] === view.dim));
+      b.addEventListener("click", function () { setDim(m[0]); });
+      dseg.appendChild(b);
+    });
     var mseg = $("modeSeg"); mseg.textContent = "";
     [["season", "Season so far"], ["game", "This game"]].forEach(function (m) {
       var b = el("button", null, m[1]);
       b.type = "button"; b.id = "mode-" + m[0]; b.setAttribute("aria-pressed", String(m[0] === view.mode));
-      b.addEventListener("click", function () { if (view.mode === m[0]) return; view.mode = m[0]; remember(); renderControls(); drawMap(true); });
+      b.addEventListener("click", function () { if (view.mode === m[0]) return; view.mode = m[0]; remember(); renderControls(); restyle(); });
       mseg.appendChild(b);
     });
     var zseg = $("sizeSeg"); zseg.textContent = "";
     SIZES.forEach(function (z) {
       var b = el("button", null, z[1]);
       b.type = "button"; b.id = "size-" + z[0]; b.setAttribute("aria-pressed", String(z[0] === view.size));
-      b.addEventListener("click", function () { if (view.size === z[0]) return; view.size = z[0]; remember(); renderControls(); drawMap(true); });
+      b.addEventListener("click", function () { if (view.size === z[0]) return; view.size = z[0]; remember(); renderControls(); restyle(); });
       zseg.appendChild(b);
     });
     // the game view always sizes by that game's assists, so the size switch steps aside
     zseg.hidden = isGame(); $("sizeLabel").hidden = isGame();
+    $("sizeLabel").textContent = is3d() ? "Sphere size" : "Circle size";
+    zseg.setAttribute("aria-label", $("sizeLabel").textContent);
+    $("spin").hidden = !is3d();
     renderKey();
     var c = cur(), S = c.S, n = c.steps.length;
     $("eyebrow").textContent = "USF " + D.teams[view.team].label + " · " + S.label;
@@ -908,7 +1149,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       $("playersNote").textContent = "";
     }
     renderLog(c);
-    drawMap(animate);
+    redraw(animate);
   }
 
   function setStep(k, animate) {
@@ -918,8 +1159,8 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
   }
 
   function switchView() {
-    stopPlay(); remember();
-    hoverId = null; pinId = null; shown = new Map();
+    stopPlay(); remember(); stopSpin();
+    hoverId = null; pinId = null; shown = new Map(); fit3d = true;
     svg.call(zoom.transform, d3.zoomIdentity);
     gNodes.selectAll("*").remove(); gEdges.selectAll("*").remove();
     view.step = cur().steps.length;
@@ -956,6 +1197,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
   if (window.ResizeObserver) {
     var lastW = $("mapbox").clientWidth;
     new ResizeObserver(function () {
+      if (is3d()) return;   // the 3D stage resizes itself; going back to 2D redraws from scratch
       var w = $("mapbox").clientWidth;
       if (Math.abs(w - lastW) < 2) return;
       lastW = w;
