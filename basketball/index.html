@@ -124,6 +124,7 @@ section { display: flex; flex-direction: column; gap: 14px; }
 .ranks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 @media (max-width: 760px) { .ranks { grid-template-columns: minmax(0, 1fr); } }
 .rankdef { font-size: 0.85rem; color: var(--muted); }
+.narrative { max-width: 76ch; font-size: 0.98rem; }
 .ranklist { display: flex; flex-direction: column; }
 .rankrow { display: grid; grid-template-columns: minmax(0, 8.5rem) minmax(0, 1fr) 3.4rem; gap: 10px; align-items: center; width: 100%; font: inherit; font-size: 0.9rem; text-align: left; background: transparent; color: var(--ink); border: 0; border-bottom: 1px solid var(--line); padding: 8px 4px; cursor: pointer; }
 .rankrow:last-child { border-bottom: 0; }
@@ -246,6 +247,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
         <div class="ranklist" id="authList"></div>
       </div>
     </div>
+    <p class="narrative" id="narrative"></p>
   </section>
 
   <section>
@@ -703,6 +705,37 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       });
   }
 
+  // ---- summary under the lists: names, scores and counts only (wording approved by Alex, 2026-11-06) ----
+  function rankedIds(scores) {
+    return Object.keys(scores).filter(function (id) { return scores[id] > 0; })
+      .sort(function (a, b) { return (scores[b] - scores[a]) || shortName(a).localeCompare(shortName(b)); });
+  }
+  function leadSentence(scores, label) {
+    var r = rankedIds(scores);
+    if (!r.length) return "";
+    var a = r[0], b = r[1], top = fmtScore(scores[a], 3);
+    if (b && Math.abs(scores[a] - scores[b]) < 1e-9) return shortName(a) + " and " + shortName(b) + " share the top " + label + " score, " + top + ".";
+    if (!b) return shortName(a) + " has the top " + label + " score, " + top + ".";
+    return label === "hub"
+      ? shortName(a) + " has the top hub score, " + top + ", " + (scores[a] / scores[b]).toFixed(1) + " times " + shortName(b) + "'s " + fmtScore(scores[b], 3) + "."
+      : shortName(a) + " has the top authority score, " + top + ", with " + shortName(b) + " next at " + fmtScore(scores[b], 3) + ".";
+  }
+  function narrative(st) {
+    var hub = leadSentence(st.hub, "hub");
+    if (!hub) return "No assisted baskets mapped yet.";
+    var parts = ["Through game " + st.idx + ",", hub, leadSentence(st.auth, "authority")];
+    var h1 = rankedIds(st.hub)[0], outs = [];
+    st.edges.forEach(function (e) { if (e.p === h1) outs.push(e); });
+    if (outs.length) {
+      var w = Math.max.apply(null, outs.map(function (e) { return e.w; }));
+      var tops = outs.filter(function (e) { return e.w === w; }).map(function (e) { return shortName(e.s); }).sort();
+      var who = tops.length === 1 ? tops[0] : tops.length <= 3 ? tops.slice(0, -1).join(", ") + " and " + tops[tops.length - 1] : tops.length + " teammates";
+      parts.push(shortName(h1) + "'s assists go most often to " + who + (tops.length === 1 ? " (" + plural(w, "assist", "assists") + ")." : ", " + w + " each."));
+    }
+    if (st.te != null) parts.push("Team entropy, where 1 means every player on the map makes the same number of assists, is " + fmtScore(st.te, 2) + ".");
+    return parts.join(" ");
+  }
+
   function renderRanks(st) {
     [["hubList", st.hub], ["authList", st.auth]].forEach(function (pair) {
       var list = $(pair[0]), scores = pair[1]; list.textContent = "";
@@ -858,6 +891,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     if (st) {
       $("steplabel").textContent = "Through game " + st.idx + " of " + n + " · " + fmtDate(st.game.date) + " " + where(st.game);
       renderTiles(st, c); renderGame(st, n); renderRanks(st); renderPlayers(st, c);
+      $("narrative").textContent = narrative(st);
     } else {
       $("steplabel").textContent = "Waiting for the first game";
       document.querySelector("#players tbody").textContent = "";
