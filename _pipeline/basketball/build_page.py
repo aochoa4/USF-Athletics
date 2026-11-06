@@ -21,12 +21,12 @@ OUT = os.path.join(HERE, "page", "assist_network.html")
 MARKER = "/*__DATA__*/null"
 LABELS = {"mens": "Men's Basketball", "womens": "Women's Basketball"}
 
-# One page per team for the public site, laid out like the soccer pages in aochoa4/usf-playoff-watch:
-# basketball/ is the men's page and basketball/women/ the women's, each linking to the other.
+# One page per team for the public site in aochoa4/USF-Athletics: basketball/ is the men's page and
+# basketball/women/ the women's. Neither links to the other (Alex, 2026-11-06).
 SITE_DIR = os.path.join(HERE, "site", "basketball")
 SITE_PAGES = {
-    "mens": ("index.html", "USF Men's Assist Network", {"label": "Women's team", "href": "women/"}),
-    "womens": (os.path.join("women", "index.html"), "USF Women's Assist Network", {"label": "Men's team", "href": "../"}),
+    "mens": ("index.html", "USF Men's Assist Network"),
+    "womens": (os.path.join("women", "index.html"), "USF Women's Assist Network"),
 }
 # the same document shell the soccer pages use on GitHub Pages
 SHELL_HEAD = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
@@ -187,10 +187,10 @@ def main():
         with open(args.combined, "w", encoding="utf-8") as f:
             f.write(fill(data))
 
-    for league, (rel, title, other) in SITE_PAGES.items():
+    for league, (rel, title) in SITE_PAGES.items():
         if league not in data["teams"]:
             continue
-        one = fill({"built": data["built"], "teams": {league: data["teams"][league]}, "other": other})
+        one = fill({"built": data["built"], "teams": {league: data["teams"][league]}})
         if one.count("<title>USF Assist Network</title>") != 1:
             raise SystemExit("template title changed; update SITE_PAGES titling")
         one = one.replace("<title>USF Assist Network</title>", f"<title>{title}</title>")

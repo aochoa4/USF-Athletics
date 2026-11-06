@@ -53,8 +53,6 @@ header { display: flex; flex-direction: column; gap: 8px; }
 .lede { max-width: 62ch; color: var(--muted); }
 .controls { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin-top: 6px; }
 .status { font-size: 0.85rem; color: var(--muted); }
-.teamlink { font-size: 0.85rem; font-weight: 600; color: var(--green); text-decoration: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 14px; background: var(--panel); }
-.teamlink:hover { background: var(--green-soft); }
 
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--panel); }
 .seg button { font: inherit; font-size: 0.85rem; padding: 6px 14px; background: transparent; color: var(--ink); border: 0; border-right: 1px solid var(--line); cursor: pointer; }
@@ -169,7 +167,6 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     <p class="lede">Assisted baskets from ESPN's play-by-play, passer to scorer, added one game at a time.</p>
     <div class="controls">
       <div class="seg" role="group" aria-label="Team" id="teamSeg"></div>
-      <a class="teamlink" id="otherTeam" hidden></a>
       <div class="seg" role="group" aria-label="Season" id="seasonSeg"></div>
       <span class="status" id="status"></span>
     </div>
@@ -743,9 +740,8 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
   var SIZES = [["inv", "Assists", "Bigger circle, more assists made and received"], ["hub", "Hub", "Bigger circle, higher hub score"], ["auth", "Authority", "Bigger circle, higher authority score"]];
   function renderControls() {
     var tseg = $("teamSeg"); tseg.textContent = "";
-    // a one-team page swaps the team switch for a link to the other team's page
+    // a one-team page has no team switch
     tseg.hidden = teams.length < 2;
-    if (teams.length < 2 && D.other) { var a = $("otherTeam"); a.href = D.other.href; a.textContent = D.other.label; a.hidden = false; }
     if (teams.length > 1) teams.forEach(function (t) {
       var b = el("button", null, t === "mens" ? "Men" : "Women");
       b.type = "button"; b.id = "team-" + t; b.setAttribute("aria-pressed", String(t === view.team));
