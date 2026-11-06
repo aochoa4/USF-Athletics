@@ -90,7 +90,7 @@ section { display: flex; flex-direction: column; gap: 14px; }
 .mapbox { position: relative; width: 100%; }
 /* one finger still scrolls the page; two fingers pan and zoom the map */
 #map { display: block; width: 100%; touch-action: pan-x pan-y; cursor: grab; }
-#map.dragging, #map.dragging .node { cursor: grabbing; }
+#map:active { cursor: grabbing; }
 .mapbar .spacer { flex: 1; }
 .btn.small { font-size: 0.78rem; padding: 4px 10px; min-width: 0; }
 .empty { padding: 40px 16px; text-align: center; color: var(--muted); }
@@ -152,7 +152,7 @@ button:focus-visible, input:focus-visible, tr:focus-visible, .node:focus-visible
 .edge.entering { opacity: 0; }
 .edge.off { display: none; }            /* the game view hides connections without an assist that game */
 .arrowhead { fill: var(--edge); }
-.node { cursor: grab; transition: opacity 0.2s; }
+.node { cursor: pointer; transition: opacity 0.2s; }
 .node circle { fill: var(--green); stroke: var(--panel); stroke-width: 1.5; }
 .node.faded circle { fill: var(--line); }
 .node.faded text { fill: var(--muted); }
@@ -444,8 +444,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
   var gView = svg.append("g");   // pan and zoom move this group
   var gEdges = gView.append("g"), gNodes = gView.append("g");
   var shown = new Map();   // id -> drawn {x, y, r}, so the next draw starts where this one is
-  var moved = new Map();   // id -> layout {x, y} for players the viewer dragged; kept across games
-  var anim = null, hoverId = null, pinId = null, live = null, geo = null;
+  var anim = null, hoverId = null, pinId = null;
 
   var zoom = d3.zoom().scaleExtent([0.5, 4])
     .filter(function (ev) {
@@ -456,32 +455,9 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     .on("zoom", function (ev) { gView.attr("transform", ev.transform); });
   svg.call(zoom).on("dblclick.zoom", null);
 
-  // redraw marks where they stand now, without animating (used while dragging)
-  function redraw() {
-    if (!live) return;
-    live.nodeSel.attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
-    live.edgeSel.attr("d", function (d) { return edgePath(live.byId.get(d.p), live.byId.get(d.s)); });
-  }
-
-  var drag = d3.drag().clickDistance(4)
-    .on("start", function () {
-      if (anim) { cancelAnimationFrame(anim); anim = null; }
-      svg.classed("dragging", true);
-    })
-    .on("drag", function (ev, d) {
-      d.x = d.t.x = ev.x; d.y = d.t.y = ev.y;
-      if (geo) moved.set(d.id, { x: geo.ix(ev.x), y: geo.iy(ev.y) });
-      shown.set(d.id, { x: d.x, y: d.y, r: d.r });
-      redraw();
-    })
-    .on("end", function () { svg.classed("dragging", false); });
-
+  // players stay where the layout puts them (Alex, 2026-11-06); the map pans and zooms as a whole.
   // reset snaps back at once, so it never depends on animation frames running
-  $("resetView").addEventListener("click", function () {
-    moved.clear();
-    svg.call(zoom.transform, d3.zoomIdentity);
-    drawMap(false);
-  });
+  $("resetView").addEventListener("click", function () { svg.call(zoom.transform, d3.zoomIdentity); });
 
   function geometry(c) {
     var w = Math.max(280, $("mapbox").clientWidth);
@@ -490,8 +466,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     var bw = Math.max(1, bb.x1 - bb.x0), bh = Math.max(1, bb.y1 - bb.y0);
     var k = Math.min((w - 2 * pad) / bw, (h - 2 * pad - 16) / bh, 1.5);
     var cx = (bb.x0 + bb.x1) / 2, cy = (bb.y0 + bb.y1) / 2;
-    return { w: w, h: h, X: function (x) { return w / 2 + (x - cx) * k; }, Y: function (y) { return h / 2 - 6 + (y - cy) * k; },
-             ix: function (px) { return (px - w / 2) / k + cx; }, iy: function (py) { return (py - h / 2 + 6) / k + cy; } };
+    return { w: w, h: h, X: function (x) { return w / 2 + (x - cx) * k; }, Y: function (y) { return h / 2 - 6 + (y - cy) * k; } };
   }
 
   function edgePath(a, b) {
@@ -530,7 +505,6 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     }
     $("mapEmpty").hidden = true;
     var G = geometry(c), pos = c.pos[view.step - 1];
-    geo = G;
     svg.attr("viewBox", "0 0 " + G.w + " " + G.h).attr("height", G.h);
 
     // both views keep the season layout, so players hold their places; the game view hides the rest
@@ -540,7 +514,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     vmax = vmax || 1;
 
     var ndata = Array.from(st.nodes.values()).map(function (n) {
-      var p = moved.get(n.id) || pos.get(n.id);
+      var p = pos.get(n.id);
       return { id: n.id, out: n.out, in: n.in, faded: game && !gc.of(n.id),
                t: { x: G.X(p.x), y: G.Y(p.y), r: 5 + 12 * Math.sqrt(sizeValue(st, n, gc) / vmax) }, f: shown.get(n.id) || null };
     });
@@ -562,7 +536,6 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
           fmtScore(hubOf(st, d.id), 3) + ", authority " + fmtScore(authOf(st, d.id), 3);
       });
     nodeSel.select("text").text(function (d) { return shortName(d.id); }).attr("dy", function (d) { return d.t.r + 13; });
-    nodeSel.call(drag);
     nodeSel.on("pointerenter", function (ev, d) { hoverId = d.id; applyFocus(); })
       .on("pointerleave", function () { hoverId = null; applyFocus(); })
       .on("click", function (ev, d) { ev.stopPropagation(); pinId = pinId === d.id ? null : d.id; applyFocus(); })
@@ -575,7 +548,6 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       .attr("stroke-width", function (d) { return d.sw; })
       .attr("marker-end", "url(#arrow)")
       .order();
-    live = { nodeSel: nodeSel, edgeSel: edgeSel, byId: byId };
 
     if (anim) cancelAnimationFrame(anim);
     var dur = animate && !reduceMotion ? 650 : 0, t0 = performance.now();
@@ -827,7 +799,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       if (view.size === "auth") keyLine(null, "Authority score", "baskets scored off assists, each weighted by the passer's hub score.");
     }
     keyLine(null, "Click a player", "to show only their connections. Click empty space to show everyone again.");
-    keyLine(null, "Move the map", "by dragging the background; pinch or Ctrl+scroll to zoom. Dragging a player moves them.");
+    keyLine(null, "Move the map", "by dragging it; pinch or Ctrl+scroll to zoom.");
   }
   function renderControls() {
     var tseg = $("teamSeg"); tseg.textContent = "";
@@ -895,7 +867,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
 
   function switchView() {
     stopPlay(); remember();
-    hoverId = null; pinId = null; shown = new Map(); moved.clear();
+    hoverId = null; pinId = null; shown = new Map();
     svg.call(zoom.transform, d3.zoomIdentity);
     gNodes.selectAll("*").remove(); gEdges.selectAll("*").remove();
     view.step = cur().steps.length;
