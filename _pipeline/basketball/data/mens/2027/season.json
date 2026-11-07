@@ -2,7 +2,7 @@
  "league": "mens",
  "season": 2027,
  "team_id": "2539",
- "fetched": "2026-11-06 00:29",
+ "fetched": "2026-11-07 18:59",
  "games": [
   {
    "event_id": "401921060",
@@ -25,20 +25,31 @@
     "name_checks": 13,
     "name_mismatches": []
    }
-  }
- ],
- "upcoming": [
+  },
   {
    "event_id": "401921061",
    "date": "2026-11-06",
-   "tip_utc": "2026-11-07T03:00Z",
    "opponent": "North Dakota State Bison",
    "opponent_short": "N Dakota St",
-   "opponent_id": "2449",
    "site": "H",
    "conference_game": false,
-   "season_type": 2
-  },
+   "season_type": 2,
+   "usf_score": 79,
+   "opp_score": 70,
+   "result": "W",
+   "check": {
+    "box_assists": 14,
+    "pbp_assists": 13,
+    "matches_box": false,
+    "box_fgm": 24,
+    "pbp_made_fg": 24,
+    "assist_text_without_ids": 0,
+    "name_checks": 13,
+    "name_mismatches": []
+   }
+  }
+ ],
+ "upcoming": [
   {
    "event_id": "401921062",
    "date": "2026-11-10",
@@ -57,6 +68,17 @@
    "opponent": "Portland State Vikings",
    "opponent_short": "Portland St",
    "opponent_id": "2502",
+   "site": "H",
+   "conference_game": false,
+   "season_type": 2
+  },
+  {
+   "event_id": "401921064",
+   "date": "2026-11-17",
+   "tip_utc": "2026-11-18T05:00Z",
+   "opponent": "Louisiana Ragin' Cajuns",
+   "opponent_short": "Louisiana",
+   "opponent_id": "309",
    "site": "H",
    "conference_game": false,
    "season_type": 2

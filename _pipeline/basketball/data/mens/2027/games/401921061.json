@@ -1,0 +1,334 @@
+{
+ "event_id": "401921061",
+ "date": "2026-11-06",
+ "tip_utc": "2026-11-07T03:00Z",
+ "opponent": "North Dakota State Bison",
+ "opponent_short": "N Dakota St",
+ "opponent_id": "2449",
+ "site": "H",
+ "conference_game": false,
+ "season_type": 2,
+ "usf_score": 79,
+ "opp_score": 70,
+ "result": "W",
+ "check": {
+  "box_assists": 14,
+  "pbp_assists": 13,
+  "matches_box": false,
+  "box_fgm": 24,
+  "pbp_made_fg": 24,
+  "assist_text_without_ids": 0,
+  "name_checks": 13,
+  "name_mismatches": []
+ },
+ "roster": {
+  "5458442": {
+   "name": "Gustav Knudsen",
+   "short": "G. Knudsen",
+   "jersey": "8",
+   "position": "F",
+   "starter": true,
+   "minutes": "25",
+   "points": "9",
+   "assists": "3",
+   "dnp": false
+  },
+  "5177054": {
+   "name": "Ben Oosterbaan",
+   "short": "B. Oosterbaan",
+   "jersey": "12",
+   "position": "F",
+   "starter": true,
+   "minutes": "34",
+   "points": "22",
+   "assists": "2",
+   "dnp": false
+  },
+  "5240587": {
+   "name": "Ismaila Diagne",
+   "short": "I. Diagne",
+   "jersey": "44",
+   "position": "C",
+   "starter": true,
+   "minutes": "33",
+   "points": "4",
+   "assists": "2",
+   "dnp": false
+  },
+  "5458444": {
+   "name": "Dylan Bordon",
+   "short": "D. Bordon",
+   "jersey": "16",
+   "position": "G",
+   "starter": true,
+   "minutes": "26",
+   "points": "6",
+   "assists": "4",
+   "dnp": false
+  },
+  "5458441": {
+   "name": "Yoav Vitlem",
+   "short": "Y. Vitlem",
+   "jersey": "7",
+   "position": "G",
+   "starter": true,
+   "minutes": "26",
+   "points": "2",
+   "assists": "3",
+   "dnp": false
+  },
+  "5458445": {
+   "name": "Jaroslavs Pihtovs",
+   "short": "J. Pihtovs",
+   "jersey": "21",
+   "position": "F",
+   "starter": false,
+   "minutes": "1",
+   "points": "0",
+   "assists": "0",
+   "dnp": false
+  },
+  "4875213": {
+   "name": "Ndewedo Newbury",
+   "short": "N. Newbury",
+   "jersey": "27",
+   "position": "F",
+   "starter": false,
+   "minutes": "18",
+   "points": "11",
+   "assists": "0",
+   "dnp": false
+  },
+  "5458448": {
+   "name": "Andrew Hilman",
+   "short": "A. Hilman",
+   "jersey": "99",
+   "position": "G",
+   "starter": false,
+   "minutes": "24",
+   "points": "22",
+   "assists": "0",
+   "dnp": false
+  },
+  "5458446": {
+   "name": "Jaylen Hunter-Coleman",
+   "short": "J. Hunter-Coleman",
+   "jersey": "23",
+   "position": "G",
+   "starter": false,
+   "minutes": "5",
+   "points": "3",
+   "assists": "0",
+   "dnp": false
+  },
+  "5107971": {
+   "name": "Aidan Braccia",
+   "short": "A. Braccia",
+   "jersey": "2",
+   "position": "G",
+   "starter": false,
+   "minutes": "8",
+   "points": "0",
+   "assists": "0",
+   "dnp": false
+  },
+  "5458447": {
+   "name": "Ziga Daneu",
+   "short": "Z. Daneu",
+   "jersey": "41",
+   "position": "F",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  },
+  "5458443": {
+   "name": "Dashel Wiley",
+   "short": "D. Wiley",
+   "jersey": "13",
+   "position": "F",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  },
+  "5144575": {
+   "name": "Adam Tyson",
+   "short": "A. Tyson",
+   "jersey": "0",
+   "position": "F",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  },
+  "5458440": {
+   "name": "Mason Magee",
+   "short": "M. Magee",
+   "jersey": "3",
+   "position": "G",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  },
+  "5458439": {
+   "name": "Wisdom Fode",
+   "short": "W. Fode",
+   "jersey": "1",
+   "position": "G",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  },
+  "5311501": {
+   "name": "Abdul Bashir",
+   "short": "A. Bashir",
+   "jersey": "5",
+   "position": "G",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  }
+ },
+ "assists": [
+  {
+   "seq": 120857152,
+   "period": 1,
+   "clock": "18:30",
+   "passer": "5458444",
+   "scorer": "5177054",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ben Oosterbaan makes 24-foot three point jumper (Dylan Bordon assists)"
+  },
+  {
+   "seq": 120857455,
+   "period": 1,
+   "clock": "17:10",
+   "passer": "5458441",
+   "scorer": "5458442",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Gustav Knudsen makes 7-foot jumper (Yoav Vitlem assists)"
+  },
+  {
+   "seq": 120857597,
+   "period": 1,
+   "clock": "16:22",
+   "passer": "5177054",
+   "scorer": "5458442",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Gustav Knudsen makes 25-foot three point jumper (Ben Oosterbaan assists)"
+  },
+  {
+   "seq": 120857787,
+   "period": 1,
+   "clock": "15:42",
+   "passer": "5458442",
+   "scorer": "5458444",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Dylan Bordon makes 25-foot three point jumper (Gustav Knudsen assists)"
+  },
+  {
+   "seq": 120859140,
+   "period": 1,
+   "clock": "11:58",
+   "passer": "5240587",
+   "scorer": "5458446",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Jaylen Hunter-Coleman makes 24-foot three point jumper (Ismaila Diagne assists)"
+  },
+  {
+   "seq": 120859259,
+   "period": 1,
+   "clock": "11:23",
+   "passer": "5240587",
+   "scorer": "5458448",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Andrew Hilman makes 23-foot three point jumper (Ismaila Diagne assists)"
+  },
+  {
+   "seq": 120859823,
+   "period": 1,
+   "clock": "10:07",
+   "passer": "5458441",
+   "scorer": "5177054",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ben Oosterbaan makes 24-foot three point jumper (Yoav Vitlem assists)"
+  },
+  {
+   "seq": 120860923,
+   "period": 1,
+   "clock": "6:43",
+   "passer": "5458441",
+   "scorer": "5177054",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ben Oosterbaan makes 25-foot three point jumper (Yoav Vitlem assists)"
+  },
+  {
+   "seq": 120861727,
+   "period": 1,
+   "clock": "2:48",
+   "passer": "5177054",
+   "scorer": "4875213",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ndewedo Newbury makes 24-foot three point jumper (Ben Oosterbaan assists)"
+  },
+  {
+   "seq": 120864406,
+   "period": 2,
+   "clock": "18:15",
+   "passer": "5458444",
+   "scorer": "5177054",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ben Oosterbaan makes 24-foot three point jumper (Dylan Bordon assists)"
+  },
+  {
+   "seq": 120865347,
+   "period": 2,
+   "clock": "12:21",
+   "passer": "5458442",
+   "scorer": "5177054",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ben Oosterbaan makes layup (Gustav Knudsen assists)"
+  },
+  {
+   "seq": 120866149,
+   "period": 2,
+   "clock": "5:12",
+   "passer": "5458444",
+   "scorer": "5458442",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Gustav Knudsen makes 24-foot three point jumper (Dylan Bordon assists)"
+  },
+  {
+   "seq": 120866245,
+   "period": 2,
+   "clock": "3:59",
+   "passer": "5458444",
+   "scorer": "5458448",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Andrew Hilman makes 24-foot three point jumper (Dylan Bordon assists)"
+  }
+ ]
+}
