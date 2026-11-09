@@ -118,10 +118,14 @@ def main():
         if template.count(old) != 1:
             raise SystemExit(f"template changed; {old!r} must appear exactly once")
 
+    # under GitHub Actions each outcome is also posted as a notice on the run's summary page, where anyone
+    # (and Alex, without opening logs) can see which staff page was built or which secret the job did not see
+    notice = (lambda text: print(f"::notice title=Staff pages::{text}")) if os.environ.get("GITHUB_ACTIONS") == "true" else (lambda text: None)
     for league, (rel, title) in bp.SITE_PAGES.items():
         password = os.environ.get(PASSWORDS[league])
         if not password:
             print(f"{league}: {PASSWORDS[league]} is not set, so no staff page")
+            notice(f"{PASSWORDS[league]} is not set or empty in this run, so the {TEAMS[league]} staff page was not built")
             continue
         ldir = os.path.join(bp.DATA_DIR, league)
         seasons = {s: bp.season_block(league, s, shots=True)[0] for s in sorted(os.listdir(ldir), reverse=True)
@@ -135,6 +139,7 @@ def main():
         with open(path, "w", encoding="utf-8") as f:
             f.write(lock)
         print(f"wrote {path} (locked)")
+        notice(f"{TEAMS[league]} staff page built and locked ({os.path.dirname(rel)}/staff/)")
     return 0
 
 
