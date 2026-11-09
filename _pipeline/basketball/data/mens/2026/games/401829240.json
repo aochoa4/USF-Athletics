@@ -19,7 +19,10 @@
   "pbp_made_fg": 23,
   "assist_text_without_ids": 0,
   "name_checks": 7,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 16,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -258,6 +261,152 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Saba Gigiberia makes layup (Aidan Braccia assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 118843277,
+   "period": 1,
+   "clock": "17:35",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "David Fuchs makes 6-foot jumper"
+  },
+  {
+   "seq": 118843669,
+   "period": 1,
+   "clock": "16:44",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
+  },
+  {
+   "seq": 118844171,
+   "period": 1,
+   "clock": "15:55",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Junjie Wang makes 6-foot dunk"
+  },
+  {
+   "seq": 118846609,
+   "period": 1,
+   "clock": "12:08",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "David Fuchs makes 0-foot tip in layup"
+  },
+  {
+   "seq": 118847566,
+   "period": 1,
+   "clock": "10:57",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 118850179,
+   "period": 1,
+   "clock": "8:00",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic makes driving layup"
+  },
+  {
+   "seq": 118851827,
+   "period": 1,
+   "clock": "4:21",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 11-foot pullup jump shot"
+  },
+  {
+   "seq": 118852778,
+   "period": 1,
+   "clock": "1:36",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 4-foot floating jump shot"
+  },
+  {
+   "seq": 118853045,
+   "period": 1,
+   "clock": "0:36",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Junjie Wang makes 0-foot tip in layup"
+  },
+  {
+   "seq": 118856005,
+   "period": 2,
+   "clock": "18:33",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Legend Smiley makes 0-foot tip in layup"
+  },
+  {
+   "seq": 118857020,
+   "period": 2,
+   "clock": "15:44",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
+  },
+  {
+   "seq": 118858218,
+   "period": 2,
+   "clock": "12:58",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Junjie Wang makes 5-foot hook shot"
+  },
+  {
+   "seq": 118861999,
+   "period": 2,
+   "clock": "6:59",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Junjie Wang makes 8-foot turnaround jump shot"
+  },
+  {
+   "seq": 118862630,
+   "period": 2,
+   "clock": "4:36",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Vukasin Masic makes 9-foot floating jump shot"
+  },
+  {
+   "seq": 118862781,
+   "period": 2,
+   "clock": "3:07",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic makes driving layup"
+  },
+  {
+   "seq": 118863021,
+   "period": 2,
+   "clock": "2:45",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic makes driving layup"
   }
  ]
 }

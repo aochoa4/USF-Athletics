@@ -19,7 +19,10 @@
   "pbp_made_fg": 34,
   "assist_text_without_ids": 0,
   "name_checks": 21,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 13,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -376,6 +379,125 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Sol Castro made Layup. Assisted by Amy Pateman."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 115291834,
+   "period": 1,
+   "clock": "8:22",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mara Neira made Layup."
+  },
+  {
+   "seq": 115292025,
+   "period": 1,
+   "clock": "6:41",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 115293358,
+   "period": 1,
+   "clock": "0:26",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Meghan McIntyre made Layup."
+  },
+  {
+   "seq": 115293859,
+   "period": 2,
+   "clock": "8:32",
+   "scorer": "4705117",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Sol Castro made Layup."
+  },
+  {
+   "seq": 115294436,
+   "period": 2,
+   "clock": "5:13",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Meghan McIntyre made Layup."
+  },
+  {
+   "seq": 115296131,
+   "period": 3,
+   "clock": "9:45",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 115296171,
+   "period": 3,
+   "clock": "8:58",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 115296236,
+   "period": 3,
+   "clock": "7:48",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mara Neira made Layup."
+  },
+  {
+   "seq": 115296485,
+   "period": 3,
+   "clock": "5:41",
+   "scorer": "4899726",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Olivia Williams made Jumper."
+  },
+  {
+   "seq": 115296886,
+   "period": 3,
+   "clock": "3:43",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Meghan McIntyre made Layup."
+  },
+  {
+   "seq": 115297333,
+   "period": 3,
+   "clock": "0:24",
+   "scorer": "4705117",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Sol Castro made Layup."
+  },
+  {
+   "seq": 115297188,
+   "period": 3,
+   "clock": "0:19",
+   "scorer": "5174314",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Paula Tirado made Layup."
+  },
+  {
+   "seq": 115298394,
+   "period": 4,
+   "clock": "2:27",
+   "scorer": "5314918",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Sophia Priestley made Layup."
   }
  ]
 }

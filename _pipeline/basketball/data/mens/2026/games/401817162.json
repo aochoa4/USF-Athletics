@@ -19,7 +19,10 @@
   "pbp_made_fg": 27,
   "assist_text_without_ids": 0,
   "name_checks": 17,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 10,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5105410": {
@@ -358,6 +361,98 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Legend Smiley makes layup (David Fuchs assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 116054832,
+   "period": 1,
+   "clock": "18:33",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 11-foot floating jump shot"
+  },
+  {
+   "seq": 116055031,
+   "period": 1,
+   "clock": "17:08",
+   "scorer": "4702764",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Vukasin Masic makes 25-foot three point jumper"
+  },
+  {
+   "seq": 116055117,
+   "period": 1,
+   "clock": "16:20",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Mookie Cook makes 7-foot floating jump shot"
+  },
+  {
+   "seq": 116055994,
+   "period": 1,
+   "clock": "13:15",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes driving layup"
+  },
+  {
+   "seq": 116056005,
+   "period": 1,
+   "clock": "13:00",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "David Fuchs makes 3-foot dunk"
+  },
+  {
+   "seq": 116056805,
+   "period": 1,
+   "clock": "9:03",
+   "scorer": "4702764",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Vukasin Masic makes 24-foot three pointer"
+  },
+  {
+   "seq": 116057255,
+   "period": 1,
+   "clock": "7:21",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Vukasin Masic makes 8-foot floating jump shot"
+  },
+  {
+   "seq": 116057997,
+   "period": 1,
+   "clock": "3:57",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "David Fuchs makes 3-foot dunk"
+  },
+  {
+   "seq": 116061757,
+   "period": 2,
+   "clock": "11:44",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "David Fuchs makes 0-foot tip in layup"
+  },
+  {
+   "seq": 116062307,
+   "period": 2,
+   "clock": "7:00",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "David Fuchs makes 7-foot hook shot"
   }
  ]
 }

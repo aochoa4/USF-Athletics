@@ -19,7 +19,10 @@
   "pbp_made_fg": 17,
   "assist_text_without_ids": 0,
   "name_checks": 8,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 9,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -246,6 +249,89 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Meghan McIntyre makes 26-foot three point jumper (Sophia Priestley assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 119212922,
+   "period": 1,
+   "clock": "3:51",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Meghan McIntyre makes driving layup"
+  },
+  {
+   "seq": 119213927,
+   "period": 1,
+   "clock": "2:23",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 119216984,
+   "period": 2,
+   "clock": "7:15",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Natasa Tausova makes layup"
+  },
+  {
+   "seq": 119217107,
+   "period": 2,
+   "clock": "6:50",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Natasa Tausova makes layup"
+  },
+  {
+   "seq": 119224083,
+   "period": 3,
+   "clock": "5:16",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 119226988,
+   "period": 3,
+   "clock": "1:54",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Meghan McIntyre makes driving layup"
+  },
+  {
+   "seq": 119228913,
+   "period": 4,
+   "clock": "6:40",
+   "scorer": "5314916",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Amy Pateman makes driving layup"
+  },
+  {
+   "seq": 119229191,
+   "period": 4,
+   "clock": "5:17",
+   "scorer": "5314916",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Amy Pateman makes layup"
+  },
+  {
+   "seq": 119230685,
+   "period": 4,
+   "clock": "2:11",
+   "scorer": "5178456",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Nevaeh Ferrara Horne makes layup"
   }
  ]
 }

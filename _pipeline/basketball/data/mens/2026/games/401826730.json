@@ -19,7 +19,10 @@
   "pbp_made_fg": 26,
   "assist_text_without_ids": 0,
   "name_checks": 12,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 14,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5105410": {
@@ -308,6 +311,134 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Ryan Beasley made Three Point Jumper. Assisted by Guillermo Diaz Graham."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 115658482,
+   "period": 1,
+   "clock": "13:58",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang made Layup."
+  },
+  {
+   "seq": 115658629,
+   "period": 1,
+   "clock": "13:31",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang made Layup."
+  },
+  {
+   "seq": 115660507,
+   "period": 1,
+   "clock": "10:01",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mookie Cook made Layup."
+  },
+  {
+   "seq": 115662309,
+   "period": 1,
+   "clock": "6:18",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV made Jumper."
+  },
+  {
+   "seq": 115662834,
+   "period": 1,
+   "clock": "5:00",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Jumper."
+  },
+  {
+   "seq": 115663076,
+   "period": 1,
+   "clock": "4:01",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Three Point Jumper."
+  },
+  {
+   "seq": 115664618,
+   "period": 1,
+   "clock": "0:17",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang made Layup."
+  },
+  {
+   "seq": 115666900,
+   "period": 2,
+   "clock": "18:40",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV made Jumper."
+  },
+  {
+   "seq": 115666995,
+   "period": 2,
+   "clock": "17:58",
+   "scorer": "5037875",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV made Three Point Jumper."
+  },
+  {
+   "seq": 115668422,
+   "period": 2,
+   "clock": "13:39",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang made Layup."
+  },
+  {
+   "seq": 115669195,
+   "period": 2,
+   "clock": "12:05",
+   "scorer": "4433208",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Saba Gigiberia made Layup."
+  },
+  {
+   "seq": 115672082,
+   "period": 2,
+   "clock": "3:42",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley made Layup."
+  },
+  {
+   "seq": 115672712,
+   "period": 2,
+   "clock": "2:23",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Mookie Cook made Two Point Tip Shot."
+  },
+  {
+   "seq": 115673760,
+   "period": 2,
+   "clock": "0:05",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Tyrone Riley IV made Dunk."
   }
  ]
 }

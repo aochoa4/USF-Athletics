@@ -1,12 +1,14 @@
-"""Pull USF basketball games from ESPN's public API, one file per game.
+"""Pull a team's basketball games from ESPN's public API, one file per game: USF unless --team names another.
 
 Each completed game is saved once (data/<league>/<season>/games/<event_id>.json) with
-every USF assisted basket (passer, scorer, period, clock, points) and the box-score
-roster, so the season network can be rebuilt game by game. Rerunning only fetches
-games that are not on disk yet, which is the per-game update.
+every assisted basket by that team (passer, scorer, period, clock, points, shot type) and the
+box-score roster, so the season network can be rebuilt game by game. Rerunning only fetches
+games that are not on disk yet, which is the per-game update. The usf_* fields hold the
+fetched team's numbers, whichever team that is (update_scout.py fetches the WCC opponents).
 
     python -I fetch_games.py --league mens --season 2027
     python -I fetch_games.py --league womens --season 2026 --refresh
+    python -I fetch_games.py --team 2608 --league mens --season 2027 --out scout/data/2608
 
 Season is ESPN's label: the year the season ends (2026-27 = 2027).
 Standard library only, so it runs unchanged in a scheduled job.
@@ -21,7 +23,7 @@ import sys
 import time
 import urllib.request
 
-TEAM_ID = "2539"  # San Francisco Dons on ESPN, same id for men and women
+TEAM_ID = "2539"  # San Francisco Dons on ESPN, same id for men and women; --team replaces it
 BASE = "https://site.api.espn.com/apis/site/v2/sports/basketball/{league}-college-basketball"
 UA = "Mozilla/5.0 (usf-hoops-network)"
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -101,6 +103,14 @@ def text_names(text):
     return None, None
 
 
+def named_entry(name, **flags):
+    """A roster row built from the play text, for a player the box score lists without an id."""
+    parts = name.split()
+    return {"name": name, "short": f"{parts[0][0]}. {' '.join(parts[1:])}" if len(parts) > 1 else name,
+            "jersey": None, "position": None, "starter": False, "minutes": None, "points": None, "assists": None,
+            "dnp": False, **flags}
+
+
 def parse_game(meta, summary):
     box = summary.get("boxscore", {})
 
@@ -137,7 +147,18 @@ def parse_game(meta, summary):
     hdr = summary.get("header", {}).get("competitions", [{}])[0]
     score = {c["team"]["id"]: int(c.get("score") or 0) for c in hdr.get("competitors", [])}
 
-    assists, unattributed, name_checks, name_misses, made_fg = [], 0, 0, [], 0
+    # ESPN sometimes leaves a player's id out of the box score while the assisted plays still carry it
+    # (a Portland women's player, 2026-11): name that id from the play text, so the player keeps one key
+    for p in summary.get("plays", []):
+        if (p.get("team") or {}).get("id") != TEAM_ID or not p.get("scoringPlay"):
+            continue
+        ids = [x.get("athlete", {}).get("id") for x in p.get("participants", [])]
+        for pid, name in zip(ids, text_names(p.get("text", ""))):
+            if pid and name and pid not in roster:
+                roster[pid] = named_entry(name.strip(), no_box_score_id=True)
+
+    assists, unassisted, unattributed, name_checks, name_misses, made_fg = [], [], 0, 0, [], 0
+    unassisted_by_name, unassisted_no_scorer = 0, 0
     for p in summary.get("plays", []):
         if (p.get("team") or {}).get("id") != TEAM_ID:
             continue
@@ -149,6 +170,32 @@ def parse_game(meta, summary):
         says_assist = bool(re.search(r"assist", text, re.I))
         if len(ids) < 2:
             unattributed += says_assist
+            # a made basket with no assist credited (a drive, a pull-up, a post move, a putback);
+            # baskets whose text names an assist without the passer's id are left out
+            if not says_assist:
+                scorer = ids[0] if ids and ids[0] else None
+                if not scorer:  # ESPN sometimes logs a player's plays with no id: match the play text's name to the roster
+                    m = re.match(r"^(.*?) (?:makes|made) ", text)
+                    name = m.group(1).strip() if m else ""
+                    hits = [pid for pid, r in roster.items() if name and (r["name"] or "").lower() == name.lower()]
+                    if len(hits) == 1:
+                        scorer = hits[0]
+                    elif name and not hits:  # no id anywhere in this game's data: key the player by name
+                        scorer = "name:" + name
+                        roster.setdefault(scorer, named_entry(name, no_espn_id=True))
+                    unassisted_by_name += scorer is not None
+                if scorer:
+                    unassisted.append({
+                        "seq": int(p.get("sequenceNumber") or 0),
+                        "period": (p.get("period") or {}).get("number"),
+                        "clock": (p.get("clock") or {}).get("displayValue"),
+                        "scorer": scorer,
+                        "points": p.get("scoreValue"),
+                        "shot": (p.get("type") or {}).get("text"),
+                        "text": text,
+                    })
+                else:
+                    unassisted_no_scorer += 1
             continue
         scorer, passer = ids[0], ids[1]
         # Participants come as [scorer, passer]; confirm against the play text by last name.
@@ -185,22 +232,29 @@ def parse_game(meta, summary):
             # not just untagged assists.
             "box_fgm": box_fgm.get(TEAM_ID),
             "pbp_made_fg": made_fg,
+            "pbp_unassisted": len(unassisted),
+            "unassisted_matched_by_name": unassisted_by_name,
+            "unassisted_without_scorer": unassisted_no_scorer,
             "assist_text_without_ids": unattributed,
             "name_checks": name_checks,
             "name_mismatches": name_misses,
         },
         "roster": roster,
         "assists": assists,
+        "unassisted": unassisted,
     }
 
 
 def main():
+    global TEAM_ID
     ap = argparse.ArgumentParser()
     ap.add_argument("--league", choices=["mens", "womens"], required=True)
     ap.add_argument("--season", type=int, required=True)
+    ap.add_argument("--team", default=TEAM_ID, help="ESPN team id; USF by default")
     ap.add_argument("--refresh", action="store_true", help="refetch games already on disk")
     ap.add_argument("--out", default=os.path.join(HERE, "data"))
     args = ap.parse_args()
+    TEAM_ID = args.team
 
     gdir = os.path.join(args.out, args.league, str(args.season), "games")
     os.makedirs(gdir, exist_ok=True)

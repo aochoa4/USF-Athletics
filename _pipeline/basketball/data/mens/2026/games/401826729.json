@@ -19,7 +19,10 @@
   "pbp_made_fg": 26,
   "assist_text_without_ids": 0,
   "name_checks": 13,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 13,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -318,6 +321,125 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Mookie Cook made Three Point Jumper. Assisted by David Fuchs."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 114798384,
+   "period": 1,
+   "clock": "18:44",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic made Layup."
+  },
+  {
+   "seq": 114798473,
+   "period": 1,
+   "clock": "18:00",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Jumper."
+  },
+  {
+   "seq": 114798551,
+   "period": 1,
+   "clock": "17:15",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley made Layup."
+  },
+  {
+   "seq": 114799405,
+   "period": 1,
+   "clock": "13:57",
+   "scorer": "4683767",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Mookie Cook made Three Point Jumper."
+  },
+  {
+   "seq": 114801392,
+   "period": 1,
+   "clock": "4:42",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV made Layup."
+  },
+  {
+   "seq": 114802385,
+   "period": 1,
+   "clock": "1:53",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV made Layup."
+  },
+  {
+   "seq": 114804581,
+   "period": 2,
+   "clock": "18:32",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley made Layup."
+  },
+  {
+   "seq": 114804679,
+   "period": 2,
+   "clock": "17:30",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mookie Cook made Layup."
+  },
+  {
+   "seq": 114805547,
+   "period": 2,
+   "clock": "13:39",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Jumper."
+  },
+  {
+   "seq": 114805867,
+   "period": 2,
+   "clock": "12:50",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV made Jumper."
+  },
+  {
+   "seq": 114807066,
+   "period": 2,
+   "clock": "7:39",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Three Point Jumper."
+  },
+  {
+   "seq": 114810353,
+   "period": 2,
+   "clock": "0:49",
+   "scorer": "4683767",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Mookie Cook made Three Point Jumper."
+  },
+  {
+   "seq": 114810718,
+   "period": 2,
+   "clock": "0:02",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs made Layup."
   }
  ]
 }

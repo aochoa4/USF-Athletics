@@ -19,7 +19,10 @@
   "pbp_made_fg": 22,
   "assist_text_without_ids": 0,
   "name_checks": 12,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 10,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -308,6 +311,98 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Tyrone Riley IV made Three Point Jumper. Assisted by David Fuchs."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 113960663,
+   "period": 1,
+   "clock": "15:36",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Tyrone Riley IV made Two Point Tip Shot."
+  },
+  {
+   "seq": 113960825,
+   "period": 1,
+   "clock": "14:43",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Legend Smiley made Layup."
+  },
+  {
+   "seq": 113961254,
+   "period": 1,
+   "clock": "13:21",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Mookie Cook made Two Point Tip Shot."
+  },
+  {
+   "seq": 113961595,
+   "period": 1,
+   "clock": "11:43",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mookie Cook made Layup."
+  },
+  {
+   "seq": 113965657,
+   "period": 1,
+   "clock": "2:58",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Three Point Jumper."
+  },
+  {
+   "seq": 113966269,
+   "period": 1,
+   "clock": "1:06",
+   "scorer": "4433208",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Saba Gigiberia made Jumper."
+  },
+  {
+   "seq": 113972397,
+   "period": 2,
+   "clock": "14:52",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs made Layup."
+  },
+  {
+   "seq": 113973849,
+   "period": 2,
+   "clock": "12:50",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mookie Cook made Layup."
+  },
+  {
+   "seq": 113974856,
+   "period": 2,
+   "clock": "11:17",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "David Fuchs made Dunk."
+  },
+  {
+   "seq": 113977190,
+   "period": 2,
+   "clock": "5:36",
+   "scorer": "4683767",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Mookie Cook made Three Point Jumper."
   }
  ]
 }

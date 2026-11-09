@@ -19,7 +19,10 @@
   "pbp_made_fg": 29,
   "assist_text_without_ids": 0,
   "name_checks": 15,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 14,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -316,6 +319,134 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Candy Edokpaigbe makes layup (Natasa Tausova assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 118485596,
+   "period": 1,
+   "clock": "8:47",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Candy Edokpaigbe makes 9-foot pullup jump shot"
+  },
+  {
+   "seq": 118486292,
+   "period": 1,
+   "clock": "7:11",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourino makes layup"
+  },
+  {
+   "seq": 118486512,
+   "period": 1,
+   "clock": "6:45",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 118488599,
+   "period": 1,
+   "clock": "4:28",
+   "scorer": "4899726",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Olivia Williams makes layup"
+  },
+  {
+   "seq": 118488902,
+   "period": 1,
+   "clock": "3:40",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 118489972,
+   "period": 1,
+   "clock": "1:41",
+   "scorer": "5178411",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Michelle Ugwah makes driving layup"
+  },
+  {
+   "seq": 118493587,
+   "period": 2,
+   "clock": "6:29",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol makes driving layup"
+  },
+  {
+   "seq": 118493683,
+   "period": 2,
+   "clock": "6:01",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Meghan McIntyre makes layup"
+  },
+  {
+   "seq": 118494783,
+   "period": 2,
+   "clock": "2:51",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol makes driving layup"
+  },
+  {
+   "seq": 118495596,
+   "period": 2,
+   "clock": "1:17",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 118498684,
+   "period": 3,
+   "clock": "7:37",
+   "scorer": "5314914",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Meghan McIntyre makes 25-foot three point jumper"
+  },
+  {
+   "seq": 118499717,
+   "period": 3,
+   "clock": "3:53",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Meghan McIntyre makes driving layup"
+  },
+  {
+   "seq": 118501201,
+   "period": 3,
+   "clock": "2:37",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Candy Edokpaigbe makes 11-foot jumper"
+  },
+  {
+   "seq": 118503602,
+   "period": 4,
+   "clock": "5:05",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourino makes layup"
   }
  ]
 }

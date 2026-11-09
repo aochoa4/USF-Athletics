@@ -19,7 +19,10 @@
   "pbp_made_fg": 26,
   "assist_text_without_ids": 0,
   "name_checks": 9,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 17,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -278,6 +281,161 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Tyrone Riley IV makes 23-foot three point jumper (Ryan Beasley assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 117288854,
+   "period": 1,
+   "clock": "15:04",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 14-foot pullup jump shot"
+  },
+  {
+   "seq": 117288918,
+   "period": 1,
+   "clock": "14:07",
+   "scorer": "5241062",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Veniamin Abosi makes 7-foot floating jump shot"
+  },
+  {
+   "seq": 117288940,
+   "period": 1,
+   "clock": "13:27",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic makes driving layup"
+  },
+  {
+   "seq": 117289311,
+   "period": 1,
+   "clock": "6:04",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 117289344,
+   "period": 1,
+   "clock": "4:57",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 11-foot pullup jump shot"
+  },
+  {
+   "seq": 117289358,
+   "period": 1,
+   "clock": "3:51",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "David Fuchs makes 3-foot alley oop dunk"
+  },
+  {
+   "seq": 117289454,
+   "period": 1,
+   "clock": "2:37",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 24-foot three point step back jumpshot"
+  },
+  {
+   "seq": 117289704,
+   "period": 2,
+   "clock": "19:35",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 12-foot floating jump shot"
+  },
+  {
+   "seq": 117289756,
+   "period": 2,
+   "clock": "15:47",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes driving layup"
+  },
+  {
+   "seq": 117289784,
+   "period": 2,
+   "clock": "15:06",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 7-foot floating jump shot"
+  },
+  {
+   "seq": 117289830,
+   "period": 2,
+   "clock": "12:59",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes driving layup"
+  },
+  {
+   "seq": 117289907,
+   "period": 2,
+   "clock": "11:27",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 117289952,
+   "period": 2,
+   "clock": "9:45",
+   "scorer": "5174624",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "David Fuchs makes 24-foot three point jumper"
+  },
+  {
+   "seq": 117290029,
+   "period": 2,
+   "clock": "7:43",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 117290085,
+   "period": 2,
+   "clock": "5:46",
+   "scorer": "5105410",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Guillermo Diaz Graham makes driving layup"
+  },
+  {
+   "seq": 117290091,
+   "period": 2,
+   "clock": "5:06",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes driving layup"
+  },
+  {
+   "seq": 117290121,
+   "period": 2,
+   "clock": "4:13",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes driving layup"
   }
  ]
 }

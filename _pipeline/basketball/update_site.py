@@ -4,7 +4,8 @@
     python -I -B _pipeline/basketball/update_site.py --force   # rebuild regardless (the code changed)
 
 Fetches the current season for both teams. When a new game arrived, or with --force, it rebuilds
-basketball/index.html (men) and womensbasketball/index.html (women). Under GitHub Actions it writes
+basketball/index.html (men) and womensbasketball/index.html (women), and the password-locked staff pages
+under each (build_staff.py; MENS_STAFF_PASSWORD and WOMENS_STAFF_PASSWORD). Under GitHub Actions it writes
 changed=true|false and through=<Mon D> to $GITHUB_OUTPUT for the commit step.
 
 The source of this file is lanes/ad/usf_hoops_network/ in Alex's lab repo; publish_site.py copies it here.
@@ -52,6 +53,11 @@ def main():
         r = subprocess.run([sys.executable, "-I", "-B", os.path.join(HERE, "build_page.py"),
                             "--site-dir", ROOT, "--combined", "none",
                             "--metrics", "none", "--built", today])
+        if r.returncode:
+            return r.returncode
+        # the password-locked staff pages; a team whose password secret is not set is skipped
+        r = subprocess.run([sys.executable, "-I", "-B", os.path.join(HERE, "build_staff.py"),
+                            "--site-dir", ROOT, "--built", today])
         if r.returncode:
             return r.returncode
 

@@ -19,7 +19,10 @@
   "pbp_made_fg": 27,
   "assist_text_without_ids": 0,
   "name_checks": 17,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 10,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -336,6 +339,98 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Aina Cargol makes layup (Mara Neira assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 116519366,
+   "period": 1,
+   "clock": "1:43",
+   "scorer": "5174314",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Paula Tirado makes layup"
+  },
+  {
+   "seq": 116520394,
+   "period": 2,
+   "clock": "7:12",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourio makes layup"
+  },
+  {
+   "seq": 116521149,
+   "period": 2,
+   "clock": "4:28",
+   "scorer": "5174314",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Paula Tirado makes layup"
+  },
+  {
+   "seq": 116522769,
+   "period": 3,
+   "clock": "9:03",
+   "scorer": "5107763",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Mara Neira makes 27-foot three point jumper"
+  },
+  {
+   "seq": 116522850,
+   "period": 3,
+   "clock": "8:18",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mara Neira makes layup"
+  },
+  {
+   "seq": 116522864,
+   "period": 3,
+   "clock": "7:56",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Natasa Tausova makes layup"
+  },
+  {
+   "seq": 116523504,
+   "period": 3,
+   "clock": "4:44",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mara Neira makes layup"
+  },
+  {
+   "seq": 116524415,
+   "period": 3,
+   "clock": "2:22",
+   "scorer": "5174314",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Paula Tirado makes 14-foot jumper"
+  },
+  {
+   "seq": 116524645,
+   "period": 3,
+   "clock": "1:20",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourio makes layup"
+  },
+  {
+   "seq": 116526587,
+   "period": 4,
+   "clock": "4:37",
+   "scorer": "5174314",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Paula Tirado makes layup"
   }
  ]
 }

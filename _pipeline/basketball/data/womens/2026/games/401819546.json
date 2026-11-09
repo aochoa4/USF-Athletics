@@ -19,7 +19,10 @@
   "pbp_made_fg": 28,
   "assist_text_without_ids": 0,
   "name_checks": 11,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 17,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -276,6 +279,161 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Noelia Mourio made Layup. Assisted by Candy Edokpaigbe."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 114687799,
+   "period": 1,
+   "clock": "8:45",
+   "scorer": "5314917",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Natasa Tausova made Three Point Jumper."
+  },
+  {
+   "seq": 114688289,
+   "period": 1,
+   "clock": "6:44",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 114688671,
+   "period": 1,
+   "clock": "5:32",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 114689663,
+   "period": 1,
+   "clock": "4:26",
+   "scorer": "5178411",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Michelle Ugwah made Layup."
+  },
+  {
+   "seq": 114689750,
+   "period": 1,
+   "clock": "3:57",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 114692187,
+   "period": 2,
+   "clock": "8:30",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Candy Edokpaigbe made Jumper."
+  },
+  {
+   "seq": 114693748,
+   "period": 2,
+   "clock": "4:03",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mara Neira made Layup."
+  },
+  {
+   "seq": 114695202,
+   "period": 2,
+   "clock": "4:03",
+   "scorer": "5178411",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Michelle Ugwah made Layup."
+  },
+  {
+   "seq": 114693839,
+   "period": 2,
+   "clock": "3:06",
+   "scorer": "5107763",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Mara Neira made Three Point Jumper."
+  },
+  {
+   "seq": 114694072,
+   "period": 2,
+   "clock": "2:16",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Mara Neira made Jumper."
+  },
+  {
+   "seq": 114694683,
+   "period": 2,
+   "clock": "0:18",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Natasa Tausova made Layup."
+  },
+  {
+   "seq": 114696064,
+   "period": 3,
+   "clock": "9:08",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 114696532,
+   "period": 3,
+   "clock": "6:35",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 114696553,
+   "period": 3,
+   "clock": "6:14",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 114696630,
+   "period": 3,
+   "clock": "5:38",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Candy Edokpaigbe made Jumper."
+  },
+  {
+   "seq": 114697621,
+   "period": 4,
+   "clock": "8:59",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourio made Layup."
+  },
+  {
+   "seq": 114698498,
+   "period": 4,
+   "clock": "4:08",
+   "scorer": "5314915",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Aina Cargol made Three Point Jumper."
   }
  ]
 }

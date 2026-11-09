@@ -19,7 +19,10 @@
   "pbp_made_fg": 20,
   "assist_text_without_ids": 0,
   "name_checks": 11,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 9,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -298,6 +301,89 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Legend Smiley makes 24-foot three point jumper (Ryan Beasley assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 119157403,
+   "period": 1,
+   "clock": "16:43",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
+  },
+  {
+   "seq": 119157536,
+   "period": 1,
+   "clock": "14:52",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Legend Smiley makes layup"
+  },
+  {
+   "seq": 119157790,
+   "period": 1,
+   "clock": "11:06",
+   "scorer": "4433208",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Saba Gigiberia makes 0-foot tip in layup"
+  },
+  {
+   "seq": 119157994,
+   "period": 1,
+   "clock": "8:34",
+   "scorer": "5037875",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 24-foot three point jumper"
+  },
+  {
+   "seq": 119158108,
+   "period": 1,
+   "clock": "6:40",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Legend Smiley makes 18-foot step back jumpshot"
+  },
+  {
+   "seq": 119158343,
+   "period": 1,
+   "clock": "3:11",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 10-foot pullup jump shot"
+  },
+  {
+   "seq": 119158421,
+   "period": 1,
+   "clock": "0:55",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes driving layup"
+  },
+  {
+   "seq": 119158919,
+   "period": 2,
+   "clock": "17:07",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes layup"
+  },
+  {
+   "seq": 119159422,
+   "period": 2,
+   "clock": "4:42",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
   }
  ]
 }

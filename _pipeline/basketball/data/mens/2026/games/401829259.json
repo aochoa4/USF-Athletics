@@ -19,7 +19,10 @@
   "pbp_made_fg": 25,
   "assist_text_without_ids": 0,
   "name_checks": 12,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 13,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -308,6 +311,125 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Junjie Wang makes 25-foot three point jumper (Ryan Beasley assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 119389409,
+   "period": 1,
+   "clock": "18:23",
+   "scorer": "5105410",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Guillermo Diaz Graham makes driving layup"
+  },
+  {
+   "seq": 119389705,
+   "period": 1,
+   "clock": "16:10",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
+  },
+  {
+   "seq": 119389776,
+   "period": 1,
+   "clock": "15:28",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 27-foot three point step back jumpshot"
+  },
+  {
+   "seq": 119390464,
+   "period": 1,
+   "clock": "12:22",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mookie Cook makes layup"
+  },
+  {
+   "seq": 119390755,
+   "period": 1,
+   "clock": "11:04",
+   "scorer": "5037875",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 25-foot three point jumper"
+  },
+  {
+   "seq": 119392162,
+   "period": 1,
+   "clock": "3:09",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 7-foot floating jump shot"
+  },
+  {
+   "seq": 119392418,
+   "period": 1,
+   "clock": "0:00",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 36-foot three pointer"
+  },
+  {
+   "seq": 119393301,
+   "period": 2,
+   "clock": "17:34",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes layup"
+  },
+  {
+   "seq": 119393947,
+   "period": 2,
+   "clock": "13:33",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 5-foot floating jump shot"
+  },
+  {
+   "seq": 119394632,
+   "period": 2,
+   "clock": "8:54",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes layup"
+  },
+  {
+   "seq": 119395009,
+   "period": 2,
+   "clock": "4:28",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
+  },
+  {
+   "seq": 119395043,
+   "period": 2,
+   "clock": "4:00",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
+  },
+  {
+   "seq": 119395145,
+   "period": 2,
+   "clock": "2:06",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
   }
  ]
 }

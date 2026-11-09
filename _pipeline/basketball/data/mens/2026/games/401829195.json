@@ -19,7 +19,10 @@
   "pbp_made_fg": 31,
   "assist_text_without_ids": 0,
   "name_checks": 19,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 12,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -378,6 +381,116 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Veniamin Abosi makes layup (Tyrone Riley IV assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 117206131,
+   "period": 1,
+   "clock": "19:29",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "David Fuchs makes 0-foot tip in layup"
+  },
+  {
+   "seq": 117206247,
+   "period": 1,
+   "clock": "18:39",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 14-foot pullup jump shot"
+  },
+  {
+   "seq": 117207490,
+   "period": 1,
+   "clock": "12:56",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Vukasin Masic makes 17-foot pullup jump shot"
+  },
+  {
+   "seq": 117207539,
+   "period": 1,
+   "clock": "12:40",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "David Fuchs makes 3-foot dunk"
+  },
+  {
+   "seq": 117208774,
+   "period": 1,
+   "clock": "8:30",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes driving layup"
+  },
+  {
+   "seq": 117210559,
+   "period": 1,
+   "clock": "2:54",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Tyrone Riley IV makes 0-foot tip in layup"
+  },
+  {
+   "seq": 117210696,
+   "period": 1,
+   "clock": "2:06",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 117212207,
+   "period": 2,
+   "clock": "19:37",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 117212253,
+   "period": 2,
+   "clock": "18:28",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
+  },
+  {
+   "seq": 117213323,
+   "period": 2,
+   "clock": "11:40",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 117213342,
+   "period": 2,
+   "clock": "11:25",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes driving layup"
+  },
+  {
+   "seq": 117215409,
+   "period": 2,
+   "clock": "1:05",
+   "scorer": "5313125",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Weilun Zhao makes driving layup"
   }
  ]
 }

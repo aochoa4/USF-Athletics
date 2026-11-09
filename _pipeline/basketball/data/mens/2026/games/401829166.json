@@ -19,7 +19,10 @@
   "pbp_made_fg": 20,
   "assist_text_without_ids": 0,
   "name_checks": 10,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 10,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5174624": {
@@ -288,6 +291,98 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Veniamin Abosi makes layup (David Fuchs assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 116411252,
+   "period": 1,
+   "clock": "16:53",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 26-foot three point step back jumpshot"
+  },
+  {
+   "seq": 116411515,
+   "period": 1,
+   "clock": "13:43",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
+  },
+  {
+   "seq": 116411568,
+   "period": 1,
+   "clock": "12:31",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mookie Cook makes layup"
+  },
+  {
+   "seq": 116411843,
+   "period": 1,
+   "clock": "7:39",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 4-foot floating jump shot"
+  },
+  {
+   "seq": 116412351,
+   "period": 1,
+   "clock": "0:23",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 27-foot three point jumper"
+  },
+  {
+   "seq": 116412736,
+   "period": 2,
+   "clock": "11:51",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic makes driving layup"
+  },
+  {
+   "seq": 116412917,
+   "period": 2,
+   "clock": "7:23",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
+  },
+  {
+   "seq": 116413011,
+   "period": 2,
+   "clock": "4:55",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Vukasin Masic makes 20-foot pullup jump shot"
+  },
+  {
+   "seq": 116413263,
+   "period": 2,
+   "clock": "0:46",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
+  },
+  {
+   "seq": 116413319,
+   "period": 2,
+   "clock": "0:28",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Tyrone Riley IV makes 3-foot dunk"
   }
  ]
 }

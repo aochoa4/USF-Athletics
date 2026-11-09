@@ -19,7 +19,10 @@
   "pbp_made_fg": 27,
   "assist_text_without_ids": 0,
   "name_checks": 14,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 13,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5174624": {
@@ -328,6 +331,125 @@
    "points": 2,
    "shot": "DunkShot",
    "text": "Legend Smiley makes 5-foot dunk (Ryan Beasley assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 116685623,
+   "period": 1,
+   "clock": "9:01",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 14-foot pullup jump shot"
+  },
+  {
+   "seq": 116686049,
+   "period": 1,
+   "clock": "6:25",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes driving layup"
+  },
+  {
+   "seq": 116686670,
+   "period": 1,
+   "clock": "3:16",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes driving layup"
+  },
+  {
+   "seq": 116687167,
+   "period": 1,
+   "clock": "0:21",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 7-foot hook shot"
+  },
+  {
+   "seq": 116687893,
+   "period": 2,
+   "clock": "18:46",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes driving layup"
+  },
+  {
+   "seq": 116688072,
+   "period": 2,
+   "clock": "16:31",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 15-foot pullup jump shot"
+  },
+  {
+   "seq": 116688125,
+   "period": 2,
+   "clock": "15:46",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes driving layup"
+  },
+  {
+   "seq": 116688221,
+   "period": 2,
+   "clock": "15:41",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Junjie Wang makes 0-foot tip in layup"
+  },
+  {
+   "seq": 116688460,
+   "period": 2,
+   "clock": "13:16",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes driving layup"
+  },
+  {
+   "seq": 116688699,
+   "period": 2,
+   "clock": "10:28",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
+  },
+  {
+   "seq": 116689009,
+   "period": 2,
+   "clock": "5:14",
+   "scorer": "5241062",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Veniamin Abosi makes 9-foot floating jump shot"
+  },
+  {
+   "seq": 116689078,
+   "period": 2,
+   "clock": "3:59",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Legend Smiley makes driving layup"
+  },
+  {
+   "seq": 116689279,
+   "period": 2,
+   "clock": "1:15",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
   }
  ]
 }

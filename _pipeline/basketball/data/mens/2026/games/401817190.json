@@ -19,7 +19,10 @@
   "pbp_made_fg": 25,
   "assist_text_without_ids": 0,
   "name_checks": 11,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 14,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5105410": {
@@ -298,6 +301,134 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Legend Smiley made Three Point Jumper. Assisted by Mookie Cook."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 115861556,
+   "period": 1,
+   "clock": "13:54",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV made Jumper."
+  },
+  {
+   "seq": 115861805,
+   "period": 1,
+   "clock": "12:26",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Legend Smiley made Jumper."
+  },
+  {
+   "seq": 115863227,
+   "period": 1,
+   "clock": "7:19",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV made Layup."
+  },
+  {
+   "seq": 115863909,
+   "period": 1,
+   "clock": "3:45",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV made Jumper."
+  },
+  {
+   "seq": 115864459,
+   "period": 1,
+   "clock": "1:46",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV made Layup."
+  },
+  {
+   "seq": 115866642,
+   "period": 2,
+   "clock": "14:52",
+   "scorer": "5241062",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Veniamin Abosi made Layup."
+  },
+  {
+   "seq": 115866795,
+   "period": 2,
+   "clock": "13:44",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Three Point Jumper."
+  },
+  {
+   "seq": 115866817,
+   "period": 2,
+   "clock": "12:58",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Jumper."
+  },
+  {
+   "seq": 115867313,
+   "period": 2,
+   "clock": "10:55",
+   "scorer": "5241062",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Veniamin Abosi made Jumper."
+  },
+  {
+   "seq": 115868291,
+   "period": 2,
+   "clock": "7:20",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic made Layup."
+  },
+  {
+   "seq": 115868749,
+   "period": 2,
+   "clock": "4:23",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang made Layup."
+  },
+  {
+   "seq": 115868807,
+   "period": 2,
+   "clock": "4:01",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Mookie Cook made Two Point Tip Shot."
+  },
+  {
+   "seq": 115869192,
+   "period": 2,
+   "clock": "2:20",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Legend Smiley made Jumper."
+  },
+  {
+   "seq": 115869357,
+   "period": 2,
+   "clock": "1:17",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV made Layup."
   }
  ]
 }

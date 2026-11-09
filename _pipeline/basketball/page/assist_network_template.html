@@ -60,6 +60,11 @@ header { display: flex; flex-direction: column; gap: 8px; }
 .seg button:last-child { border-right: 0; }
 .seg button[aria-pressed="true"] { background: var(--green); color: var(--bg); font-weight: 600; }
 .seg button:not([aria-pressed="true"]):hover { background: var(--green-soft); }
+/* the WCC pages: every team on its own row of buttons, wrapping on a phone */
+.teamlist { display: flex; flex-wrap: wrap; gap: 6px; flex-basis: 100%; }
+.teamlist button { font: inherit; font-size: 0.85rem; padding: 6px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--ink); cursor: pointer; }
+.teamlist button[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: var(--bg); font-weight: 600; }
+.teamlist button:not([aria-pressed="true"]):hover { background: var(--green-soft); }
 
 section { display: flex; flex-direction: column; gap: 14px; }
 .sechead { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; justify-content: space-between; border-bottom: 2px solid var(--ink); padding-bottom: 6px; }
@@ -82,6 +87,10 @@ section { display: flex; flex-direction: column; gap: 14px; }
 .stat .v { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; line-height: 1.15; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 .stat .note { grid-column: 2; font-size: 0.85rem; color: var(--muted); }
 .stat .block { display: block; }
+/* the scouting note on the WCC pages: a few labeled lines, then the top pairs */
+.snlines { display: flex; flex-direction: column; gap: 4px; }
+.snlines p { max-width: 80ch; }
+.snlines .k { font-weight: 600; }
 
 .mapgrid { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); gap: 20px; align-items: start; }
 @media (max-width: 900px) { .mapgrid { grid-template-columns: minmax(0, 1fr); } }
@@ -199,6 +208,18 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     <p class="steplabel" id="steplabel" aria-live="polite"></p>
   </div>
 
+  <div class="card" id="scoutNote" hidden>
+    <h3>Scouting note</h3>
+    <div class="snlines" id="snLines"></div>
+    <div class="scroll" id="snPairsWrap">
+      <table id="snPairs">
+        <thead><tr><th>Top connections</th><th class="r">Assists</th><th class="r">Share</th><th class="r">At the rim</th><th class="r">Two-point jumpers</th><th class="r">Threes</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="small muted" id="snNote"></p>
+  </div>
+
   <div class="stats" id="tiles">
     <div class="stat"><span class="k">Assists mapped</span><span class="v" id="tAst">0</span><span class="note" id="tAstSub"></span></div>
     <div class="stat"><span class="k">Connections</span><span class="v" id="tCon">0</span><span class="note" id="tConSub"></span></div>
@@ -260,6 +281,16 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     <p class="narrative" id="narrative"></p>
   </section>
 
+  <section id="shotSection" hidden>
+    <div class="sechead"><h2>Connections by shot</h2><span class="small muted" id="shotNote"></span></div>
+    <div class="scroll">
+      <table id="shots">
+        <thead><tr><th>Passer to scorer</th><th class="r">Assists</th><th class="r">At the rim</th><th class="r">Two-point jumpers</th><th class="r">Threes</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
   <section>
     <div class="sechead"><h2>Players</h2><span class="small muted" id="playersNote"></span></div>
     <div class="scroll">
@@ -268,6 +299,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
           <th>Player</th>
           <th class="r" data-key="out"><button class="sort" type="button">Assists</button></th>
           <th class="r" data-key="in"><button class="sort" type="button">Scored off assists</button></th>
+          <th class="r" data-key="solo" id="soloHead" hidden><button class="sort" type="button">Unassisted baskets</button></th>
           <th class="r" data-key="hub"><button class="sort" type="button">Hub</button></th>
           <th class="r" data-key="auth"><button class="sort" type="button">Authority</button></th>
           <th class="r" data-key="box"><button class="sort" type="button">Box score assists</button></th>
@@ -313,7 +345,8 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
   }
 
   // ---- view state ----
-  var teams = Object.keys(D.teams);
+  // keys that look like numbers (ESPN team ids) come back in numeric order, so the WCC pages pass theirs
+  var teams = D.order || Object.keys(D.teams);
   STORE += "." + teams.join("-");   // the men's and women's pages share a site, so each keeps its own view
   // mode "season": the network through the selected game; "game": only the selected game's assists
   // dim "2d" or "3d": which map draws; every visit opens on the 2D map
@@ -322,7 +355,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     var saved = JSON.parse(localStorage.getItem(STORE) || "null");
     if (saved && D.teams[saved.team]) { view.team = saved.team; view.season = saved.season; }
     if (saved && ["inv", "hub", "auth"].indexOf(saved.size) >= 0) view.size = saved.size;
-    if (saved && ["out", "in", "hub", "auth", "box"].indexOf(saved.sort) >= 0) view.sort = saved.sort;
+    if (saved && ["out", "in", "solo", "hub", "auth", "box"].indexOf(saved.sort) >= 0) view.sort = saved.sort;
     if (saved && ["season", "game"].indexOf(saved.mode) >= 0) view.mode = saved.mode;
   } catch (e) {}
   var seasonsOf = function (t) { return Object.keys(D.teams[t].seasons).sort().reverse(); };
@@ -994,13 +1027,127 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     $("ranksNote").textContent = "Through game " + st.idx + ". Top six, with ties at sixth. Tap a player to show them on the map.";
   }
 
+  // ---- the WCC scouting pages (D.scout): shot codes ride on each game, g.sh one per assisted basket and
+  //      g.u one [scorer, code] per unassisted basket; codes are r rim, j two-point jumper, 3 three ----
+  // each passer-to-scorer pair through game idx, with its shot split, most assists first
+  function pairTotals(c, idx) {
+    var pairs = new Map();
+    c.S.games.slice(0, idx).forEach(function (g) {
+      g.a.forEach(function (a, i) {
+        var k = a[0] + ">" + a[1], p = pairs.get(k) || { p: a[0], s: a[1], n: 0, r: 0, j: 0, t: 0 };
+        var code = (g.sh || "").charAt(i);
+        p.n++;
+        if (code === "r") p.r++; else if (code === "j") p.j++; else if (code === "3") p.t++;
+        pairs.set(k, p);
+      });
+    });
+    return Array.from(pairs.values()).sort(function (a, b) {
+      return (b.n - a.n) || shortName(a.p).localeCompare(shortName(b.p)) || shortName(a.s).localeCompare(shortName(b.s));
+    });
+  }
+  // made baskets with no assist through game idx, by scorer, with the shot split
+  function soloTotals(c, idx) {
+    var solo = new Map();
+    c.S.games.slice(0, idx).forEach(function (g) {
+      (g.u || []).forEach(function (u) {
+        var s = solo.get(u[0]) || { n: 0, r: 0, j: 0, t: 0 };
+        s.n++;
+        if (u[1] === "r") s.r++; else if (u[1] === "j") s.j++; else if (u[1] === "3") s.t++;
+        solo.set(u[0], s);
+      });
+    });
+    return solo;
+  }
+  // the ids tied for the most, and that count
+  function leaders(counts) {
+    var best = 0, ids = [];
+    counts.forEach(function (v) { best = Math.max(best, v); });
+    counts.forEach(function (v, id) { if (best > 0 && v === best) ids.push(id); });
+    return { ids: ids.sort(function (a, b) { return shortName(a).localeCompare(shortName(b)); }), n: best };
+  }
+  function pct(n, d) { return d ? Math.round(100 * n / d) + "%" : "-"; }
+  function splitText(s) {
+    var bits = [];
+    if (s.r) bits.push(s.r + " at the rim");
+    if (s.j) bits.push(plural(s.j, "two-point jumper", "two-point jumpers"));
+    if (s.t) bits.push(plural(s.t, "three", "threes"));
+    return bits.join(", ");
+  }
+
+  // the scouting note at the top: who assists most, who scores off assists most, who scores unassisted most,
+  // and the top passer-to-scorer pairs (wording approved by Alex, 2026-11-09: "Approve as drafted"; the footnote's
+  // "no assist in ESPN's play-by-play" replaced "no assist credited" on his "Yes, change it" the same day)
+  function renderScoutNote(st, c) {
+    var box = $("scoutNote");
+    box.hidden = !D.scout || !st;
+    if (box.hidden) return;
+    var made = new Map(), got = new Map(), total = 0, hasSolo = false;
+    c.S.games.slice(0, st.idx).forEach(function (g) {
+      g.a.forEach(function (a) { total++; made.set(a[0], (made.get(a[0]) || 0) + 1); got.set(a[1], (got.get(a[1]) || 0) + 1); });
+      if (g.u) hasSolo = true;
+    });
+    var lines = $("snLines"); lines.textContent = "";
+    var line = function (label, text) {
+      var p = el("p"); p.appendChild(el("span", "k", label + ": ")); p.appendChild(document.createTextNode(text)); lines.appendChild(p);
+    };
+    var each = function (L) { return L.ids.length > 1 ? " each" : ""; };
+    // every tied name is listed, so a tie never hides who shares it
+    var allNames = function (ids) { var n = ids.map(shortName); return n.length === 1 ? n[0] : n.slice(0, -1).join(", ") + " and " + n[n.length - 1]; };
+    var L = leaders(made);
+    if (L.n) line("Most assists", allNames(L.ids) + ", " + L.n + each(L) + " of " + total + " mapped (" + pct(L.n, total) + each(L) + ")");
+    L = leaders(got);
+    if (L.n) line("Most baskets off assists", allNames(L.ids) + ", " + L.n + each(L));
+    if (hasSolo) {
+      var solo = soloTotals(c, st.idx), counts = new Map();
+      solo.forEach(function (s, id) { counts.set(id, s.n); });
+      L = leaders(counts);
+      if (L.n) line("Most unassisted baskets", allNames(L.ids) + ", " + L.n + (L.ids.length > 1 ? " each" : " (" + splitText(solo.get(L.ids[0])) + ")"));
+    }
+    // pairs with at least 2 assists: the top three, plus anyone tied with the third
+    var pairs = pairTotals(c, st.idx).filter(function (p) { return p.n >= 2; });
+    var cut = pairs.length > 3 ? pairs[2].n : -1;
+    pairs = pairs.filter(function (p, i) { return i < 3 || p.n === cut; });
+    var tb = document.querySelector("#snPairs tbody"); tb.textContent = "";
+    pairs.forEach(function (p) {
+      var tr = document.createElement("tr");
+      tr.appendChild(el("td", null, shortName(p.p) + " → " + shortName(p.s)));
+      [String(p.n), pct(p.n, total), String(p.r), String(p.j), String(p.t)].forEach(function (v) { tr.appendChild(el("td", "r", v)); });
+      tb.appendChild(tr);
+    });
+    $("snPairsWrap").hidden = !pairs.length;
+    if (!pairs.length) line("Top connections", "no pair has more than 1 assist yet");
+    $("snNote").textContent = "Through game " + st.idx + " of " + c.steps.length + ". Connections need at least 2 assists to show; share is the pair's part of the team's mapped assists. Unassisted baskets are made field goals with no assist in ESPN's play-by-play, putbacks included.";
+  }
+
+  // each passer-to-scorer pair through the selected game, split by the shot the assist set up
+  function renderShots(st, c) {
+    var sec = $("shotSection");
+    sec.hidden = !D.scout || !st;
+    if (sec.hidden) return;
+    var rows = pairTotals(c, st.idx);
+    // top twelve, plus anyone tied with the twelfth
+    var cut = rows.length > 12 ? rows[11].n : -1;
+    var tb = document.querySelector("#shots tbody"); tb.textContent = "";
+    rows.filter(function (r, i) { return i < 12 || r.n === cut; }).forEach(function (r) {
+      var tr = document.createElement("tr");
+      tr.appendChild(el("td", null, shortName(r.p) + " → " + shortName(r.s)));
+      [r.n, r.r, r.j, r.t].forEach(function (v) { tr.appendChild(el("td", "r", String(v))); });
+      tb.appendChild(tr);
+    });
+    $("shotNote").textContent = "Through game " + st.idx + ". Top 12 pairs, with ties at 12th.";
+  }
+
   function renderPlayers(st, c) {
     var ids = new Set(Array.from(st.nodes.keys()));
     st.boxP.forEach(function (n, id) { ids.add(id); });
+    // the WCC pages add each player's unassisted baskets
+    var solo = D.scout ? soloTotals(c, st.idx) : new Map();
+    solo.forEach(function (s, id) { ids.add(id); });
+    $("soloHead").hidden = !D.scout;
     var rows = Array.from(ids).map(function (id) {
       var n = st.nodes.get(id) || { out: 0, in: 0 }, outs = [], ins = [];
       st.edges.forEach(function (e) { if (e.p === id) outs.push(e); if (e.s === id) ins.push(e); });
-      return { id: id, out: n.out, in: n.in, box: st.boxP.get(id) || 0, hub: hubOf(st, id), auth: authOf(st, id),
+      return { id: id, out: n.out, in: n.in, solo: (solo.get(id) || { n: 0 }).n, box: st.boxP.get(id) || 0, hub: hubOf(st, id), auth: authOf(st, id),
                to: topLabel(outs, function (e) { return shortName(e.s); }), from: topLabel(ins, function (e) { return shortName(e.p); }) };
     }).sort(function (a, b) { return (b[view.sort] - a[view.sort]) || (b.out - a.out) || shortName(a.id).localeCompare(shortName(b.id)); });
     var tb = document.querySelector("#players tbody"); tb.textContent = "";
@@ -1009,6 +1156,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
       tr.appendChild(el("td", null, player(r.id).n));
       tr.appendChild(el("td", "r", String(r.out)));
       tr.appendChild(el("td", "r", String(r.in)));
+      if (D.scout) tr.appendChild(el("td", "r", String(r.solo)));
       [["hub", r.hub], ["auth", r.auth]].forEach(function (m) {
         var td = el("td", "r"), wrap = el("span", "cellm");
         wrap.appendChild(spark(series(c, r.id, m[0]), view.step - 1, 56, 16));
@@ -1023,7 +1171,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     document.querySelectorAll("#players th[data-key]").forEach(function (th) {
       if (th.dataset.key === view.sort) th.setAttribute("aria-sort", "descending"); else th.removeAttribute("aria-sort");
     });
-    $("playersNote").textContent = "Players with a mapped assist made or received, or a box-score assist, through game " + st.idx;
+    $("playersNote").textContent = "Players with a mapped assist made or received, " + (D.scout ? "an unassisted basket, " : "") + "or a box-score assist, through game " + st.idx;
   }
 
   function renderLog(c) {
@@ -1080,10 +1228,11 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
   }
   function renderControls() {
     var tseg = $("teamSeg"); tseg.textContent = "";
-    // a one-team page has no team switch
+    // a one-team page has no team switch; a conference page lists every team on a row of its own
     tseg.hidden = teams.length < 2;
+    tseg.className = teams.length > 2 ? "teamlist" : "seg";
     if (teams.length > 1) teams.forEach(function (t) {
-      var b = el("button", null, t === "mens" ? "Men" : "Women");
+      var b = el("button", null, D.teams[t].short || (t === "mens" ? "Men" : "Women"));
       b.type = "button"; b.id = "team-" + t; b.setAttribute("aria-pressed", String(t === view.team));
       b.addEventListener("click", function () { if (view.team === t) return; view.team = t; if (!D.teams[t].seasons[view.season]) view.season = seasonsOf(t)[0]; switchView(); });
       tseg.appendChild(b);
@@ -1123,7 +1272,7 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     $("spin").hidden = !is3d();
     renderKey();
     var c = cur(), S = c.S, n = c.steps.length;
-    $("eyebrow").textContent = "USF " + D.teams[view.team].label + ", " + S.label;
+    $("eyebrow").textContent = (D.teams[view.team].eyebrow || "USF " + D.teams[view.team].label) + ", " + S.label;
     $("status").textContent = n ? plural(n, "game", "games") + " through " + fmtDate(S.games[n - 1].date) + ", built " + fmtDate(D.built) : "No games yet, built " + fmtDate(D.built);
     var range = $("game");
     range.max = String(Math.max(1, n)); range.value = String(Math.max(1, view.step)); range.disabled = n <= 1;
@@ -1136,10 +1285,11 @@ svg.focusing .node.me, svg.focusing .node.nbr { opacity: 1; }
     $("tiles").hidden = !st; $("gamecard").hidden = !st; $("rankSection").hidden = !st;
     if (st) {
       $("steplabel").textContent = "Through game " + st.idx + " of " + n + ", " + fmtDate(st.game.date) + " " + where(st.game);
-      renderTiles(st, c); renderGame(st, n); renderRanks(st); renderPlayers(st, c);
+      renderScoutNote(st, c); renderTiles(st, c); renderGame(st, n); renderRanks(st); renderShots(st, c); renderPlayers(st, c);
       $("narrative").textContent = narrative(st);
     } else {
       $("steplabel").textContent = "Waiting for the first game";
+      $("shotSection").hidden = true; $("scoutNote").hidden = true;
       document.querySelector("#players tbody").textContent = "";
       $("playersNote").textContent = "";
     }

@@ -19,7 +19,10 @@
   "pbp_made_fg": 19,
   "assist_text_without_ids": 0,
   "name_checks": 14,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 5,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -328,6 +331,53 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Mookie Cook made Three Point Jumper. Assisted by Weilun Zhao."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 115120264,
+   "period": 1,
+   "clock": "12:41",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV made Layup."
+  },
+  {
+   "seq": 115124680,
+   "period": 1,
+   "clock": "1:58",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "David Fuchs made Jumper."
+  },
+  {
+   "seq": 115124922,
+   "period": 1,
+   "clock": "0:56",
+   "scorer": "5105410",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Guillermo Diaz Graham made Jumper."
+  },
+  {
+   "seq": 115128463,
+   "period": 2,
+   "clock": "17:34",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Junjie Wang made Jumper."
+  },
+  {
+   "seq": 115130425,
+   "period": 2,
+   "clock": "13:02",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs made Layup."
   }
  ]
 }

@@ -19,7 +19,10 @@
   "pbp_made_fg": 28,
   "assist_text_without_ids": 0,
   "name_checks": 11,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 17,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -276,6 +279,161 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Mara Neira makes 25-foot three point jumper (Natasa Tausova assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 117401480,
+   "period": 1,
+   "clock": "4:10",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 117402304,
+   "period": 1,
+   "clock": "3:17",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 117402691,
+   "period": 1,
+   "clock": "1:59",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 117403099,
+   "period": 1,
+   "clock": "1:04",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Natasa Tausova makes 5-foot jumper"
+  },
+  {
+   "seq": 117403397,
+   "period": 1,
+   "clock": "0:21",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Natasa Tausova makes 7-foot jumper"
+  },
+  {
+   "seq": 117404461,
+   "period": 2,
+   "clock": "9:06",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 117405106,
+   "period": 2,
+   "clock": "6:54",
+   "scorer": "5174314",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Paula Tirado makes layup"
+  },
+  {
+   "seq": 117405581,
+   "period": 2,
+   "clock": "5:37",
+   "scorer": "4899726",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Olivia Williams makes layup"
+  },
+  {
+   "seq": 117406878,
+   "period": 2,
+   "clock": "3:19",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Aina Cargol makes 15-foot pullup jump shot"
+  },
+  {
+   "seq": 117410994,
+   "period": 3,
+   "clock": "9:16",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol makes driving layup"
+  },
+  {
+   "seq": 117411054,
+   "period": 3,
+   "clock": "8:55",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 117413925,
+   "period": 3,
+   "clock": "3:39",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 117414058,
+   "period": 3,
+   "clock": "2:54",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourio makes layup"
+  },
+  {
+   "seq": 117416009,
+   "period": 4,
+   "clock": "8:39",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol makes driving layup"
+  },
+  {
+   "seq": 117416127,
+   "period": 4,
+   "clock": "8:07",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mara Neira makes driving layup"
+  },
+  {
+   "seq": 117416193,
+   "period": 4,
+   "clock": "7:30",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Mara Neira makes 9-foot pullup jump shot"
+  },
+  {
+   "seq": 117418196,
+   "period": 4,
+   "clock": "2:42",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Mara Neira makes 8-foot jumper"
   }
  ]
 }

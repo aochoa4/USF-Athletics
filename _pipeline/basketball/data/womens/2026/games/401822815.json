@@ -19,7 +19,10 @@
   "pbp_made_fg": 25,
   "assist_text_without_ids": 0,
   "name_checks": 13,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 12,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314913": {
@@ -296,6 +299,116 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Natasa Tausova made Layup. Assisted by Aina Cargol."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 114329426,
+   "period": 1,
+   "clock": "9:40",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Candy Edokpaigbe made Jumper."
+  },
+  {
+   "seq": 114336421,
+   "period": 2,
+   "clock": "5:02",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol made Layup."
+  },
+  {
+   "seq": 114339494,
+   "period": 3,
+   "clock": "8:27",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol made Layup."
+  },
+  {
+   "seq": 114340529,
+   "period": 3,
+   "clock": "4:52",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourio made Layup."
+  },
+  {
+   "seq": 114341090,
+   "period": 3,
+   "clock": "3:30",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol made Layup."
+  },
+  {
+   "seq": 114341098,
+   "period": 3,
+   "clock": "2:49",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol made Layup."
+  },
+  {
+   "seq": 114342600,
+   "period": 4,
+   "clock": "8:23",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Meghan McIntyre made Layup."
+  },
+  {
+   "seq": 114343308,
+   "period": 4,
+   "clock": "5:56",
+   "scorer": "5314915",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Aina Cargol made Three Point Jumper."
+  },
+  {
+   "seq": 114343876,
+   "period": 4,
+   "clock": "3:51",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Noelia Mourio made Jumper."
+  },
+  {
+   "seq": 114344021,
+   "period": 4,
+   "clock": "2:57",
+   "scorer": "5174314",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Paula Tirado made Layup."
+  },
+  {
+   "seq": 114344055,
+   "period": 4,
+   "clock": "2:32",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 114344294,
+   "period": 4,
+   "clock": "1:18",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Natasa Tausova made Layup."
   }
  ]
 }

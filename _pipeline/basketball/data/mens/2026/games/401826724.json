@@ -19,7 +19,10 @@
   "pbp_made_fg": 37,
   "assist_text_without_ids": 0,
   "name_checks": 25,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 12,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -438,6 +441,116 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Legend Smiley made Three Point Jumper. Assisted by Weilun Zhao."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 113688816,
+   "period": 1,
+   "clock": "18:26",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Tyrone Riley IV made Two Point Tip Shot."
+  },
+  {
+   "seq": 113691486,
+   "period": 1,
+   "clock": "14:42",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley made Layup."
+  },
+  {
+   "seq": 113691600,
+   "period": 1,
+   "clock": "14:21",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley made Layup."
+  },
+  {
+   "seq": 113694760,
+   "period": 1,
+   "clock": "10:03",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Junjie Wang made Jumper."
+  },
+  {
+   "seq": 113696232,
+   "period": 1,
+   "clock": "6:42",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Mookie Cook made Two Point Tip Shot."
+  },
+  {
+   "seq": 113697331,
+   "period": 1,
+   "clock": "5:08",
+   "scorer": "4433208",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Saba Gigiberia made Two Point Tip Shot."
+  },
+  {
+   "seq": 113698528,
+   "period": 1,
+   "clock": "2:58",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Mookie Cook made Dunk."
+  },
+  {
+   "seq": 113704532,
+   "period": 2,
+   "clock": "17:19",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Junjie Wang made Two Point Tip Shot."
+  },
+  {
+   "seq": 113705936,
+   "period": 2,
+   "clock": "14:49",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Tyrone Riley IV made Dunk."
+  },
+  {
+   "seq": 113707859,
+   "period": 2,
+   "clock": "8:02",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mookie Cook made Layup."
+  },
+  {
+   "seq": 113708327,
+   "period": 2,
+   "clock": "6:49",
+   "scorer": "5313125",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Weilun Zhao made Layup."
+  },
+  {
+   "seq": 113708690,
+   "period": 2,
+   "clock": "5:25",
+   "scorer": "4433208",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Saba Gigiberia made Layup."
   }
  ]
 }

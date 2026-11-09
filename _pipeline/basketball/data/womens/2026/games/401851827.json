@@ -19,7 +19,10 @@
   "pbp_made_fg": 25,
   "assist_text_without_ids": 0,
   "name_checks": 19,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 6,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -356,6 +359,62 @@
    "points": 2,
    "shot": "JumpShot",
    "text": "Mara Neira makes 7-foot jumper (Aina Cargol assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 120106092,
+   "period": 1,
+   "clock": "0:00",
+   "scorer": "5178411",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Michelle Ugwah makes layup"
+  },
+  {
+   "seq": 120109274,
+   "period": 3,
+   "clock": "0:25",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Natasa Tausova makes layup"
+  },
+  {
+   "seq": 120109878,
+   "period": 4,
+   "clock": "5:25",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Mara Neira makes 9-foot jumper"
+  },
+  {
+   "seq": 120109888,
+   "period": 4,
+   "clock": "5:09",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mara Neira makes layup"
+  },
+  {
+   "seq": 120110471,
+   "period": 4,
+   "clock": "3:19",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Mara Neira makes 13-foot jumper"
+  },
+  {
+   "seq": 120110670,
+   "period": 4,
+   "clock": "1:31",
+   "scorer": "5107763",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Mara Neira makes 28-foot three pointer"
   }
  ]
 }

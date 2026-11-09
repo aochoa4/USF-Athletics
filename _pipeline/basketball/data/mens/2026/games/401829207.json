@@ -19,7 +19,10 @@
   "pbp_made_fg": 29,
   "assist_text_without_ids": 0,
   "name_checks": 18,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 11,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -368,6 +371,107 @@
    "points": 2,
    "shot": "DunkShot",
    "text": "Legend Smiley makes 2-foot dunk (Vukasin Masic assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 117606459,
+   "period": 1,
+   "clock": "16:30",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Legend Smiley makes 12-foot pullup jump shot"
+  },
+  {
+   "seq": 117606701,
+   "period": 1,
+   "clock": "13:19",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 24-foot three point step back jumpshot"
+  },
+  {
+   "seq": 117607046,
+   "period": 1,
+   "clock": "6:20",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Legend Smiley makes driving layup"
+  },
+  {
+   "seq": 117607070,
+   "period": 1,
+   "clock": "5:38",
+   "scorer": "4433208",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Saba Gigiberia makes 0-foot tip in layup"
+  },
+  {
+   "seq": 117606975,
+   "period": 1,
+   "clock": "3:36",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic makes driving layup"
+  },
+  {
+   "seq": 117606978,
+   "period": 1,
+   "clock": "2:54",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
+  },
+  {
+   "seq": 117607871,
+   "period": 2,
+   "clock": "13:09",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Vukasin Masic makes 7-foot floating jump shot"
+  },
+  {
+   "seq": 117607874,
+   "period": 2,
+   "clock": "12:33",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 6-foot floating jump shot"
+  },
+  {
+   "seq": 117608023,
+   "period": 2,
+   "clock": "9:12",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 15-foot pullup jump shot"
+  },
+  {
+   "seq": 117608171,
+   "period": 2,
+   "clock": "5:47",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic makes driving layup"
+  },
+  {
+   "seq": 117608266,
+   "period": 2,
+   "clock": "1:31",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "David Fuchs makes 0-foot tip in layup"
   }
  ]
 }

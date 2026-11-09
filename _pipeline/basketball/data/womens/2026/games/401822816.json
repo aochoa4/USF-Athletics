@@ -19,7 +19,10 @@
   "pbp_made_fg": 33,
   "assist_text_without_ids": 0,
   "name_checks": 22,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 11,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -386,6 +389,107 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Noelia Mourio made Layup. Assisted by Candy Edokpaigbe."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 114474035,
+   "period": 1,
+   "clock": "8:10",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Natasa Tausova made Layup."
+  },
+  {
+   "seq": 114474902,
+   "period": 1,
+   "clock": "5:46",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Natasa Tausova made Layup."
+  },
+  {
+   "seq": 114475159,
+   "period": 1,
+   "clock": "4:41",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol made Layup."
+  },
+  {
+   "seq": 114477435,
+   "period": 2,
+   "clock": "8:16",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mara Neira made Layup."
+  },
+  {
+   "seq": 114477527,
+   "period": 2,
+   "clock": "7:29",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourio made Layup."
+  },
+  {
+   "seq": 114478662,
+   "period": 2,
+   "clock": "3:01",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 114481128,
+   "period": 3,
+   "clock": "6:10",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Candy Edokpaigbe made Jumper."
+  },
+  {
+   "seq": 114481664,
+   "period": 3,
+   "clock": "4:11",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 114481974,
+   "period": 3,
+   "clock": "2:22",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Meghan McIntyre made Layup."
+  },
+  {
+   "seq": 114482190,
+   "period": 3,
+   "clock": "0:30",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Noelia Mourio made Jumper."
+  },
+  {
+   "seq": 114484107,
+   "period": 4,
+   "clock": "0:49",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Meghan McIntyre made Layup."
   }
  ]
 }

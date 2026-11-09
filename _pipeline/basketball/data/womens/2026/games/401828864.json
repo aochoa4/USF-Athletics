@@ -19,7 +19,10 @@
   "pbp_made_fg": 18,
   "assist_text_without_ids": 0,
   "name_checks": 14,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 4,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -306,6 +309,44 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Candy Edokpaigbe makes layup (Noelia Mourino assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 118629271,
+   "period": 2,
+   "clock": "2:47",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 118639246,
+   "period": 3,
+   "clock": "3:18",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mara Neira makes layup"
+  },
+  {
+   "seq": 118642870,
+   "period": 4,
+   "clock": "7:00",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mara Neira makes driving layup"
+  },
+  {
+   "seq": 118646332,
+   "period": 4,
+   "clock": "1:07",
+   "scorer": "5314916",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Amy Pateman makes driving layup"
   }
  ]
 }

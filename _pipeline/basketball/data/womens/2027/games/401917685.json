@@ -19,7 +19,10 @@
   "pbp_made_fg": 32,
   "assist_text_without_ids": 0,
   "name_checks": 21,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 11,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5107990": {
@@ -365,6 +368,107 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Maria Burliga makes layup (Savi Mi assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 120712803,
+   "period": 1,
+   "clock": "9:17",
+   "scorer": "5107990",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Lucia Yenes makes 0-foot tip in layup"
+  },
+  {
+   "seq": 120712806,
+   "period": 1,
+   "clock": "8:52",
+   "scorer": "5462165",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Maria Burliga makes driving layup"
+  },
+  {
+   "seq": 120712812,
+   "period": 1,
+   "clock": "8:31",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 120712993,
+   "period": 1,
+   "clock": "1:27",
+   "scorer": "5178181",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Keiryn McGuff makes 0-foot tip in layup"
+  },
+  {
+   "seq": 120713459,
+   "period": 3,
+   "clock": "8:48",
+   "scorer": "5107990",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Lucia Yenes makes 4-foot floating jump shot"
+  },
+  {
+   "seq": 120713690,
+   "period": 3,
+   "clock": "1:25",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Aina Cargol makes 17-foot step back jumpshot"
+  },
+  {
+   "seq": 120713849,
+   "period": 4,
+   "clock": "7:48",
+   "scorer": "5462165",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Maria Burliga makes 0-foot tip in layup"
+  },
+  {
+   "seq": 120714044,
+   "period": 4,
+   "clock": "4:39",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourino makes driving layup"
+  },
+  {
+   "seq": 120714133,
+   "period": 4,
+   "clock": "0:20",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol makes layup"
+  },
+  {
+   "seq": 120714269,
+   "period": 5,
+   "clock": "3:51",
+   "scorer": "5462163",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Savi Mi makes 9-foot jumper"
+  },
+  {
+   "seq": 120714396,
+   "period": 5,
+   "clock": "1:43",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Noelia Mourino makes 0-foot tip in layup"
   }
  ]
 }

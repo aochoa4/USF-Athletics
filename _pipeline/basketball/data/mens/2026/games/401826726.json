@@ -19,7 +19,10 @@
   "pbp_made_fg": 26,
   "assist_text_without_ids": 0,
   "name_checks": 14,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 12,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -328,6 +331,116 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Ryan Beasley made Layup. Assisted by Vukasin Masic."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 114248163,
+   "period": 1,
+   "clock": "16:57",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley made Layup."
+  },
+  {
+   "seq": 114248987,
+   "period": 1,
+   "clock": "15:06",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mookie Cook made Layup."
+  },
+  {
+   "seq": 114249262,
+   "period": 1,
+   "clock": "14:19",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Jumper."
+  },
+  {
+   "seq": 114249709,
+   "period": 1,
+   "clock": "12:34",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mookie Cook made Layup."
+  },
+  {
+   "seq": 114250361,
+   "period": 1,
+   "clock": "10:12",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Three Point Jumper."
+  },
+  {
+   "seq": 114251000,
+   "period": 1,
+   "clock": "8:48",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang made Layup."
+  },
+  {
+   "seq": 114251701,
+   "period": 1,
+   "clock": "7:21",
+   "scorer": "4433208",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Saba Gigiberia made Two Point Tip Shot."
+  },
+  {
+   "seq": 114255074,
+   "period": 2,
+   "clock": "19:10",
+   "scorer": "5105410",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Guillermo Diaz Graham made Layup."
+  },
+  {
+   "seq": 114255540,
+   "period": 2,
+   "clock": "17:21",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Three Point Jumper."
+  },
+  {
+   "seq": 114255692,
+   "period": 2,
+   "clock": "16:36",
+   "scorer": "4702764",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Vukasin Masic made Three Point Jumper."
+  },
+  {
+   "seq": 114257354,
+   "period": 2,
+   "clock": "15:51",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Mookie Cook made Two Point Tip Shot."
+  },
+  {
+   "seq": 114256530,
+   "period": 2,
+   "clock": "6:29",
+   "scorer": "4683767",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Mookie Cook made Three Point Jumper."
   }
  ]
 }

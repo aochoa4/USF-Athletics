@@ -19,7 +19,10 @@
   "pbp_made_fg": 22,
   "assist_text_without_ids": 0,
   "name_checks": 17,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 5,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -336,6 +339,53 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Aina Cargol makes 26-foot three point jumper (Candy Edokpaigbe assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 119376054,
+   "period": 1,
+   "clock": "5:02",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 119379019,
+   "period": 2,
+   "clock": "7:28",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Aina Cargol makes 15-foot pullup jump shot"
+  },
+  {
+   "seq": 119382482,
+   "period": 3,
+   "clock": "9:45",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourino makes layup"
+  },
+  {
+   "seq": 119386818,
+   "period": 4,
+   "clock": "1:31",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 119387612,
+   "period": 5,
+   "clock": "4:10",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
   }
  ]
 }

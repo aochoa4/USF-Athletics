@@ -19,7 +19,10 @@
   "pbp_made_fg": 25,
   "assist_text_without_ids": 0,
   "name_checks": 16,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 9,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -348,6 +351,89 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Tyrone Riley IV makes 22-foot three point jumper (Ryan Beasley assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 120113350,
+   "period": 1,
+   "clock": "15:52",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 120113630,
+   "period": 1,
+   "clock": "13:15",
+   "scorer": "4433208",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Saba Gigiberia makes 0-foot dunk"
+  },
+  {
+   "seq": 120114004,
+   "period": 1,
+   "clock": "7:40",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Tyrone Riley IV makes 3-foot dunk"
+  },
+  {
+   "seq": 120115207,
+   "period": 2,
+   "clock": "18:44",
+   "scorer": "5037875",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 24-foot three point jumper"
+  },
+  {
+   "seq": 120115404,
+   "period": 2,
+   "clock": "15:41",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 24-foot three point jumper"
+  },
+  {
+   "seq": 120116058,
+   "period": 2,
+   "clock": "9:06",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes layup"
+  },
+  {
+   "seq": 120116107,
+   "period": 2,
+   "clock": "8:26",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
+  },
+  {
+   "seq": 120116150,
+   "period": 2,
+   "clock": "7:30",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes layup"
+  },
+  {
+   "seq": 120116335,
+   "period": 2,
+   "clock": "5:07",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "David Fuchs makes 4-foot hook shot"
   }
  ]
 }

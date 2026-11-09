@@ -19,7 +19,10 @@
   "pbp_made_fg": 24,
   "assist_text_without_ids": 0,
   "name_checks": 13,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 11,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5458442": {
@@ -329,6 +332,107 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Andrew Hilman makes 24-foot three point jumper (Dylan Bordon assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 120859701,
+   "period": 1,
+   "clock": "10:39",
+   "scorer": "4875213",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ndewedo Newbury makes 24-foot three point jumper"
+  },
+  {
+   "seq": 120860811,
+   "period": 1,
+   "clock": "7:20",
+   "scorer": "5177054",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ben Oosterbaan makes layup"
+  },
+  {
+   "seq": 120861152,
+   "period": 1,
+   "clock": "5:28",
+   "scorer": "5240587",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Ismaila Diagne makes 2-foot dunk"
+  },
+  {
+   "seq": 120861622,
+   "period": 1,
+   "clock": "3:54",
+   "scorer": "5240587",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ismaila Diagne makes layup"
+  },
+  {
+   "seq": 120861651,
+   "period": 1,
+   "clock": "3:37",
+   "scorer": "5177054",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Ben Oosterbaan makes 1-foot dunk"
+  },
+  {
+   "seq": 120861766,
+   "period": 1,
+   "clock": "2:22",
+   "scorer": "5177054",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ben Oosterbaan makes layup"
+  },
+  {
+   "seq": 120862066,
+   "period": 1,
+   "clock": "1:22",
+   "scorer": "4875213",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ndewedo Newbury makes 11-foot turnaround jump shot"
+  },
+  {
+   "seq": 120865033,
+   "period": 2,
+   "clock": "15:27",
+   "scorer": "5177054",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ben Oosterbaan makes layup"
+  },
+  {
+   "seq": 120865210,
+   "period": 2,
+   "clock": "13:37",
+   "scorer": "5458448",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Andrew Hilman makes 2-foot dunk"
+  },
+  {
+   "seq": 120865625,
+   "period": 2,
+   "clock": "10:40",
+   "scorer": "5458448",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Andrew Hilman makes layup"
+  },
+  {
+   "seq": 120866674,
+   "period": 2,
+   "clock": "0:00",
+   "scorer": "5458448",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Andrew Hilman makes layup"
   }
  ]
 }

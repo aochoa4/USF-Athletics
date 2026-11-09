@@ -19,7 +19,10 @@
   "pbp_made_fg": 15,
   "assist_text_without_ids": 0,
   "name_checks": 12,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 3,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -286,6 +289,35 @@
    "points": 2,
    "shot": "JumpShot",
    "text": "Olivia Williams made Jumper. Assisted by Natasa Tausova."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 115839370,
+   "period": 1,
+   "clock": "7:17",
+   "scorer": "5314915",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Aina Cargol made Three Point Jumper."
+  },
+  {
+   "seq": 115843473,
+   "period": 2,
+   "clock": "8:45",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 115846884,
+   "period": 2,
+   "clock": "0:02",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
   }
  ]
 }

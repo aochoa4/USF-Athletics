@@ -19,7 +19,10 @@
   "pbp_made_fg": 30,
   "assist_text_without_ids": 0,
   "name_checks": 15,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 15,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -338,6 +341,143 @@
    "points": 2,
    "shot": "DunkShot",
    "text": "Guillermo Diaz Graham makes 1-foot dunk (Ryan Beasley assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 118286491,
+   "period": 1,
+   "clock": "16:54",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 118286871,
+   "period": 1,
+   "clock": "15:06",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes layup"
+  },
+  {
+   "seq": 118286981,
+   "period": 1,
+   "clock": "13:44",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 16-foot jumper"
+  },
+  {
+   "seq": 118287026,
+   "period": 1,
+   "clock": "12:38",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes layup"
+  },
+  {
+   "seq": 118287371,
+   "period": 1,
+   "clock": "10:49",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
+  },
+  {
+   "seq": 118287418,
+   "period": 1,
+   "clock": "10:12",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 118287585,
+   "period": 1,
+   "clock": "8:52",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "David Fuchs makes 6-foot hook shot"
+  },
+  {
+   "seq": 118287899,
+   "period": 1,
+   "clock": "7:03",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes layup"
+  },
+  {
+   "seq": 118288011,
+   "period": 1,
+   "clock": "6:23",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes layup"
+  },
+  {
+   "seq": 118288180,
+   "period": 1,
+   "clock": "4:34",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 118289390,
+   "period": 2,
+   "clock": "17:57",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 118290668,
+   "period": 2,
+   "clock": "8:03",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 118290891,
+   "period": 2,
+   "clock": "5:02",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 118290912,
+   "period": 2,
+   "clock": "4:27",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 11-foot jumper"
+  },
+  {
+   "seq": 118291068,
+   "period": 2,
+   "clock": "2:17",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Legend Smiley makes 9-foot jumper"
   }
  ]
 }

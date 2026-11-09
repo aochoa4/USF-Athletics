@@ -19,7 +19,10 @@
   "pbp_made_fg": 24,
   "assist_text_without_ids": 0,
   "name_checks": 10,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 14,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -288,6 +291,134 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "David Fuchs makes 23-foot three point jumper (Tyrone Riley IV assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 119722175,
+   "period": 1,
+   "clock": "16:54",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "David Fuchs makes 6-foot jumper"
+  },
+  {
+   "seq": 119722339,
+   "period": 1,
+   "clock": "16:24",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "David Fuchs makes 19-foot jumper"
+  },
+  {
+   "seq": 119722474,
+   "period": 1,
+   "clock": "15:46",
+   "scorer": "5174624",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "David Fuchs makes 26-foot three point jumper"
+  },
+  {
+   "seq": 119724107,
+   "period": 1,
+   "clock": "13:46",
+   "scorer": "5105410",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Guillermo Diaz Graham makes 24-foot three point jumper"
+  },
+  {
+   "seq": 119725425,
+   "period": 1,
+   "clock": "11:51",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 15-foot jumper"
+  },
+  {
+   "seq": 119729818,
+   "period": 1,
+   "clock": "7:14",
+   "scorer": "4433208",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Saba Gigiberia makes 4-foot hook shot"
+  },
+  {
+   "seq": 119731418,
+   "period": 1,
+   "clock": "4:53",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic makes layup"
+  },
+  {
+   "seq": 119732008,
+   "period": 1,
+   "clock": "3:10",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 119733498,
+   "period": 1,
+   "clock": "1:07",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes layup"
+  },
+  {
+   "seq": 119736820,
+   "period": 2,
+   "clock": "17:55",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes layup"
+  },
+  {
+   "seq": 119737509,
+   "period": 2,
+   "clock": "15:46",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 9-foot jumper"
+  },
+  {
+   "seq": 119740514,
+   "period": 2,
+   "clock": "8:26",
+   "scorer": "5037875",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 23-foot three point jumper"
+  },
+  {
+   "seq": 119742422,
+   "period": 2,
+   "clock": "4:40",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 119743740,
+   "period": 2,
+   "clock": "2:00",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 19-foot jumper"
   }
  ]
 }

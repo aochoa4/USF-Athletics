@@ -19,7 +19,10 @@
   "pbp_made_fg": 16,
   "assist_text_without_ids": 0,
   "name_checks": 7,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 9,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -258,6 +261,89 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Legend Smiley makes 23-foot three point jumper (Junjie Wang assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 118426931,
+   "period": 1,
+   "clock": "10:07",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
+  },
+  {
+   "seq": 118427961,
+   "period": 1,
+   "clock": "5:43",
+   "scorer": "5105410",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Guillermo Diaz Graham makes 7-foot floating jump shot"
+  },
+  {
+   "seq": 118428089,
+   "period": 1,
+   "clock": "4:42",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes layup"
+  },
+  {
+   "seq": 118430051,
+   "period": 2,
+   "clock": "16:40",
+   "scorer": "5105410",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Guillermo Diaz Graham makes layup"
+  },
+  {
+   "seq": 118430510,
+   "period": 2,
+   "clock": "15:14",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Legend Smiley makes 8-foot hook shot"
+  },
+  {
+   "seq": 118430699,
+   "period": 2,
+   "clock": "13:37",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mookie Cook makes layup"
+  },
+  {
+   "seq": 118431332,
+   "period": 2,
+   "clock": "9:55",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
+  },
+  {
+   "seq": 118431795,
+   "period": 2,
+   "clock": "7:10",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Mookie Cook makes 2-foot dunk"
+  },
+  {
+   "seq": 118432496,
+   "period": 2,
+   "clock": "0:05",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes layup"
   }
  ]
 }

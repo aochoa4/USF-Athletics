@@ -19,7 +19,10 @@
   "pbp_made_fg": 26,
   "assist_text_without_ids": 0,
   "name_checks": 12,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 14,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5174624": {
@@ -308,6 +311,134 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Legend Smiley makes 24-foot three point jumper (Junjie Wang assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 117053063,
+   "period": 1,
+   "clock": "18:42",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
+  },
+  {
+   "seq": 117053280,
+   "period": 1,
+   "clock": "16:36",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 24-foot three point jumper"
+  },
+  {
+   "seq": 117055209,
+   "period": 1,
+   "clock": "1:34",
+   "scorer": "4702764",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Vukasin Masic makes 27-foot three point jumper"
+  },
+  {
+   "seq": 117055237,
+   "period": 1,
+   "clock": "1:06",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
+  },
+  {
+   "seq": 117056248,
+   "period": 2,
+   "clock": "15:54",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 25-foot three pointer"
+  },
+  {
+   "seq": 117056274,
+   "period": 2,
+   "clock": "14:39",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 19-foot pullup jump shot"
+  },
+  {
+   "seq": 117056332,
+   "period": 2,
+   "clock": "14:02",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 25-foot three pointer"
+  },
+  {
+   "seq": 117056508,
+   "period": 2,
+   "clock": "8:04",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Legend Smiley makes 18-foot pullup jump shot"
+  },
+  {
+   "seq": 117056534,
+   "period": 2,
+   "clock": "6:44",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 21-foot pullup jump shot"
+  },
+  {
+   "seq": 117056565,
+   "period": 2,
+   "clock": "5:30",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Legend Smiley makes layup"
+  },
+  {
+   "seq": 117056671,
+   "period": 2,
+   "clock": "2:50",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes layup"
+  },
+  {
+   "seq": 117056672,
+   "period": 2,
+   "clock": "1:34",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV makes driving layup"
+  },
+  {
+   "seq": 117056797,
+   "period": 3,
+   "clock": "3:29",
+   "scorer": "5037875",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 26-foot three pointer"
+  },
+  {
+   "seq": 117056973,
+   "period": 4,
+   "clock": "2:49",
+   "scorer": "5101799",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Legend Smiley makes 27-foot three pointer"
   }
  ]
 }

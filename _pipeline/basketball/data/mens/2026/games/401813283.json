@@ -19,7 +19,10 @@
   "pbp_made_fg": 29,
   "assist_text_without_ids": 0,
   "name_checks": 16,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 13,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5105410": {
@@ -348,6 +351,125 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Mookie Cook makes layup (David Fuchs assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 116297608,
+   "period": 1,
+   "clock": "13:15",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 13-foot pullup jump shot"
+  },
+  {
+   "seq": 116298713,
+   "period": 1,
+   "clock": "9:17",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "David Fuchs makes 0-foot tip in layup"
+  },
+  {
+   "seq": 116299002,
+   "period": 1,
+   "clock": "8:19",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 8-foot jumper"
+  },
+  {
+   "seq": 116299830,
+   "period": 1,
+   "clock": "4:14",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 26-foot three point step back jumpshot"
+  },
+  {
+   "seq": 116300307,
+   "period": 1,
+   "clock": "2:20",
+   "scorer": "4683767",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Mookie Cook makes 24-foot three pointer"
+  },
+  {
+   "seq": 116300551,
+   "period": 1,
+   "clock": "1:04",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Legend Smiley makes 0-foot tip in layup"
+  },
+  {
+   "seq": 116303020,
+   "period": 2,
+   "clock": "11:55",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
+  },
+  {
+   "seq": 116303309,
+   "period": 2,
+   "clock": "10:41",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mookie Cook makes driving layup"
+  },
+  {
+   "seq": 116303795,
+   "period": 2,
+   "clock": "7:42",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Tyrone Riley IV makes 2-foot dunk"
+  },
+  {
+   "seq": 116304015,
+   "period": 2,
+   "clock": "7:06",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Legend Smiley makes 16-foot step back jumpshot"
+  },
+  {
+   "seq": 116304546,
+   "period": 2,
+   "clock": "2:56",
+   "scorer": "5241062",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Veniamin Abosi makes 6-foot turnaround jump shot"
+  },
+  {
+   "seq": 116304593,
+   "period": 2,
+   "clock": "2:15",
+   "scorer": "5313125",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Weilun Zhao makes driving layup"
+  },
+  {
+   "seq": 116304665,
+   "period": 2,
+   "clock": "1:40",
+   "scorer": "5241062",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Veniamin Abosi makes 0-foot tip in layup"
   }
  ]
 }

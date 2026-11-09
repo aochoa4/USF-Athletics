@@ -12,6 +12,7 @@ import csv
 import json
 import math
 import os
+import re
 import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -107,8 +108,18 @@ def add_metrics(games):
     return rows
 
 
-def season_block(league, season):
-    sdir = os.path.join(DATA_DIR, league, season)
+def shot_code(a):
+    """The shot an assist set up: 3 a three, r at the rim (layup, dunk, tip), j a two-point jumper.
+    ESPN's shot type says LayUpShot, DunkShot or JumpShot; the play text backs it up."""
+    if a.get("points") == 3:
+        return "3"
+    kind, text = (a.get("shot") or "").lower(), (a.get("text") or "").lower()
+    return "r" if ("layup" in kind or "dunk" in kind or re.search(r"layup|dunk|tip|alley", text)) else "j"
+
+
+def season_block(league, season, data_dir=DATA_DIR, shots=False):
+    """One season for the page. shots=True adds g['sh'], one shot code per assisted basket (the WCC pages)."""
+    sdir = os.path.join(data_dir, league, season)
     gdir = os.path.join(sdir, "games")
     games = []
     for fn in os.listdir(gdir):
@@ -139,6 +150,11 @@ def season_block(league, season):
             # [passer, scorer, points, period] for every assisted basket, in play order
             "a": [[a["passer"], a["scorer"], a["points"], a["period"]] for a in g["assists"]],
         })
+        if shots:
+            out[-1]["sh"] = "".join(shot_code(a) for a in g["assists"])
+            # made baskets with no assist, [scorer, shot code]; game files fetched before 2026-11-09 have none
+            if "unassisted" in g:
+                out[-1]["u"] = [[u["scorer"], shot_code(u)] for u in g["unassisted"]]
 
     upcoming = []
     spath = os.path.join(sdir, "season.json")

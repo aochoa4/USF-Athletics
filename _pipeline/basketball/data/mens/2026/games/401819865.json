@@ -19,7 +19,10 @@
   "pbp_made_fg": 26,
   "assist_text_without_ids": 0,
   "name_checks": 11,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 15,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -298,6 +301,143 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Tyrone Riley IV made Layup. Assisted by David Fuchs."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 115085537,
+   "period": 1,
+   "clock": "18:23",
+   "scorer": "5105410",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Guillermo Diaz Graham made Layup."
+  },
+  {
+   "seq": 115085624,
+   "period": 1,
+   "clock": "17:25",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Jumper."
+  },
+  {
+   "seq": 115085719,
+   "period": 1,
+   "clock": "16:11",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley made Layup."
+  },
+  {
+   "seq": 115086058,
+   "period": 1,
+   "clock": "12:06",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Vukasin Masic made Jumper."
+  },
+  {
+   "seq": 115086237,
+   "period": 1,
+   "clock": "9:32",
+   "scorer": "5105410",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Guillermo Diaz Graham made Layup."
+  },
+  {
+   "seq": 115086337,
+   "period": 1,
+   "clock": "8:20",
+   "scorer": "5176426",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Junjie Wang made Three Point Jumper."
+  },
+  {
+   "seq": 115086528,
+   "period": 1,
+   "clock": "5:37",
+   "scorer": "5037875",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV made Three Point Jumper."
+  },
+  {
+   "seq": 115086554,
+   "period": 1,
+   "clock": "5:03",
+   "scorer": "5101799",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Legend Smiley made Three Point Jumper."
+  },
+  {
+   "seq": 115086775,
+   "period": 1,
+   "clock": "0:48",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang made Layup."
+  },
+  {
+   "seq": 115087989,
+   "period": 2,
+   "clock": "14:49",
+   "scorer": "4433208",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Saba Gigiberia made Jumper."
+  },
+  {
+   "seq": 115088074,
+   "period": 2,
+   "clock": "14:00",
+   "scorer": "5241062",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Veniamin Abosi made Jumper."
+  },
+  {
+   "seq": 115088201,
+   "period": 2,
+   "clock": "12:53",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Mookie Cook made Jumper."
+  },
+  {
+   "seq": 115088965,
+   "period": 2,
+   "clock": "7:09",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "David Fuchs made Two Point Tip Shot."
+  },
+  {
+   "seq": 115089465,
+   "period": 2,
+   "clock": "3:05",
+   "scorer": "5241062",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Veniamin Abosi made Three Point Jumper."
+  },
+  {
+   "seq": 115089642,
+   "period": 2,
+   "clock": "0:43",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley made Layup."
   }
  ]
 }

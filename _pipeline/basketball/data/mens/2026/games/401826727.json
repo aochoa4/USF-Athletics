@@ -19,7 +19,10 @@
   "pbp_made_fg": 25,
   "assist_text_without_ids": 0,
   "name_checks": 13,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 12,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -318,6 +321,116 @@
    "points": 2,
    "shot": "DunkShot",
    "text": "Mookie Cook made Dunk. Assisted by Saba Gigiberia."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 114421525,
+   "period": 1,
+   "clock": "16:32",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Jumper."
+  },
+  {
+   "seq": 114421931,
+   "period": 1,
+   "clock": "15:16",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley made Layup."
+  },
+  {
+   "seq": 114422567,
+   "period": 1,
+   "clock": "12:15",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic made Layup."
+  },
+  {
+   "seq": 114423152,
+   "period": 1,
+   "clock": "9:14",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Jumper."
+  },
+  {
+   "seq": 114423220,
+   "period": 1,
+   "clock": "8:23",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Junjie Wang made Two Point Tip Shot."
+  },
+  {
+   "seq": 114424110,
+   "period": 1,
+   "clock": "4:01",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Three Point Jumper."
+  },
+  {
+   "seq": 114424648,
+   "period": 1,
+   "clock": "1:22",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang made Layup."
+  },
+  {
+   "seq": 114425494,
+   "period": 2,
+   "clock": "18:02",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley made Layup."
+  },
+  {
+   "seq": 114425529,
+   "period": 2,
+   "clock": "17:37",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Tyrone Riley IV made Layup."
+  },
+  {
+   "seq": 114426445,
+   "period": 2,
+   "clock": "7:35",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "David Fuchs made Jumper."
+  },
+  {
+   "seq": 114426610,
+   "period": 2,
+   "clock": "3:13",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Jumper."
+  },
+  {
+   "seq": 114426726,
+   "period": 2,
+   "clock": "1:18",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley made Three Point Jumper."
   }
  ]
 }

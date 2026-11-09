@@ -19,7 +19,10 @@
   "pbp_made_fg": 30,
   "assist_text_without_ids": 0,
   "name_checks": 24,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 6,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -406,6 +409,62 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Aina Cargol makes 24-foot three point jumper (Noelia Mourino assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 119009820,
+   "period": 1,
+   "clock": "4:53",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 119011855,
+   "period": 2,
+   "clock": "8:33",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Candy Edokpaigbe makes 7-foot turnaround jump shot"
+  },
+  {
+   "seq": 119015528,
+   "period": 3,
+   "clock": "9:12",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Natasa Tausova makes layup"
+  },
+  {
+   "seq": 119015961,
+   "period": 3,
+   "clock": "5:58",
+   "scorer": "5314915",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Aina Cargol makes 24-foot three point jumper"
+  },
+  {
+   "seq": 119015975,
+   "period": 3,
+   "clock": "5:39",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 119016805,
+   "period": 3,
+   "clock": "3:26",
+   "scorer": "4705117",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Sol Castro makes layup"
   }
  ]
 }

@@ -19,7 +19,10 @@
   "pbp_made_fg": 27,
   "assist_text_without_ids": 0,
   "name_checks": 17,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 10,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -358,6 +361,98 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "David Fuchs makes layup (Legend Smiley assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 120073985,
+   "period": 1,
+   "clock": "17:12",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 120074095,
+   "period": 1,
+   "clock": "15:55",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "David Fuchs makes 10-foot floating jump shot"
+  },
+  {
+   "seq": 120075005,
+   "period": 1,
+   "clock": "12:07",
+   "scorer": "4433208",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Saba Gigiberia makes layup"
+  },
+  {
+   "seq": 120075806,
+   "period": 1,
+   "clock": "9:16",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "David Fuchs makes 0-foot tip in dunk"
+  },
+  {
+   "seq": 120076578,
+   "period": 1,
+   "clock": "5:29",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 120080278,
+   "period": 2,
+   "clock": "15:19",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 120081395,
+   "period": 2,
+   "clock": "10:10",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes layup"
+  },
+  {
+   "seq": 120081595,
+   "period": 2,
+   "clock": "8:50",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 12-foot floating jump shot"
+  },
+  {
+   "seq": 120081922,
+   "period": 2,
+   "clock": "8:15",
+   "scorer": "5101799",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Legend Smiley makes driving layup"
+  },
+  {
+   "seq": 120083122,
+   "period": 2,
+   "clock": "3:18",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 8-foot floating jump shot"
   }
  ]
 }

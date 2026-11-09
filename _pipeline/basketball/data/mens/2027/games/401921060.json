@@ -19,7 +19,10 @@
   "pbp_made_fg": 24,
   "assist_text_without_ids": 0,
   "name_checks": 13,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 11,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5458442": {
@@ -329,6 +332,107 @@
    "points": 2,
    "shot": "DunkShot",
    "text": "Ismaila Diagne makes 1-foot dunk (Dylan Bordon assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 120603112,
+   "period": 1,
+   "clock": "18:18",
+   "scorer": "5458444",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Dylan Bordon makes driving layup"
+  },
+  {
+   "seq": 120605985,
+   "period": 1,
+   "clock": "14:17",
+   "scorer": "5458444",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Dylan Bordon makes driving layup"
+  },
+  {
+   "seq": 120606429,
+   "period": 1,
+   "clock": "13:18",
+   "scorer": "5458446",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Jaylen Hunter-Coleman makes 0-foot tip in layup"
+  },
+  {
+   "seq": 120611550,
+   "period": 1,
+   "clock": "7:16",
+   "scorer": "5458444",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Dylan Bordon makes driving layup"
+  },
+  {
+   "seq": 120616507,
+   "period": 1,
+   "clock": "2:30",
+   "scorer": "5458444",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Dylan Bordon makes 14-foot step back jumpshot"
+  },
+  {
+   "seq": 120623214,
+   "period": 2,
+   "clock": "15:27",
+   "scorer": "5458444",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Dylan Bordon makes 13-foot jumper"
+  },
+  {
+   "seq": 120623917,
+   "period": 2,
+   "clock": "13:48",
+   "scorer": "5240587",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Ismaila Diagne makes 0-foot tip in layup"
+  },
+  {
+   "seq": 120625529,
+   "period": 2,
+   "clock": "9:14",
+   "scorer": "5458442",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Gustav Knudsen makes driving layup"
+  },
+  {
+   "seq": 120626869,
+   "period": 2,
+   "clock": "4:07",
+   "scorer": "5458444",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Dylan Bordon makes driving layup"
+  },
+  {
+   "seq": 120626881,
+   "period": 2,
+   "clock": "3:44",
+   "scorer": "5458448",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Andrew Hilman makes driving layup"
+  },
+  {
+   "seq": 120627202,
+   "period": 2,
+   "clock": "3:02",
+   "scorer": "5458442",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Gustav Knudsen makes 9-foot turnaround jump shot"
   }
  ]
 }

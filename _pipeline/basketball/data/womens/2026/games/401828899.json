@@ -19,7 +19,10 @@
   "pbp_made_fg": 30,
   "assist_text_without_ids": 0,
   "name_checks": 22,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 8,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -386,6 +389,80 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Noelia Mourino makes layup (Candy Edokpaigbe assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 119657634,
+   "period": 1,
+   "clock": "8:44",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 119669579,
+   "period": 2,
+   "clock": "9:42",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Meghan McIntyre makes 0-foot tip in layup"
+  },
+  {
+   "seq": 119671046,
+   "period": 2,
+   "clock": "7:55",
+   "scorer": "5178411",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Michelle Ugwah makes layup"
+  },
+  {
+   "seq": 119671837,
+   "period": 2,
+   "clock": "6:48",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 119674900,
+   "period": 2,
+   "clock": "4:36",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Noelia Mourino makes 6-foot hook shot"
+  },
+  {
+   "seq": 119696651,
+   "period": 4,
+   "clock": "7:33",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mara Neira makes layup"
+  },
+  {
+   "seq": 119700226,
+   "period": 4,
+   "clock": "1:43",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 119707475,
+   "period": 5,
+   "clock": "1:08",
+   "scorer": "5178411",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Michelle Ugwah makes layup"
   }
  ]
 }

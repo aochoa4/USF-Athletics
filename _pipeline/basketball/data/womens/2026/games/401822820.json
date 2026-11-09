@@ -19,7 +19,10 @@
   "pbp_made_fg": 27,
   "assist_text_without_ids": 0,
   "name_checks": 12,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 15,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -286,6 +289,143 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Mara Neira made Layup. Assisted by Natasa Tausova."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 115488369,
+   "period": 1,
+   "clock": "7:54",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourio made Layup."
+  },
+  {
+   "seq": 115488377,
+   "period": 1,
+   "clock": "7:18",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 115488567,
+   "period": 1,
+   "clock": "4:48",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 115488636,
+   "period": 1,
+   "clock": "3:36",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Candy Edokpaigbe made Jumper."
+  },
+  {
+   "seq": 115488652,
+   "period": 1,
+   "clock": "2:46",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 115488711,
+   "period": 1,
+   "clock": "2:00",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Noelia Mourio made Jumper."
+  },
+  {
+   "seq": 115488722,
+   "period": 1,
+   "clock": "1:42",
+   "scorer": "5178456",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Nevaeh Ferrara Horne made Layup."
+  },
+  {
+   "seq": 115488902,
+   "period": 2,
+   "clock": "9:02",
+   "scorer": "5178456",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Nevaeh Ferrara Horne made Layup."
+  },
+  {
+   "seq": 115489321,
+   "period": 2,
+   "clock": "3:12",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol made Layup."
+  },
+  {
+   "seq": 115490605,
+   "period": 3,
+   "clock": "4:59",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Aina Cargol made Two Point Tip Shot."
+  },
+  {
+   "seq": 115490701,
+   "period": 3,
+   "clock": "4:25",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Noelia Mourio made Two Point Tip Shot."
+  },
+  {
+   "seq": 115491152,
+   "period": 3,
+   "clock": "3:31",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Meghan McIntyre made Layup."
+  },
+  {
+   "seq": 115494843,
+   "period": 4,
+   "clock": "3:08",
+   "scorer": "4899726",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Olivia Williams made Jumper."
+  },
+  {
+   "seq": 115495559,
+   "period": 4,
+   "clock": "1:25",
+   "scorer": "5178456",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Nevaeh Ferrara Horne made Jumper."
+  },
+  {
+   "seq": 115495794,
+   "period": 4,
+   "clock": "0:20",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Meghan McIntyre made Layup."
   }
  ]
 }

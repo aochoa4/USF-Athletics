@@ -19,7 +19,10 @@
   "pbp_made_fg": 22,
   "assist_text_without_ids": 0,
   "name_checks": 14,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 8,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -306,6 +309,80 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Mara Neira makes 23-foot three point jumper (Aina Cargol assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 119569823,
+   "period": 1,
+   "clock": "5:33",
+   "scorer": "4705117",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Sol Castro makes layup"
+  },
+  {
+   "seq": 119572191,
+   "period": 1,
+   "clock": "1:33",
+   "scorer": "4899726",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Olivia Williams makes layup"
+  },
+  {
+   "seq": 119572961,
+   "period": 1,
+   "clock": "0:04",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 119581910,
+   "period": 3,
+   "clock": "6:36",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mara Neira makes driving layup"
+  },
+  {
+   "seq": 119582476,
+   "period": 3,
+   "clock": "4:56",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 119582666,
+   "period": 3,
+   "clock": "4:00",
+   "scorer": "4899726",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Olivia Williams makes 0-foot tip in layup"
+  },
+  {
+   "seq": 119585948,
+   "period": 4,
+   "clock": "8:02",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mara Neira makes driving layup"
+  },
+  {
+   "seq": 119589577,
+   "period": 4,
+   "clock": "0:15",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
   }
  ]
 }

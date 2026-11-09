@@ -19,7 +19,10 @@
   "pbp_made_fg": 28,
   "assist_text_without_ids": 0,
   "name_checks": 17,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 11,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -358,6 +361,107 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Vukasin Masic makes 24-foot three point jumper (Ryan Beasley assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 119055775,
+   "period": 1,
+   "clock": "18:45",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes layup"
+  },
+  {
+   "seq": 119055983,
+   "period": 1,
+   "clock": "17:14",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
+  },
+  {
+   "seq": 119056979,
+   "period": 1,
+   "clock": "8:21",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes driving layup"
+  },
+  {
+   "seq": 119057031,
+   "period": 1,
+   "clock": "7:55",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes driving layup"
+  },
+  {
+   "seq": 119058050,
+   "period": 1,
+   "clock": "0:39",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
+  },
+  {
+   "seq": 119058799,
+   "period": 2,
+   "clock": "18:59",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic makes driving layup"
+  },
+  {
+   "seq": 119059129,
+   "period": 2,
+   "clock": "14:30",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
+  },
+  {
+   "seq": 119060010,
+   "period": 2,
+   "clock": "5:59",
+   "scorer": "5105410",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Guillermo Diaz Graham makes driving layup"
+  },
+  {
+   "seq": 119060162,
+   "period": 2,
+   "clock": "4:00",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 119060176,
+   "period": 2,
+   "clock": "3:32",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
+  },
+  {
+   "seq": 119060198,
+   "period": 2,
+   "clock": "2:51",
+   "scorer": "5105410",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Guillermo Diaz Graham makes driving layup"
   }
  ]
 }

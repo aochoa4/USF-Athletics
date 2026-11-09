@@ -19,7 +19,10 @@
   "pbp_made_fg": 25,
   "assist_text_without_ids": 0,
   "name_checks": 17,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 8,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -336,6 +339,80 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Aina Cargol makes layup (Paula Tirado assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 116011966,
+   "period": 1,
+   "clock": "8:57",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol makes driving layup"
+  },
+  {
+   "seq": 116012761,
+   "period": 1,
+   "clock": "6:15",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourio makes layup"
+  },
+  {
+   "seq": 116015466,
+   "period": 1,
+   "clock": "1:41",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 116021165,
+   "period": 2,
+   "clock": "1:38",
+   "scorer": "5107763",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Mara Neira makes 24-foot three point step back jumpshot"
+  },
+  {
+   "seq": 116027014,
+   "period": 3,
+   "clock": "5:47",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Natasa Tausova makes layup"
+  },
+  {
+   "seq": 116038709,
+   "period": 4,
+   "clock": "3:06",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol makes driving layup"
+  },
+  {
+   "seq": 116038952,
+   "period": 4,
+   "clock": "2:47",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Natasa Tausova makes layup"
+  },
+  {
+   "seq": 116040121,
+   "period": 4,
+   "clock": "0:51",
+   "scorer": "5174314",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Paula Tirado makes 8-foot jumper"
   }
  ]
 }

@@ -19,7 +19,10 @@
   "pbp_made_fg": 16,
   "assist_text_without_ids": 0,
   "name_checks": 11,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 5,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -276,6 +279,53 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Nevaeh Ferrara Horne made Layup. Assisted by Meghan McIntyre."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 115560850,
+   "period": 1,
+   "clock": "1:27",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 115562962,
+   "period": 2,
+   "clock": "5:26",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
+  },
+  {
+   "seq": 115564277,
+   "period": 2,
+   "clock": "4:28",
+   "scorer": "4705117",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Sol Castro made Layup."
+  },
+  {
+   "seq": 115575481,
+   "period": 3,
+   "clock": "3:07",
+   "scorer": "4899726",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Olivia Williams made Layup."
+  },
+  {
+   "seq": 115578309,
+   "period": 4,
+   "clock": "8:36",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe made Layup."
   }
  ]
 }

@@ -19,7 +19,10 @@
   "pbp_made_fg": 21,
   "assist_text_without_ids": 0,
   "name_checks": 7,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 14,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5174624": {
@@ -258,6 +261,134 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "David Fuchs makes layup (Vukasin Masic assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 116523017,
+   "period": 1,
+   "clock": "19:04",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "David Fuchs makes 8-foot hook shot"
+  },
+  {
+   "seq": 116524613,
+   "period": 1,
+   "clock": "11:14",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes layup"
+  },
+  {
+   "seq": 116524704,
+   "period": 1,
+   "clock": "10:13",
+   "scorer": "5105410",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Guillermo Diaz Graham makes layup"
+  },
+  {
+   "seq": 116525665,
+   "period": 1,
+   "clock": "6:26",
+   "scorer": "5241062",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Veniamin Abosi makes 35-foot three point jumper"
+  },
+  {
+   "seq": 116525700,
+   "period": 1,
+   "clock": "6:05",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 15-foot pullup jump shot"
+  },
+  {
+   "seq": 116525864,
+   "period": 1,
+   "clock": "5:27",
+   "scorer": "5241062",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Veniamin Abosi makes driving layup"
+  },
+  {
+   "seq": 116527136,
+   "period": 1,
+   "clock": "0:03",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 20-foot pullup jump shot"
+  },
+  {
+   "seq": 116527915,
+   "period": 2,
+   "clock": "18:54",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 15-foot pullup jump shot"
+  },
+  {
+   "seq": 116528109,
+   "period": 2,
+   "clock": "16:58",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic makes driving layup"
+  },
+  {
+   "seq": 116528611,
+   "period": 2,
+   "clock": "13:06",
+   "scorer": "5174624",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "David Fuchs makes driving layup"
+  },
+  {
+   "seq": 116528793,
+   "period": 2,
+   "clock": "11:12",
+   "scorer": "5176426",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Junjie Wang makes 25-foot three point jumper"
+  },
+  {
+   "seq": 116529696,
+   "period": 2,
+   "clock": "3:19",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 21-foot pullup jump shot"
+  },
+  {
+   "seq": 116529700,
+   "period": 2,
+   "clock": "3:08",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes layup"
+  },
+  {
+   "seq": 116529903,
+   "period": 2,
+   "clock": "1:27",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ryan Beasley makes driving layup"
   }
  ]
 }

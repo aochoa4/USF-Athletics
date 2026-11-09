@@ -19,7 +19,10 @@
   "pbp_made_fg": 22,
   "assist_text_without_ids": 0,
   "name_checks": 17,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 5,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -358,6 +361,53 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Legend Smiley made Three Point Jumper. Assisted by Tyrone Riley IV."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 115445985,
+   "period": 1,
+   "clock": "14:33",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Mookie Cook made Dunk."
+  },
+  {
+   "seq": 115446962,
+   "period": 1,
+   "clock": "11:16",
+   "scorer": "4433208",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Saba Gigiberia made Layup."
+  },
+  {
+   "seq": 115452686,
+   "period": 2,
+   "clock": "11:25",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic made Layup."
+  },
+  {
+   "seq": 115453108,
+   "period": 2,
+   "clock": "7:36",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Mookie Cook made Two Point Tip Shot."
+  },
+  {
+   "seq": 115453354,
+   "period": 2,
+   "clock": "5:04",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Vukasin Masic made Jumper."
   }
  ]
 }

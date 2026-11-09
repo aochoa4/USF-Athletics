@@ -19,7 +19,10 @@
   "pbp_made_fg": 23,
   "assist_text_without_ids": 0,
   "name_checks": 8,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 15,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -246,6 +249,143 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Olivia Williams makes layup (Aina Cargol assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 118221166,
+   "period": 1,
+   "clock": "7:31",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Natasa Tausova makes 7-foot hook shot"
+  },
+  {
+   "seq": 118221832,
+   "period": 1,
+   "clock": "6:13",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Candy Edokpaigbe makes 8-foot pullup jump shot"
+  },
+  {
+   "seq": 118224766,
+   "period": 1,
+   "clock": "2:26",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 118227964,
+   "period": 2,
+   "clock": "9:00",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Noelia Mourino makes 9-foot jumper"
+  },
+  {
+   "seq": 118230283,
+   "period": 2,
+   "clock": "6:08",
+   "scorer": "5178411",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Michelle Ugwah makes 13-foot turnaround jump shot"
+  },
+  {
+   "seq": 118231074,
+   "period": 2,
+   "clock": "4:24",
+   "scorer": "4899726",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Olivia Williams makes layup"
+  },
+  {
+   "seq": 118231581,
+   "period": 2,
+   "clock": "3:15",
+   "scorer": "4899726",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Olivia Williams makes 14-foot jumper"
+  },
+  {
+   "seq": 118232298,
+   "period": 2,
+   "clock": "1:43",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 118237985,
+   "period": 3,
+   "clock": "7:29",
+   "scorer": "4899726",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Olivia Williams makes 19-foot jumper"
+  },
+  {
+   "seq": 118240972,
+   "period": 3,
+   "clock": "3:42",
+   "scorer": "5178411",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Michelle Ugwah makes driving layup"
+  },
+  {
+   "seq": 118241380,
+   "period": 3,
+   "clock": "2:50",
+   "scorer": "5178411",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Michelle Ugwah makes 9-foot jumper"
+  },
+  {
+   "seq": 118245109,
+   "period": 4,
+   "clock": "9:30",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Natasa Tausova makes driving layup"
+  },
+  {
+   "seq": 118245277,
+   "period": 4,
+   "clock": "8:59",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 118247116,
+   "period": 4,
+   "clock": "5:12",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 118249492,
+   "period": 4,
+   "clock": "2:41",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
   }
  ]
 }

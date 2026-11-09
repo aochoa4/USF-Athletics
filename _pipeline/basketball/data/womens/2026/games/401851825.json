@@ -19,7 +19,10 @@
   "pbp_made_fg": 32,
   "assist_text_without_ids": 0,
   "name_checks": 23,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 9,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -396,6 +399,89 @@
    "points": 2,
    "shot": "JumpShot",
    "text": "Noelia Mourino makes 11-foot hook shot (Nevaeh Ferrara Horne assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 120053553,
+   "period": 1,
+   "clock": "9:37",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Aina Cargol makes 11-foot floating jump shot"
+  },
+  {
+   "seq": 120054536,
+   "period": 1,
+   "clock": "7:26",
+   "scorer": "5314915",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Aina Cargol makes 24-foot three pointer"
+  },
+  {
+   "seq": 120055512,
+   "period": 1,
+   "clock": "2:28",
+   "scorer": "5178411",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Michelle Ugwah makes 9-foot hook shot"
+  },
+  {
+   "seq": 120055555,
+   "period": 1,
+   "clock": "2:02",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol makes driving layup"
+  },
+  {
+   "seq": 120055758,
+   "period": 1,
+   "clock": "0:07",
+   "scorer": "5314914",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Meghan McIntyre makes 7-foot floating jump shot"
+  },
+  {
+   "seq": 120060105,
+   "period": 3,
+   "clock": "9:35",
+   "scorer": "5241784",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Candy Edokpaigbe makes 26-foot three point step back jumpshot"
+  },
+  {
+   "seq": 120062599,
+   "period": 4,
+   "clock": "9:19",
+   "scorer": "5178411",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Michelle Ugwah makes 5-foot hook shot"
+  },
+  {
+   "seq": 120062664,
+   "period": 4,
+   "clock": "8:39",
+   "scorer": "5314917",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Natasa Tausova makes 25-foot three point jumper"
+  },
+  {
+   "seq": 120064191,
+   "period": 4,
+   "clock": "2:14",
+   "scorer": "5107763",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Mara Neira makes 7-foot floating jump shot"
   }
  ]
 }

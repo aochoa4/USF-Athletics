@@ -19,7 +19,10 @@
   "pbp_made_fg": 22,
   "assist_text_without_ids": 0,
   "name_checks": 12,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 10,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -308,6 +311,98 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Vukasin Masic makes 24-foot three point jumper (Ryan Beasley assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 117945493,
+   "period": 1,
+   "clock": "8:05",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Vukasin Masic makes 17-foot pullup jump shot"
+  },
+  {
+   "seq": 117945591,
+   "period": 1,
+   "clock": "7:02",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 25-foot three pointer"
+  },
+  {
+   "seq": 117947395,
+   "period": 1,
+   "clock": "1:37",
+   "scorer": "4702764",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Vukasin Masic makes layup"
+  },
+  {
+   "seq": 117948389,
+   "period": 2,
+   "clock": "19:05",
+   "scorer": "5176425",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 24-foot three pointer"
+  },
+  {
+   "seq": 117948518,
+   "period": 2,
+   "clock": "17:56",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 5-foot jumper"
+  },
+  {
+   "seq": 117948821,
+   "period": 2,
+   "clock": "14:52",
+   "scorer": "5176425",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ryan Beasley makes 20-foot step back jumpshot"
+  },
+  {
+   "seq": 117949397,
+   "period": 2,
+   "clock": "11:45",
+   "scorer": "5241062",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Veniamin Abosi makes layup"
+  },
+  {
+   "seq": 117949701,
+   "period": 2,
+   "clock": "9:47",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Mookie Cook makes layup"
+  },
+  {
+   "seq": 117949789,
+   "period": 2,
+   "clock": "9:10",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Tyrone Riley IV makes 6-foot jumper"
+  },
+  {
+   "seq": 117949987,
+   "period": 2,
+   "clock": "7:42",
+   "scorer": "5176426",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Junjie Wang makes layup"
   }
  ]
 }

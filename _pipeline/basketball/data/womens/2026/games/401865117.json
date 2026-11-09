@@ -19,7 +19,10 @@
   "pbp_made_fg": 21,
   "assist_text_without_ids": 0,
   "name_checks": 12,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 9,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5314917": {
@@ -286,6 +289,89 @@
    "points": 3,
    "shot": "JumpShot",
    "text": "Candy Edokpaigbe makes 26-foot three point jumper (Noelia Mourino assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 120359420,
+   "period": 1,
+   "clock": "6:38",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 120359528,
+   "period": 1,
+   "clock": "4:28",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Natasa Tausova makes 17-foot pullup jump shot"
+  },
+  {
+   "seq": 120359979,
+   "period": 2,
+   "clock": "6:52",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Candy Edokpaigbe makes 7-foot turnaround jump shot"
+  },
+  {
+   "seq": 120361382,
+   "period": 3,
+   "clock": "2:49",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 120361770,
+   "period": 4,
+   "clock": "9:16",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Candy Edokpaigbe makes 16-foot pullup jump shot"
+  },
+  {
+   "seq": 120361835,
+   "period": 4,
+   "clock": "7:59",
+   "scorer": "5178456",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Nevaeh Ferrara Horne makes layup"
+  },
+  {
+   "seq": 120362013,
+   "period": 4,
+   "clock": "5:43",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol makes layup"
+  },
+  {
+   "seq": 120362229,
+   "period": 4,
+   "clock": "3:24",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourino makes layup"
+  },
+  {
+   "seq": 120362483,
+   "period": 4,
+   "clock": "3:21",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
   }
  ]
 }

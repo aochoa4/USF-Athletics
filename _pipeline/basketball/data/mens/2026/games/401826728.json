@@ -19,7 +19,10 @@
   "pbp_made_fg": 25,
   "assist_text_without_ids": 0,
   "name_checks": 21,
-  "name_mismatches": []
+  "name_mismatches": [],
+  "pbp_unassisted": 4,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0
  },
  "roster": {
   "5176426": {
@@ -398,6 +401,44 @@
    "points": 2,
    "shot": "LayUpShot",
    "text": "Guillermo Diaz Graham made Layup. Assisted by Junjie Wang."
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 114575051,
+   "period": 1,
+   "clock": "18:46",
+   "scorer": "4683767",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Mookie Cook made Two Point Tip Shot."
+  },
+  {
+   "seq": 114575465,
+   "period": 1,
+   "clock": "15:55",
+   "scorer": "5037875",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Tyrone Riley IV made Dunk."
+  },
+  {
+   "seq": 114578760,
+   "period": 1,
+   "clock": "4:08",
+   "scorer": "5313125",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Weilun Zhao made Layup."
+  },
+  {
+   "seq": 114582713,
+   "period": 2,
+   "clock": "9:07",
+   "scorer": "4433208",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Saba Gigiberia made Jumper."
   }
  ]
 }
