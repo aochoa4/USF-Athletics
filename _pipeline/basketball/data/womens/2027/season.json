@@ -2,7 +2,7 @@
  "league": "womens",
  "season": 2027,
  "team_id": "2539",
- "fetched": "2026-11-06 00:29",
+ "fetched": "2026-11-09 19:42",
  "games": [
   {
    "event_id": "401917685",
@@ -23,22 +23,39 @@
     "pbp_made_fg": 32,
     "assist_text_without_ids": 0,
     "name_checks": 21,
+    "name_mismatches": [],
+    "pbp_unassisted": 11,
+    "unassisted_matched_by_name": 0,
+    "unassisted_without_scorer": 0
+   }
+  },
+  {
+   "event_id": "401906064",
+   "date": "2026-11-08",
+   "opponent": "California Golden Bears",
+   "opponent_short": "California",
+   "site": "N",
+   "conference_game": false,
+   "season_type": 2,
+   "usf_score": 65,
+   "opp_score": 87,
+   "result": "L",
+   "check": {
+    "box_assists": 15,
+    "pbp_assists": 14,
+    "matches_box": false,
+    "box_fgm": 26,
+    "pbp_made_fg": 26,
+    "pbp_unassisted": 11,
+    "unassisted_matched_by_name": 0,
+    "unassisted_without_scorer": 0,
+    "assist_text_without_ids": 1,
+    "name_checks": 14,
     "name_mismatches": []
    }
   }
  ],
  "upcoming": [
-  {
-   "event_id": "401906064",
-   "date": "2026-11-08",
-   "tip_utc": "2026-11-08T19:00Z",
-   "opponent": "California Golden Bears",
-   "opponent_short": "California",
-   "opponent_id": "25",
-   "site": "N",
-   "conference_game": false,
-   "season_type": 2
-  },
   {
    "event_id": "401917698",
    "date": "2026-11-11",
@@ -58,6 +75,17 @@
    "opponent_short": "UC San Diego",
    "opponent_id": "28",
    "site": "A",
+   "conference_game": false,
+   "season_type": 2
+  },
+  {
+   "event_id": "401917710",
+   "date": "2026-11-19",
+   "tip_utc": "2026-11-20T02:00Z",
+   "opponent": "Long Beach State Beach",
+   "opponent_short": "Long Beach St",
+   "opponent_id": "299",
+   "site": "H",
    "conference_game": false,
    "season_type": 2
   }
