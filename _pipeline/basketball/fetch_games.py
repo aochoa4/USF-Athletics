@@ -103,6 +103,79 @@ def text_names(text):
     return None, None
 
 
+def clock_seconds(display):
+    """ESPN's game clock ("6:52", "45.3") as seconds left in the period."""
+    v = (display or "0").strip()
+    if ":" in v:
+        m, s = v.split(":", 1)
+        return int(m) * 60 + float(s)
+    return float(v)
+
+
+def period_lengths(plays, league=None):
+    """Seconds in each period played: women four 10-minute quarters, men two 20-minute halves, overtimes 5 minutes.
+    Without a league, period 1's longest clock decides."""
+    n = max(((p.get("period") or {}).get("number") or 1 for p in plays), default=0)
+    regulation = {"womens": (4, 600), "mens": (2, 1200)}.get(league)
+    if not regulation:
+        top = max((clock_seconds((p.get("clock") or {}).get("displayValue")) for p in plays
+                   if (p.get("period") or {}).get("number") == 1), default=1200)
+        regulation = (4, 600) if top <= 600 else (2, 1200)
+    k, length = regulation
+    return [length if i <= k else 300 for i in range(1, n + 1)]
+
+
+def on_court(summary, roster, league=None):
+    """Who was on the floor when, for the fetched team: each player's [start, end] spans in seconds from tip-off,
+    rebuilt from the box score's five starters and ESPN's substitution plays, with checks against box-score minutes."""
+    plays = summary.get("plays", [])
+    lengths = period_lengths(plays, league)
+    starts = [sum(lengths[:i]) for i in range(len(lengths))]
+    game_end = float(sum(lengths))
+    at = lambda p: starts[((p.get("period") or {}).get("number") or 1) - 1] + lengths[((p.get("period") or {}).get("number") or 1) - 1] \
+        - clock_seconds((p.get("clock") or {}).get("displayValue"))
+    on = {pid for pid, r in roster.items() if r.get("starter")}
+    spans = {pid: [[0.0, None]] for pid in on}
+    sizes, anomalies = [(0.0, len(on))], 0   # lineup size after each substitution, to time any spell without five
+    for p in plays:
+        if (p.get("type") or {}).get("text") != "Substitution" or (p.get("team") or {}).get("id") != TEAM_ID:
+            continue
+        ids = [x.get("athlete", {}).get("id") for x in p.get("participants", [])]
+        text, now = (p.get("text") or "").lower(), at(p)
+        pid = ids[0] if ids and ids[0] else None
+        if pid and "subbing in" in text and pid not in on:
+            on.add(pid)
+            spans.setdefault(pid, []).append([now, None])
+        elif pid and "subbing out" in text and pid in on:
+            on.discard(pid)
+            spans[pid][-1][1] = now
+        else:  # no id, unknown wording, or a sub that contradicts the lineup: counted, not applied
+            anomalies += 1
+            continue
+        sizes.append((now, len(on)))
+    for pid in on:
+        spans[pid][-1][1] = game_end
+
+    # time with other than five on the floor, from the lineup size left standing at each moment
+    final = {}
+    for when, size in sizes:
+        final[when] = size
+    moments = sorted(final.items()) + [(game_end, None)]
+    not_five = sum(b[0] - a[0] for a, b in zip(moments, moments[1:]) if a[1] != 5)
+
+    devs = []
+    for pid, r in roster.items():
+        played = sum(e - s for s, e in spans.get(pid, [])) / 60
+        mins = r.get("minutes")
+        if mins is not None and str(mins).isdigit():
+            devs.append(played - int(mins))
+    court = {pid: [[round(s, 1), round(e, 1)] for s, e in sp if e > s] for pid, sp in spans.items()}
+    check = {"court_periods": lengths, "court_sub_anomalies": anomalies, "court_not_five_seconds": round(not_five, 1),
+             "court_minutes_max_dev": round(max((abs(d) for d in devs), default=0.0), 2),
+             "court_players_off_over_1min": sum(1 for d in devs if abs(d) > 1.0)}
+    return {pid: sp for pid, sp in court.items() if sp}, check
+
+
 def named_entry(name, **flags):
     """A roster row built from the play text, for a player the box score lists without an id."""
     parts = name.split()
@@ -111,7 +184,7 @@ def named_entry(name, **flags):
             "dnp": False, **flags}
 
 
-def parse_game(meta, summary):
+def parse_game(meta, summary, league=None):
     box = summary.get("boxscore", {})
 
     roster = {}
@@ -156,6 +229,8 @@ def parse_game(meta, summary):
         for pid, name in zip(ids, text_names(p.get("text", ""))):
             if pid and name and pid not in roster:
                 roster[pid] = named_entry(name.strip(), no_box_score_id=True)
+
+    court, court_check = on_court(summary, roster, league)
 
     assists, unassisted, unattributed, name_checks, name_misses, made_fg = [], [], 0, 0, [], 0
     unassisted_by_name, unassisted_no_scorer = 0, 0
@@ -235,6 +310,7 @@ def parse_game(meta, summary):
             "pbp_unassisted": len(unassisted),
             "unassisted_matched_by_name": unassisted_by_name,
             "unassisted_without_scorer": unassisted_no_scorer,
+            **court_check,
             "assist_text_without_ids": unattributed,
             "name_checks": name_checks,
             "name_mismatches": name_misses,
@@ -242,6 +318,7 @@ def parse_game(meta, summary):
         "roster": roster,
         "assists": assists,
         "unassisted": unassisted,
+        "court": court,
     }
 
 
@@ -266,7 +343,7 @@ def main():
         if os.path.exists(path) and not args.refresh:
             continue
         summary = get_json(f"{BASE.format(league=args.league)}/summary?event={meta['event_id']}")
-        game = parse_game(meta, summary)
+        game = parse_game(meta, summary, args.league)
         with open(path, "w", encoding="utf-8") as f:
             json.dump(game, f, ensure_ascii=False, indent=1)
         new += 1
