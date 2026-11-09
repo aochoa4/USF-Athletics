@@ -2,9 +2,10 @@
 
     python -I build_page.py
 
-Reads data/<league>/<season>/games/*.json and season.json, writes page/assist_network.html
-from page/assist_network_template.html. The output is one self-contained file: publish it
-as the private artifact, or drop it into a static site as is.
+Reads data/<league>/<season>/games/*.json and season.json and fills page/assist_network_template.html.
+Writes the public team pages under --site-dir (basketball/index.html, womensbasketball/index.html), each
+one self-contained file, plus page/assist_network.html (both teams, for local checks) and
+page/metrics_by_game.csv. The staff and WCC pages come from build_staff.py and build_scout.py.
 """
 
 import argparse
