@@ -2,7 +2,7 @@
  "league": "mens",
  "season": 2027,
  "team_id": "2539",
- "fetched": "2026-11-07 18:59",
+ "fetched": "2026-11-11 21:30",
  "games": [
   {
    "event_id": "401921060",
@@ -23,7 +23,18 @@
     "pbp_made_fg": 24,
     "assist_text_without_ids": 0,
     "name_checks": 13,
-    "name_mismatches": []
+    "name_mismatches": [],
+    "pbp_unassisted": 11,
+    "unassisted_matched_by_name": 0,
+    "unassisted_without_scorer": 0,
+    "court_periods": [
+     1200,
+     1200
+    ],
+    "court_sub_anomalies": 0,
+    "court_not_five_seconds": 0,
+    "court_minutes_max_dev": 0.47,
+    "court_players_off_over_1min": 0
    }
   },
   {
@@ -45,26 +56,59 @@
     "pbp_made_fg": 24,
     "assist_text_without_ids": 0,
     "name_checks": 13,
+    "name_mismatches": [],
+    "pbp_unassisted": 11,
+    "unassisted_matched_by_name": 0,
+    "unassisted_without_scorer": 0,
+    "court_periods": [
+     1200,
+     1200
+    ],
+    "court_sub_anomalies": 0,
+    "court_not_five_seconds": 0,
+    "court_minutes_max_dev": 0.88,
+    "court_players_off_over_1min": 0
+   }
+  },
+  {
+   "event_id": "401921062",
+   "date": "2026-11-10",
+   "opponent": "Montana Grizzlies",
+   "opponent_short": "Montana",
+   "site": "H",
+   "conference_game": false,
+   "season_type": 2,
+   "usf_score": 63,
+   "opp_score": 58,
+   "result": "W",
+   "check": {
+    "box_assists": 7,
+    "pbp_assists": 7,
+    "matches_box": true,
+    "box_fgm": 21,
+    "pbp_made_fg": 21,
+    "pbp_unassisted": 14,
+    "unassisted_matched_by_name": 0,
+    "unassisted_without_scorer": 0,
+    "court_periods": [
+     1200,
+     1200
+    ],
+    "court_sub_anomalies": 0,
+    "court_not_five_seconds": 0,
+    "court_minutes_max_dev": 0.47,
+    "court_players_off_over_1min": 0,
+    "assist_text_without_ids": 0,
+    "name_checks": 7,
     "name_mismatches": []
    }
   }
  ],
  "upcoming": [
   {
-   "event_id": "401921062",
-   "date": "2026-11-10",
-   "tip_utc": "2026-11-11T03:00Z",
-   "opponent": "Montana Grizzlies",
-   "opponent_short": "Montana",
-   "opponent_id": "149",
-   "site": "H",
-   "conference_game": false,
-   "season_type": 2
-  },
-  {
    "event_id": "401921063",
-   "date": "2026-11-13",
-   "tip_utc": "2026-11-14T05:00Z",
+   "date": "2026-11-14",
+   "tip_utc": "2026-11-15T00:00Z",
    "opponent": "Portland State Vikings",
    "opponent_short": "Portland St",
    "opponent_id": "2502",
@@ -80,6 +124,17 @@
    "opponent_short": "Louisiana",
    "opponent_id": "309",
    "site": "H",
+   "conference_game": false,
+   "season_type": 2
+  },
+  {
+   "event_id": "401911457",
+   "date": "2026-11-23",
+   "tip_utc": "2026-11-23T21:30Z",
+   "opponent": "Nevada Wolf Pack",
+   "opponent_short": "Nevada",
+   "opponent_id": "2440",
+   "site": "N",
    "conference_game": false,
    "season_type": 2
   }
