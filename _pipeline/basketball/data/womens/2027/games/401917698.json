@@ -1,0 +1,628 @@
+{
+ "event_id": "401917698",
+ "date": "2026-11-11",
+ "tip_utc": "2026-11-11T23:00Z",
+ "opponent": "Air Force Falcons",
+ "opponent_short": "Air Force",
+ "opponent_id": "2005",
+ "site": "A",
+ "conference_game": false,
+ "season_type": 2,
+ "usf_score": 77,
+ "opp_score": 70,
+ "result": "W",
+ "check": {
+  "box_assists": 17,
+  "pbp_assists": 16,
+  "matches_box": false,
+  "box_fgm": 28,
+  "pbp_made_fg": 28,
+  "pbp_unassisted": 11,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0,
+  "court_periods": [
+   600,
+   600,
+   600,
+   600
+  ],
+  "court_sub_anomalies": 4,
+  "court_not_five_seconds": 432.0,
+  "court_minutes_max_dev": 0.53,
+  "court_players_off_over_1min": 0,
+  "assist_text_without_ids": 1,
+  "name_checks": 16,
+  "name_mismatches": []
+ },
+ "roster": {
+  "5314913": {
+   "name": "Noelia Mourino",
+   "short": "N. Mouriño",
+   "jersey": "3",
+   "position": "F",
+   "starter": true,
+   "minutes": "8",
+   "points": "4",
+   "assists": "0",
+   "dnp": false
+  },
+  "5462165": {
+   "name": "Maria Burliga",
+   "short": "M. Burliga",
+   "jersey": "33",
+   "position": "G",
+   "starter": true,
+   "minutes": "21",
+   "points": "7",
+   "assists": "0",
+   "dnp": false
+  },
+  "5462163": {
+   "name": "Savi Mi",
+   "short": "S. Mi",
+   "jersey": "10",
+   "position": "G",
+   "starter": true,
+   "minutes": "24",
+   "points": "12",
+   "assists": "5",
+   "dnp": false
+  },
+  "5314915": {
+   "name": "Aina Cargol",
+   "short": "A. Cargol",
+   "jersey": "9",
+   "position": "G",
+   "starter": true,
+   "minutes": "37",
+   "points": "15",
+   "assists": "6",
+   "dnp": false
+  },
+  "5241784": {
+   "name": "Candy Edokpaigbe",
+   "short": "C. Edokpaigbe",
+   "jersey": "23",
+   "position": "G",
+   "starter": true,
+   "minutes": "33",
+   "points": "16",
+   "assists": "2",
+   "dnp": false
+  },
+  "5314917": {
+   "name": "Natasa Tausova",
+   "short": "N. Taušova",
+   "jersey": "12",
+   "position": "F",
+   "starter": false,
+   "minutes": "15",
+   "points": "5",
+   "assists": "0",
+   "dnp": false
+  },
+  "5107990": {
+   "name": "Lucia Yenes",
+   "short": "L. Yenes",
+   "jersey": "24",
+   "position": "F",
+   "starter": false,
+   "minutes": "24",
+   "points": "9",
+   "assists": "3",
+   "dnp": false
+  },
+  "5462162": {
+   "name": "Emilie Beggs",
+   "short": "E. Beggs",
+   "jersey": "8",
+   "position": "G",
+   "starter": false,
+   "minutes": "18",
+   "points": "7",
+   "assists": "1",
+   "dnp": false
+  },
+  "5312407": {
+   "name": "Jayda Queeley",
+   "short": "J. Queeley",
+   "jersey": "5",
+   "position": "G",
+   "starter": false,
+   "minutes": "2",
+   "points": "0",
+   "assists": "0",
+   "dnp": false
+  },
+  "5178181": {
+   "name": "Keiryn McGuff",
+   "short": "K. McGuff",
+   "jersey": "14",
+   "position": "G",
+   "starter": false,
+   "minutes": "11",
+   "points": "0",
+   "assists": "0",
+   "dnp": false
+  },
+  "5462159": {
+   "name": "Ines Babaya",
+   "short": "I. Babaya",
+   "jersey": "0",
+   "position": "G",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  },
+  "5174314": {
+   "name": "Paula Tirado",
+   "short": "P. Tirado",
+   "jersey": "22",
+   "position": "G",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  }
+ },
+ "assists": [
+  {
+   "seq": 121130146,
+   "period": 1,
+   "clock": "8:02",
+   "passer": "5462163",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup (Savi Mi assists)"
+  },
+  {
+   "seq": 121130584,
+   "period": 1,
+   "clock": "7:00",
+   "passer": "5107990",
+   "scorer": "5314915",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Aina Cargol makes 24-foot three point jumper (Lucia Yenes assists)"
+  },
+  {
+   "seq": 121131502,
+   "period": 1,
+   "clock": "3:52",
+   "passer": "5462163",
+   "scorer": "5107990",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Lucia Yenes makes layup (Savi Mi assists)"
+  },
+  {
+   "seq": 121132186,
+   "period": 1,
+   "clock": "3:30",
+   "passer": "5462163",
+   "scorer": "5314913",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Noelia Mourino makes layup (Savi Mi assists)"
+  },
+  {
+   "seq": 121133158,
+   "period": 1,
+   "clock": "1:07",
+   "passer": "5462162",
+   "scorer": "5314915",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Aina Cargol makes 23-foot three point jumper (Emilie Beggs assists)"
+  },
+  {
+   "seq": 121133327,
+   "period": 1,
+   "clock": "0:36",
+   "passer": "5314915",
+   "scorer": "5462165",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Maria Burliga makes layup (Aina Cargol assists)"
+  },
+  {
+   "seq": 121134139,
+   "period": 2,
+   "clock": "9:42",
+   "passer": "5241784",
+   "scorer": "5107990",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Lucia Yenes makes layup (Candy Edokpaigbe assists)"
+  },
+  {
+   "seq": 121136142,
+   "period": 2,
+   "clock": "1:23",
+   "passer": "5241784",
+   "scorer": "5462163",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Savi Mi makes 24-foot three point jumper (Candy Edokpaigbe assists)"
+  },
+  {
+   "seq": 121147270,
+   "period": 3,
+   "clock": "7:35",
+   "passer": "5462163",
+   "scorer": "5314915",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Aina Cargol makes layup (Savi Mi assists)"
+  },
+  {
+   "seq": 121148265,
+   "period": 3,
+   "clock": "5:50",
+   "passer": "5314915",
+   "scorer": "5462163",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Savi Mi makes layup (Aina Cargol assists)"
+  },
+  {
+   "seq": 121154151,
+   "period": 3,
+   "clock": "0:55",
+   "passer": "5314915",
+   "scorer": "5462165",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Maria Burliga makes layup (Aina Cargol assists)"
+  },
+  {
+   "seq": 121156387,
+   "period": 4,
+   "clock": "9:44",
+   "passer": "5462163",
+   "scorer": "5462165",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Maria Burliga makes 3-foot turnaround jump shot (Savi Mi assists)"
+  },
+  {
+   "seq": 121157195,
+   "period": 4,
+   "clock": "8:02",
+   "passer": "5107990",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup (Lucia Yenes assists)"
+  },
+  {
+   "seq": 121159421,
+   "period": 4,
+   "clock": "5:28",
+   "passer": "5314915",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup (Aina Cargol assists)"
+  },
+  {
+   "seq": 121159656,
+   "period": 4,
+   "clock": "4:45",
+   "passer": "5314915",
+   "scorer": "5314917",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Natasa Tausova makes 22-foot three point jumper (Aina Cargol assists)"
+  },
+  {
+   "seq": 121159843,
+   "period": 4,
+   "clock": "4:24",
+   "passer": "5107990",
+   "scorer": "5314917",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Natasa Tausova makes layup (Lucia Yenes assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 121131336,
+   "period": 1,
+   "clock": "4:31",
+   "scorer": "5462162",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Emilie Beggs makes 0-foot tip in layup"
+  },
+  {
+   "seq": 121134568,
+   "period": 2,
+   "clock": "7:27",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes driving layup"
+  },
+  {
+   "seq": 121135194,
+   "period": 2,
+   "clock": "4:27",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  },
+  {
+   "seq": 121135408,
+   "period": 2,
+   "clock": "3:22",
+   "scorer": "5462163",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Savi Mi makes driving layup"
+  },
+  {
+   "seq": 121146635,
+   "period": 3,
+   "clock": "8:19",
+   "scorer": "5462163",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Savi Mi makes 24-foot three point jumper"
+  },
+  {
+   "seq": 121148001,
+   "period": 3,
+   "clock": "6:29",
+   "scorer": "5462163",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Savi Mi makes 14-foot pullup jump shot"
+  },
+  {
+   "seq": 121148661,
+   "period": 3,
+   "clock": "4:53",
+   "scorer": "5107990",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Lucia Yenes makes 0-foot tip in layup"
+  },
+  {
+   "seq": 121148869,
+   "period": 3,
+   "clock": "4:30",
+   "scorer": "5314915",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Aina Cargol makes 25-foot three point jumper"
+  },
+  {
+   "seq": 121154800,
+   "period": 3,
+   "clock": "0:15",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Candy Edokpaigbe makes 6-foot jumper"
+  },
+  {
+   "seq": 121156892,
+   "period": 4,
+   "clock": "8:34",
+   "scorer": "5107990",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Lucia Yenes makes 0-foot tip in layup"
+  },
+  {
+   "seq": 121159910,
+   "period": 4,
+   "clock": "4:06",
+   "scorer": "5241784",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Candy Edokpaigbe makes layup"
+  }
+ ],
+ "court": {
+  "5314913": [
+   [
+    0.0,
+    102.0
+   ],
+   [
+    384.0,
+    475.0
+   ],
+   [
+    1200.0,
+    1320.0
+   ],
+   [
+    1537.0,
+    1628.0
+   ],
+   [
+    2155.0,
+    2224.0
+   ]
+  ],
+  "5241784": [
+   [
+    0.0,
+    384.0
+   ],
+   [
+    475.0,
+    773.0
+   ],
+   [
+    848.0,
+    1320.0
+   ],
+   [
+    1594.0,
+    2400.0
+   ]
+  ],
+  "5314915": [
+   [
+    0.0,
+    278.0
+   ],
+   [
+    384.0,
+    960.0
+   ],
+   [
+    1028.0,
+    1594.0
+   ],
+   [
+    1628.0,
+    2400.0
+   ]
+  ],
+  "5462165": [
+   [
+    0.0,
+    102.0
+   ],
+   [
+    475.0,
+    679.0
+   ],
+   [
+    815.0,
+    1379.0
+   ],
+   [
+    1537.0,
+    1905.0
+   ],
+   [
+    2155.0,
+    2201.0
+   ]
+  ],
+  "5462163": [
+   [
+    0.0,
+    217.0
+   ],
+   [
+    278.0,
+    495.0
+   ],
+   [
+    773.0,
+    848.0
+   ],
+   [
+    960.0,
+    1537.0
+   ],
+   [
+    1628.0,
+    1955.0
+   ]
+  ],
+  "5314917": [
+   [
+    102.0,
+    278.0
+   ],
+   [
+    679.0,
+    815.0
+   ],
+   [
+    1379.0,
+    1537.0
+   ],
+   [
+    1905.0,
+    2155.0
+   ],
+   [
+    2201.0,
+    2400.0
+   ]
+  ],
+  "5107990": [
+   [
+    102.0,
+    384.0
+   ],
+   [
+    551.0,
+    891.0
+   ],
+   [
+    1102.0,
+    1200.0
+   ],
+   [
+    1320.0,
+    1537.0
+   ],
+   [
+    1628.0,
+    2155.0
+   ]
+  ],
+  "5312407": [
+   [
+    217.0,
+    278.0
+   ],
+   [
+    1537.0,
+    1628.0
+   ]
+  ],
+  "5462162": [
+   [
+    278.0,
+    475.0
+   ],
+   [
+    495.0,
+    600.0
+   ],
+   [
+    815.0,
+    1028.0
+   ],
+   [
+    1537.0,
+    1628.0
+   ],
+   [
+    1955.0,
+    2400.0
+   ]
+  ],
+  "5178181": [
+   [
+    278.0,
+    551.0
+   ],
+   [
+    891.0,
+    1102.0
+   ],
+   [
+    2224.0,
+    2400.0
+   ]
+  ]
+ }
+}

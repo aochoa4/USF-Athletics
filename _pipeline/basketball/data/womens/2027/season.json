@@ -2,7 +2,7 @@
  "league": "womens",
  "season": 2027,
  "team_id": "2539",
- "fetched": "2026-11-09 19:42",
+ "fetched": "2026-11-12 21:33",
  "games": [
   {
    "event_id": "401917685",
@@ -26,7 +26,18 @@
     "name_mismatches": [],
     "pbp_unassisted": 11,
     "unassisted_matched_by_name": 0,
-    "unassisted_without_scorer": 0
+    "unassisted_without_scorer": 0,
+    "court_periods": [
+     600,
+     600,
+     600,
+     600,
+     300
+    ],
+    "court_sub_anomalies": 0,
+    "court_not_five_seconds": 0,
+    "court_minutes_max_dev": 0.48,
+    "court_players_off_over_1min": 0
    }
   },
   {
@@ -51,22 +62,56 @@
     "unassisted_without_scorer": 0,
     "assist_text_without_ids": 1,
     "name_checks": 14,
+    "name_mismatches": [],
+    "court_periods": [
+     600,
+     600,
+     600,
+     600
+    ],
+    "court_sub_anomalies": 1,
+    "court_not_five_seconds": 301.0,
+    "court_minutes_max_dev": 0.45,
+    "court_players_off_over_1min": 0
+   }
+  },
+  {
+   "event_id": "401917698",
+   "date": "2026-11-11",
+   "opponent": "Air Force Falcons",
+   "opponent_short": "Air Force",
+   "site": "A",
+   "conference_game": false,
+   "season_type": 2,
+   "usf_score": 77,
+   "opp_score": 70,
+   "result": "W",
+   "check": {
+    "box_assists": 17,
+    "pbp_assists": 16,
+    "matches_box": false,
+    "box_fgm": 28,
+    "pbp_made_fg": 28,
+    "pbp_unassisted": 11,
+    "unassisted_matched_by_name": 0,
+    "unassisted_without_scorer": 0,
+    "court_periods": [
+     600,
+     600,
+     600,
+     600
+    ],
+    "court_sub_anomalies": 4,
+    "court_not_five_seconds": 432.0,
+    "court_minutes_max_dev": 0.53,
+    "court_players_off_over_1min": 0,
+    "assist_text_without_ids": 1,
+    "name_checks": 16,
     "name_mismatches": []
    }
   }
  ],
  "upcoming": [
-  {
-   "event_id": "401917698",
-   "date": "2026-11-11",
-   "tip_utc": "2026-11-11T23:00Z",
-   "opponent": "Air Force Falcons",
-   "opponent_short": "Air Force",
-   "opponent_id": "2005",
-   "site": "A",
-   "conference_game": false,
-   "season_type": 2
-  },
   {
    "event_id": "401917706",
    "date": "2026-11-15",
@@ -85,6 +130,17 @@
    "opponent": "Long Beach State Beach",
    "opponent_short": "Long Beach St",
    "opponent_id": "299",
+   "site": "H",
+   "conference_game": false,
+   "season_type": 2
+  },
+  {
+   "event_id": "401917717",
+   "date": "2026-11-22",
+   "tip_utc": "2026-11-22T22:00Z",
+   "opponent": "Cal State Bakersfield Roadrunners",
+   "opponent_short": "Bakersfield",
+   "opponent_id": "2934",
    "site": "H",
    "conference_game": false,
    "season_type": 2
