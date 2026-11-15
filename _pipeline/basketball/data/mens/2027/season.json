@@ -2,7 +2,7 @@
  "league": "mens",
  "season": 2027,
  "team_id": "2539",
- "fetched": "2026-11-11 21:30",
+ "fetched": "2026-11-15 19:55",
  "games": [
   {
    "event_id": "401921060",
@@ -102,24 +102,46 @@
     "name_checks": 7,
     "name_mismatches": []
    }
+  },
+  {
+   "event_id": "401921063",
+   "date": "2026-11-14",
+   "opponent": "Portland State Vikings",
+   "opponent_short": "Portland St",
+   "site": "H",
+   "conference_game": false,
+   "season_type": 2,
+   "usf_score": 68,
+   "opp_score": 84,
+   "result": "L",
+   "check": {
+    "box_assists": 10,
+    "pbp_assists": 10,
+    "matches_box": true,
+    "box_fgm": 20,
+    "pbp_made_fg": 20,
+    "pbp_unassisted": 10,
+    "unassisted_matched_by_name": 0,
+    "unassisted_without_scorer": 0,
+    "court_periods": [
+     1200,
+     1200
+    ],
+    "court_sub_anomalies": 0,
+    "court_not_five_seconds": 0,
+    "court_minutes_max_dev": 0.5,
+    "court_players_off_over_1min": 0,
+    "assist_text_without_ids": 0,
+    "name_checks": 10,
+    "name_mismatches": []
+   }
   }
  ],
  "upcoming": [
   {
-   "event_id": "401921063",
-   "date": "2026-11-14",
-   "tip_utc": "2026-11-15T00:00Z",
-   "opponent": "Portland State Vikings",
-   "opponent_short": "Portland St",
-   "opponent_id": "2502",
-   "site": "H",
-   "conference_game": false,
-   "season_type": 2
-  },
-  {
    "event_id": "401921064",
-   "date": "2026-11-17",
-   "tip_utc": "2026-11-18T05:00Z",
+   "date": "2026-11-18",
+   "tip_utc": "2026-11-19T03:00Z",
    "opponent": "Louisiana Ragin' Cajuns",
    "opponent_short": "Louisiana",
    "opponent_id": "309",
@@ -134,6 +156,17 @@
    "opponent": "Nevada Wolf Pack",
    "opponent_short": "Nevada",
    "opponent_id": "2440",
+   "site": "N",
+   "conference_game": false,
+   "season_type": 2
+  },
+  {
+   "event_id": "401917676",
+   "date": "2026-11-24",
+   "tip_utc": "2026-11-24T19:00Z",
+   "opponent": "Oregon State Beavers",
+   "opponent_short": "Oregon St",
+   "opponent_id": "204",
    "site": "N",
    "conference_game": false,
    "season_type": 2

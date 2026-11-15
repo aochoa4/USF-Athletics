@@ -1,0 +1,629 @@
+{
+ "event_id": "401921063",
+ "date": "2026-11-14",
+ "tip_utc": "2026-11-15T00:00Z",
+ "opponent": "Portland State Vikings",
+ "opponent_short": "Portland St",
+ "opponent_id": "2502",
+ "site": "H",
+ "conference_game": false,
+ "season_type": 2,
+ "usf_score": 68,
+ "opp_score": 84,
+ "result": "L",
+ "check": {
+  "box_assists": 10,
+  "pbp_assists": 10,
+  "matches_box": true,
+  "box_fgm": 20,
+  "pbp_made_fg": 20,
+  "pbp_unassisted": 10,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0,
+  "court_periods": [
+   1200,
+   1200
+  ],
+  "court_sub_anomalies": 0,
+  "court_not_five_seconds": 0,
+  "court_minutes_max_dev": 0.5,
+  "court_players_off_over_1min": 0,
+  "assist_text_without_ids": 0,
+  "name_checks": 10,
+  "name_mismatches": []
+ },
+ "roster": {
+  "5458442": {
+   "name": "Gustav Knudsen",
+   "short": "G. Knudsen",
+   "jersey": "8",
+   "position": "F",
+   "starter": true,
+   "minutes": "36",
+   "points": "25",
+   "assists": "1",
+   "dnp": false
+  },
+  "5177054": {
+   "name": "Ben Oosterbaan",
+   "short": "B. Oosterbaan",
+   "jersey": "12",
+   "position": "F",
+   "starter": true,
+   "minutes": "33",
+   "points": "4",
+   "assists": "0",
+   "dnp": false
+  },
+  "5240587": {
+   "name": "Ismaila Diagne",
+   "short": "I. Diagne",
+   "jersey": "44",
+   "position": "C",
+   "starter": true,
+   "minutes": "19",
+   "points": "12",
+   "assists": "0",
+   "dnp": false
+  },
+  "5458444": {
+   "name": "Dylan Bordon",
+   "short": "D. Bordon",
+   "jersey": "16",
+   "position": "G",
+   "starter": true,
+   "minutes": "24",
+   "points": "0",
+   "assists": "4",
+   "dnp": false
+  },
+  "5458441": {
+   "name": "Yoav Vitlem",
+   "short": "Y. Vitlem",
+   "jersey": "7",
+   "position": "G",
+   "starter": true,
+   "minutes": "32",
+   "points": "24",
+   "assists": "4",
+   "dnp": false
+  },
+  "5458445": {
+   "name": "Jaroslavs Pihtovs",
+   "short": "J. Pihtovs",
+   "jersey": "21",
+   "position": "F",
+   "starter": false,
+   "minutes": "8",
+   "points": "0",
+   "assists": "1",
+   "dnp": false
+  },
+  "5144575": {
+   "name": "Adam Tyson",
+   "short": "A. Tyson",
+   "jersey": "0",
+   "position": "F",
+   "starter": false,
+   "minutes": "2",
+   "points": "0",
+   "assists": "0",
+   "dnp": false
+  },
+  "4875213": {
+   "name": "Ndewedo Newbury",
+   "short": "N. Newbury",
+   "jersey": "27",
+   "position": "F",
+   "starter": false,
+   "minutes": "11",
+   "points": "2",
+   "assists": "0",
+   "dnp": false
+  },
+  "5458448": {
+   "name": "Andrew Hilman",
+   "short": "A. Hilman",
+   "jersey": "99",
+   "position": "G",
+   "starter": false,
+   "minutes": "12",
+   "points": "1",
+   "assists": "0",
+   "dnp": false
+  },
+  "5458446": {
+   "name": "Jaylen Hunter-Coleman",
+   "short": "J. Hunter-Coleman",
+   "jersey": "23",
+   "position": "G",
+   "starter": false,
+   "minutes": "3",
+   "points": "0",
+   "assists": "0",
+   "dnp": false
+  },
+  "5311501": {
+   "name": "Abdul Bashir",
+   "short": "A. Bashir",
+   "jersey": "5",
+   "position": "G",
+   "starter": false,
+   "minutes": "10",
+   "points": "0",
+   "assists": "0",
+   "dnp": false
+  },
+  "5107971": {
+   "name": "Aidan Braccia",
+   "short": "A. Braccia",
+   "jersey": "2",
+   "position": "G",
+   "starter": false,
+   "minutes": "10",
+   "points": "0",
+   "assists": "0",
+   "dnp": false
+  },
+  "5458447": {
+   "name": "Ziga Daneu",
+   "short": "Z. Daneu",
+   "jersey": "41",
+   "position": "F",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  },
+  "5458443": {
+   "name": "Dashel Wiley",
+   "short": "D. Wiley",
+   "jersey": "13",
+   "position": "F",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  },
+  "5458440": {
+   "name": "Mason Magee",
+   "short": "M. Magee",
+   "jersey": "3",
+   "position": "G",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  },
+  "5458439": {
+   "name": "Wisdom Fode",
+   "short": "W. Fode",
+   "jersey": "1",
+   "position": "G",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  }
+ },
+ "assists": [
+  {
+   "seq": 121354248,
+   "period": 1,
+   "clock": "17:55",
+   "passer": "5458441",
+   "scorer": "5240587",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Ismaila Diagne makes 2-foot dunk (Yoav Vitlem assists)"
+  },
+  {
+   "seq": 121356923,
+   "period": 1,
+   "clock": "9:32",
+   "passer": "5458444",
+   "scorer": "5458442",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Gustav Knudsen makes layup (Dylan Bordon assists)"
+  },
+  {
+   "seq": 121356985,
+   "period": 1,
+   "clock": "8:58",
+   "passer": "5458444",
+   "scorer": "5458442",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Gustav Knudsen makes 25-foot three point jumper (Dylan Bordon assists)"
+  },
+  {
+   "seq": 121358464,
+   "period": 1,
+   "clock": "4:21",
+   "passer": "5458444",
+   "scorer": "5458442",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Gustav Knudsen makes 24-foot three point jumper (Dylan Bordon assists)"
+  },
+  {
+   "seq": 121361046,
+   "period": 2,
+   "clock": "18:55",
+   "passer": "5458441",
+   "scorer": "5458442",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Gustav Knudsen makes 24-foot three point jumper (Yoav Vitlem assists)"
+  },
+  {
+   "seq": 121361517,
+   "period": 2,
+   "clock": "16:18",
+   "passer": "5458444",
+   "scorer": "5458442",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Gustav Knudsen makes 24-foot three point jumper (Dylan Bordon assists)"
+  },
+  {
+   "seq": 121362253,
+   "period": 2,
+   "clock": "14:43",
+   "passer": "5458442",
+   "scorer": "5240587",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ismaila Diagne makes layup (Gustav Knudsen assists)"
+  },
+  {
+   "seq": 121363796,
+   "period": 2,
+   "clock": "9:06",
+   "passer": "5458441",
+   "scorer": "5240587",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ismaila Diagne makes layup (Yoav Vitlem assists)"
+  },
+  {
+   "seq": 121365625,
+   "period": 2,
+   "clock": "4:59",
+   "passer": "5458441",
+   "scorer": "5458442",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Gustav Knudsen makes 26-foot three point jumper (Yoav Vitlem assists)"
+  },
+  {
+   "seq": 121366690,
+   "period": 2,
+   "clock": "0:50",
+   "passer": "5458445",
+   "scorer": "5458441",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Yoav Vitlem makes layup (Jaroslavs Pihtovs assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 121355784,
+   "period": 1,
+   "clock": "12:41",
+   "scorer": "5458441",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Yoav Vitlem makes driving layup"
+  },
+  {
+   "seq": 121359554,
+   "period": 1,
+   "clock": "0:42",
+   "scorer": "5458441",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Yoav Vitlem makes 25-foot three point jumper"
+  },
+  {
+   "seq": 121359585,
+   "period": 1,
+   "clock": "0:02",
+   "scorer": "5458441",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Yoav Vitlem makes driving layup"
+  },
+  {
+   "seq": 121361317,
+   "period": 2,
+   "clock": "17:02",
+   "scorer": "5240587",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ismaila Diagne makes layup"
+  },
+  {
+   "seq": 121362528,
+   "period": 2,
+   "clock": "12:41",
+   "scorer": "5458442",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Gustav Knudsen makes driving layup"
+  },
+  {
+   "seq": 121364173,
+   "period": 2,
+   "clock": "7:49",
+   "scorer": "5240587",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ismaila Diagne makes layup"
+  },
+  {
+   "seq": 121364661,
+   "period": 2,
+   "clock": "7:00",
+   "scorer": "5458441",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Yoav Vitlem makes driving layup"
+  },
+  {
+   "seq": 121364795,
+   "period": 2,
+   "clock": "6:39",
+   "scorer": "5458441",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Yoav Vitlem makes 23-foot three point jumper"
+  },
+  {
+   "seq": 121365409,
+   "period": 2,
+   "clock": "5:25",
+   "scorer": "5458441",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Yoav Vitlem makes driving layup"
+  },
+  {
+   "seq": 121365863,
+   "period": 2,
+   "clock": "4:12",
+   "scorer": "5458441",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Yoav Vitlem makes 15-foot pullup jump shot"
+  }
+ ],
+ "court": {
+  "5240587": [
+   [
+    0.0,
+    253.0
+   ],
+   [
+    379.0,
+    398.0
+   ],
+   [
+    707.0,
+    744.0
+   ],
+   [
+    1200.0,
+    1607.0
+   ],
+   [
+    1838.0,
+    2231.0
+   ],
+   [
+    2253.0,
+    2310.0
+   ]
+  ],
+  "5458441": [
+   [
+    0.0,
+    253.0
+   ],
+   [
+    407.0,
+    791.0
+   ],
+   [
+    818.0,
+    918.0
+   ],
+   [
+    1066.0,
+    1607.0
+   ],
+   [
+    1760.0,
+    2375.0
+   ]
+  ],
+  "5177054": [
+   [
+    0.0,
+    379.0
+   ],
+   [
+    398.0,
+    544.0
+   ],
+   [
+    707.0,
+    880.0
+   ],
+   [
+    918.0,
+    1607.0
+   ],
+   [
+    1760.0,
+    2337.0
+   ]
+  ],
+  "5458444": [
+   [
+    0.0,
+    407.0
+   ],
+   [
+    544.0,
+    818.0
+   ],
+   [
+    918.0,
+    1066.0
+   ],
+   [
+    1200.0,
+    1838.0
+   ]
+  ],
+  "5458442": [
+   [
+    0.0,
+    379.0
+   ],
+   [
+    494.0,
+    1704.0
+   ],
+   [
+    1760.0,
+    2337.0
+   ]
+  ],
+  "4875213": [
+   [
+    253.0,
+    494.0
+   ],
+   [
+    744.0,
+    1032.0
+   ],
+   [
+    1607.0,
+    1760.0
+   ]
+  ],
+  "5458448": [
+   [
+    253.0,
+    707.0
+   ],
+   [
+    880.0,
+    918.0
+   ],
+   [
+    1087.0,
+    1105.0
+   ],
+   [
+    1607.0,
+    1760.0
+   ],
+   [
+    2310.0,
+    2337.0
+   ]
+  ],
+  "5107971": [
+   [
+    379.0,
+    494.0
+   ],
+   [
+    918.0,
+    1087.0
+   ],
+   [
+    1607.0,
+    1838.0
+   ],
+   [
+    2337.0,
+    2400.0
+   ]
+  ],
+  "5458445": [
+   [
+    494.0,
+    707.0
+   ],
+   [
+    1032.0,
+    1200.0
+   ],
+   [
+    1704.0,
+    1760.0
+   ],
+   [
+    2337.0,
+    2400.0
+   ]
+  ],
+  "5458446": [
+   [
+    791.0,
+    918.0
+   ],
+   [
+    2375.0,
+    2400.0
+   ]
+  ],
+  "5311501": [
+   [
+    1105.0,
+    1200.0
+   ],
+   [
+    1838.0,
+    2042.0
+   ],
+   [
+    2064.0,
+    2075.0
+   ],
+   [
+    2085.0,
+    2400.0
+   ]
+  ],
+  "5144575": [
+   [
+    2042.0,
+    2064.0
+   ],
+   [
+    2075.0,
+    2085.0
+   ],
+   [
+    2231.0,
+    2253.0
+   ],
+   [
+    2337.0,
+    2400.0
+   ]
+  ]
+ }
+}
