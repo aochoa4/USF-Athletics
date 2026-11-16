@@ -2,7 +2,7 @@
  "league": "womens",
  "season": 2027,
  "team_id": "2539",
- "fetched": "2026-11-12 21:33",
+ "fetched": "2026-11-16 23:29",
  "games": [
   {
    "event_id": "401917685",
@@ -109,20 +109,44 @@
     "name_checks": 16,
     "name_mismatches": []
    }
-  }
- ],
- "upcoming": [
+  },
   {
    "event_id": "401917706",
    "date": "2026-11-15",
-   "tip_utc": "2026-11-15T21:00Z",
    "opponent": "UC San Diego Tritons",
    "opponent_short": "UC San Diego",
-   "opponent_id": "28",
    "site": "A",
    "conference_game": false,
-   "season_type": 2
-  },
+   "season_type": 2,
+   "usf_score": 79,
+   "opp_score": 54,
+   "result": "W",
+   "check": {
+    "box_assists": 23,
+    "pbp_assists": 23,
+    "matches_box": true,
+    "box_fgm": 31,
+    "pbp_made_fg": 31,
+    "pbp_unassisted": 8,
+    "unassisted_matched_by_name": 0,
+    "unassisted_without_scorer": 0,
+    "court_periods": [
+     600,
+     600,
+     600,
+     600
+    ],
+    "court_sub_anomalies": 1,
+    "court_not_five_seconds": 163.0,
+    "court_minutes_max_dev": 0.72,
+    "court_players_off_over_1min": 0,
+    "assist_text_without_ids": 0,
+    "name_checks": 23,
+    "name_mismatches": []
+   }
+  }
+ ],
+ "upcoming": [
   {
    "event_id": "401917710",
    "date": "2026-11-19",
@@ -141,6 +165,17 @@
    "opponent": "Cal State Bakersfield Roadrunners",
    "opponent_short": "Bakersfield",
    "opponent_id": "2934",
+   "site": "H",
+   "conference_game": false,
+   "season_type": 2
+  },
+  {
+   "event_id": "401917722",
+   "date": "2026-11-25",
+   "tip_utc": "2026-11-25T19:00Z",
+   "opponent": "Cal State East Bay Pioneers",
+   "opponent_short": "Cal State EB",
+   "opponent_id": "499",
    "site": "H",
    "conference_game": false,
    "season_type": 2
