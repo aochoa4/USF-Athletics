@@ -1,0 +1,637 @@
+{
+ "event_id": "401921064",
+ "date": "2026-11-18",
+ "tip_utc": "2026-11-19T03:00Z",
+ "opponent": "Louisiana Ragin' Cajuns",
+ "opponent_short": "Louisiana",
+ "opponent_id": "309",
+ "site": "H",
+ "conference_game": false,
+ "season_type": 2,
+ "usf_score": 77,
+ "opp_score": 56,
+ "result": "W",
+ "check": {
+  "box_assists": 15,
+  "pbp_assists": 15,
+  "matches_box": true,
+  "box_fgm": 25,
+  "pbp_made_fg": 25,
+  "pbp_unassisted": 10,
+  "unassisted_matched_by_name": 0,
+  "unassisted_without_scorer": 0,
+  "court_periods": [
+   1200,
+   1200
+  ],
+  "court_sub_anomalies": 0,
+  "court_not_five_seconds": 0,
+  "court_minutes_max_dev": 0.4,
+  "court_players_off_over_1min": 0,
+  "assist_text_without_ids": 0,
+  "name_checks": 15,
+  "name_mismatches": []
+ },
+ "roster": {
+  "5458442": {
+   "name": "Gustav Knudsen",
+   "short": "G. Knudsen",
+   "jersey": "8",
+   "position": "F",
+   "starter": true,
+   "minutes": "31",
+   "points": "18",
+   "assists": "0",
+   "dnp": false
+  },
+  "5177054": {
+   "name": "Ben Oosterbaan",
+   "short": "B. Oosterbaan",
+   "jersey": "12",
+   "position": "F",
+   "starter": true,
+   "minutes": "30",
+   "points": "15",
+   "assists": "0",
+   "dnp": false
+  },
+  "5240587": {
+   "name": "Ismaila Diagne",
+   "short": "I. Diagne",
+   "jersey": "44",
+   "position": "C",
+   "starter": true,
+   "minutes": "20",
+   "points": "8",
+   "assists": "2",
+   "dnp": false
+  },
+  "5458444": {
+   "name": "Dylan Bordon",
+   "short": "D. Bordon",
+   "jersey": "16",
+   "position": "G",
+   "starter": true,
+   "minutes": "32",
+   "points": "12",
+   "assists": "10",
+   "dnp": false
+  },
+  "5458441": {
+   "name": "Yoav Vitlem",
+   "short": "Y. Vitlem",
+   "jersey": "7",
+   "position": "G",
+   "starter": true,
+   "minutes": "21",
+   "points": "6",
+   "assists": "2",
+   "dnp": false
+  },
+  "5458447": {
+   "name": "Ziga Daneu",
+   "short": "Z. Daneu",
+   "jersey": "41",
+   "position": "F",
+   "starter": false,
+   "minutes": "3",
+   "points": "2",
+   "assists": "0",
+   "dnp": false
+  },
+  "5458445": {
+   "name": "Jaroslavs Pihtovs",
+   "short": "J. Pihtovs",
+   "jersey": "21",
+   "position": "F",
+   "starter": false,
+   "minutes": "7",
+   "points": "0",
+   "assists": "0",
+   "dnp": false
+  },
+  "5144575": {
+   "name": "Adam Tyson",
+   "short": "A. Tyson",
+   "jersey": "0",
+   "position": "F",
+   "starter": false,
+   "minutes": "1",
+   "points": "0",
+   "assists": "0",
+   "dnp": false
+  },
+  "4875213": {
+   "name": "Ndewedo Newbury",
+   "short": "N. Newbury",
+   "jersey": "27",
+   "position": "F",
+   "starter": false,
+   "minutes": "20",
+   "points": "5",
+   "assists": "1",
+   "dnp": false
+  },
+  "5458448": {
+   "name": "Andrew Hilman",
+   "short": "A. Hilman",
+   "jersey": "99",
+   "position": "G",
+   "starter": false,
+   "minutes": "12",
+   "points": "9",
+   "assists": "0",
+   "dnp": false
+  },
+  "5458446": {
+   "name": "Jaylen Hunter-Coleman",
+   "short": "J. Hunter-Coleman",
+   "jersey": "23",
+   "position": "G",
+   "starter": false,
+   "minutes": "6",
+   "points": "0",
+   "assists": "0",
+   "dnp": false
+  },
+  "5311501": {
+   "name": "Abdul Bashir",
+   "short": "A. Bashir",
+   "jersey": "5",
+   "position": "G",
+   "starter": false,
+   "minutes": "4",
+   "points": "0",
+   "assists": "0",
+   "dnp": false
+  },
+  "5107971": {
+   "name": "Aidan Braccia",
+   "short": "A. Braccia",
+   "jersey": "2",
+   "position": "G",
+   "starter": false,
+   "minutes": "13",
+   "points": "2",
+   "assists": "0",
+   "dnp": false
+  },
+  "5458443": {
+   "name": "Dashel Wiley",
+   "short": "D. Wiley",
+   "jersey": "13",
+   "position": "F",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  },
+  "5458440": {
+   "name": "Mason Magee",
+   "short": "M. Magee",
+   "jersey": "3",
+   "position": "G",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  },
+  "5458439": {
+   "name": "Wisdom Fode",
+   "short": "W. Fode",
+   "jersey": "1",
+   "position": "G",
+   "starter": false,
+   "minutes": null,
+   "points": null,
+   "assists": null,
+   "dnp": true
+  }
+ },
+ "assists": [
+  {
+   "seq": 121611438,
+   "period": 1,
+   "clock": "13:44",
+   "passer": "5458444",
+   "scorer": "5240587",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Ismaila Diagne makes 3-foot dunk (Dylan Bordon assists)"
+  },
+  {
+   "seq": 121611520,
+   "period": 1,
+   "clock": "13:06",
+   "passer": "5458444",
+   "scorer": "4875213",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ndewedo Newbury makes 25-foot three point jumper (Dylan Bordon assists)"
+  },
+  {
+   "seq": 121611850,
+   "period": 1,
+   "clock": "11:46",
+   "passer": "5458444",
+   "scorer": "5240587",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ismaila Diagne makes layup (Dylan Bordon assists)"
+  },
+  {
+   "seq": 121612960,
+   "period": 1,
+   "clock": "8:46",
+   "passer": "5240587",
+   "scorer": "5177054",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ben Oosterbaan makes driving layup (Ismaila Diagne assists)"
+  },
+  {
+   "seq": 121613001,
+   "period": 1,
+   "clock": "8:26",
+   "passer": "5458441",
+   "scorer": "5458444",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Dylan Bordon makes layup (Yoav Vitlem assists)"
+  },
+  {
+   "seq": 121613598,
+   "period": 1,
+   "clock": "6:48",
+   "passer": "5458444",
+   "scorer": "4875213",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Ndewedo Newbury makes 3-foot dunk (Dylan Bordon assists)"
+  },
+  {
+   "seq": 121614893,
+   "period": 1,
+   "clock": "3:44",
+   "passer": "5458441",
+   "scorer": "5458448",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Andrew Hilman makes 25-foot three point jumper (Yoav Vitlem assists)"
+  },
+  {
+   "seq": 121615418,
+   "period": 1,
+   "clock": "3:06",
+   "passer": "5458444",
+   "scorer": "5240587",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Ismaila Diagne makes 3-foot alley oop dunk (Dylan Bordon assists)"
+  },
+  {
+   "seq": 121615820,
+   "period": 1,
+   "clock": "0:01",
+   "passer": "5458444",
+   "scorer": "5177054",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ben Oosterbaan makes 24-foot three point jumper (Dylan Bordon assists)"
+  },
+  {
+   "seq": 121617645,
+   "period": 2,
+   "clock": "16:49",
+   "passer": "5458444",
+   "scorer": "5177054",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ben Oosterbaan makes layup (Dylan Bordon assists)"
+  },
+  {
+   "seq": 121617788,
+   "period": 2,
+   "clock": "15:13",
+   "passer": "4875213",
+   "scorer": "5458442",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Gustav Knudsen makes layup (Ndewedo Newbury assists)"
+  },
+  {
+   "seq": 121617922,
+   "period": 2,
+   "clock": "13:42",
+   "passer": "5240587",
+   "scorer": "5458448",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Andrew Hilman makes layup (Ismaila Diagne assists)"
+  },
+  {
+   "seq": 121618014,
+   "period": 2,
+   "clock": "12:43",
+   "passer": "5458444",
+   "scorer": "5458442",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Gustav Knudsen makes 24-foot three point jumper (Dylan Bordon assists)"
+  },
+  {
+   "seq": 121619392,
+   "period": 2,
+   "clock": "6:16",
+   "passer": "5458444",
+   "scorer": "5177054",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Ben Oosterbaan makes 24-foot three point jumper (Dylan Bordon assists)"
+  },
+  {
+   "seq": 121619472,
+   "period": 2,
+   "clock": "5:11",
+   "passer": "5458444",
+   "scorer": "5458442",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Gustav Knudsen makes 25-foot three point jumper (Dylan Bordon assists)"
+  }
+ ],
+ "unassisted": [
+  {
+   "seq": 121610388,
+   "period": 1,
+   "clock": "16:08",
+   "scorer": "5458442",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Gustav Knudsen makes driving layup"
+  },
+  {
+   "seq": 121611093,
+   "period": 1,
+   "clock": "14:09",
+   "scorer": "5177054",
+   "points": 2,
+   "shot": "JumpShot",
+   "text": "Ben Oosterbaan makes 10-foot pullup jump shot"
+  },
+  {
+   "seq": 121612796,
+   "period": 1,
+   "clock": "9:41",
+   "scorer": "5458442",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Gustav Knudsen makes driving layup"
+  },
+  {
+   "seq": 121613530,
+   "period": 1,
+   "clock": "7:23",
+   "scorer": "5458444",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Dylan Bordon makes 28-foot three pointer"
+  },
+  {
+   "seq": 121613914,
+   "period": 1,
+   "clock": "5:44",
+   "scorer": "5458442",
+   "points": 2,
+   "shot": "DunkShot",
+   "text": "Gustav Knudsen makes 3-foot dunk"
+  },
+  {
+   "seq": 121615767,
+   "period": 1,
+   "clock": "1:16",
+   "scorer": "5458441",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Yoav Vitlem makes driving layup"
+  },
+  {
+   "seq": 121617512,
+   "period": 2,
+   "clock": "17:51",
+   "scorer": "5458442",
+   "points": 2,
+   "shot": "TipShot",
+   "text": "Gustav Knudsen makes 0-foot tip in layup"
+  },
+  {
+   "seq": 121619103,
+   "period": 2,
+   "clock": "10:00",
+   "scorer": "5458444",
+   "points": 3,
+   "shot": "JumpShot",
+   "text": "Dylan Bordon makes 25-foot three point step back jumpshot"
+  },
+  {
+   "seq": 121619384,
+   "period": 2,
+   "clock": "6:49",
+   "scorer": "5458444",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Dylan Bordon makes driving layup"
+  },
+  {
+   "seq": 121619924,
+   "period": 2,
+   "clock": "0:32",
+   "scorer": "5458447",
+   "points": 2,
+   "shot": "LayUpShot",
+   "text": "Ziga Daneu makes driving layup"
+  }
+ ],
+ "court": {
+  "5177054": [
+   [
+    0.0,
+    458.0
+   ],
+   [
+    549.0,
+    952.0
+   ],
+   [
+    984.0,
+    1555.0
+   ],
+   [
+    1677.0,
+    1820.0
+   ],
+   [
+    1924.0,
+    2147.0
+   ]
+  ],
+  "5240587": [
+   [
+    0.0,
+    269.0
+   ],
+   [
+    351.0,
+    702.0
+   ],
+   [
+    915.0,
+    1249.0
+   ],
+   [
+    1555.0,
+    1777.0
+   ]
+  ],
+  "5458441": [
+   [
+    0.0,
+    218.0
+   ],
+   [
+    549.0,
+    840.0
+   ],
+   [
+    952.0,
+    1555.0
+   ],
+   [
+    1777.0,
+    1924.0
+   ]
+  ],
+  "5458444": [
+   [
+    0.0,
+    549.0
+   ],
+   [
+    653.0,
+    1677.0
+   ],
+   [
+    1777.0,
+    2147.0
+   ]
+  ],
+  "5458442": [
+   [
+    0.0,
+    351.0
+   ],
+   [
+    458.0,
+    1051.0
+   ],
+   [
+    1200.0,
+    1677.0
+   ],
+   [
+    1777.0,
+    2215.0
+   ]
+  ],
+  "5458448": [
+   [
+    218.0,
+    458.0
+   ],
+   [
+    840.0,
+    984.0
+   ],
+   [
+    1555.0,
+    1677.0
+   ],
+   [
+    1820.0,
+    2047.0
+   ]
+  ],
+  "4875213": [
+   [
+    269.0,
+    549.0
+   ],
+   [
+    702.0,
+    915.0
+   ],
+   [
+    1051.0,
+    1200.0
+   ],
+   [
+    1249.0,
+    1555.0
+   ],
+   [
+    1677.0,
+    1924.0
+   ]
+  ],
+  "5107971": [
+   [
+    458.0,
+    653.0
+   ],
+   [
+    1555.0,
+    1777.0
+   ],
+   [
+    2047.0,
+    2400.0
+   ]
+  ],
+  "5458446": [
+   [
+    1677.0,
+    1777.0
+   ],
+   [
+    2147.0,
+    2400.0
+   ]
+  ],
+  "5458445": [
+   [
+    1924.0,
+    2352.0
+   ]
+  ],
+  "5311501": [
+   [
+    2147.0,
+    2400.0
+   ]
+  ],
+  "5458447": [
+   [
+    2215.0,
+    2400.0
+   ]
+  ],
+  "5144575": [
+   [
+    2352.0,
+    2400.0
+   ]
+  ]
+ }
+}
