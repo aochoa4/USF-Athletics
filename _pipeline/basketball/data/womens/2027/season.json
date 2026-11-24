@@ -2,7 +2,7 @@
  "league": "womens",
  "season": 2027,
  "team_id": "2539",
- "fetched": "2026-11-20 21:55",
+ "fetched": "2026-11-24 01:49",
  "games": [
   {
    "event_id": "401917685",
@@ -179,20 +179,44 @@
     "name_checks": 16,
     "name_mismatches": []
    }
-  }
- ],
- "upcoming": [
+  },
   {
    "event_id": "401917717",
    "date": "2026-11-22",
-   "tip_utc": "2026-11-22T22:00Z",
    "opponent": "Cal State Bakersfield Roadrunners",
    "opponent_short": "Bakersfield",
-   "opponent_id": "2934",
    "site": "H",
    "conference_game": false,
-   "season_type": 2
-  },
+   "season_type": 2,
+   "usf_score": 81,
+   "opp_score": 58,
+   "result": "W",
+   "check": {
+    "box_assists": 22,
+    "pbp_assists": 22,
+    "matches_box": true,
+    "box_fgm": 28,
+    "pbp_made_fg": 28,
+    "pbp_unassisted": 6,
+    "unassisted_matched_by_name": 0,
+    "unassisted_without_scorer": 0,
+    "court_periods": [
+     600,
+     600,
+     600,
+     600
+    ],
+    "court_sub_anomalies": 0,
+    "court_not_five_seconds": 0,
+    "court_minutes_max_dev": 0.85,
+    "court_players_off_over_1min": 0,
+    "assist_text_without_ids": 0,
+    "name_checks": 22,
+    "name_mismatches": []
+   }
+  }
+ ],
+ "upcoming": [
   {
    "event_id": "401917722",
    "date": "2026-11-25",
@@ -207,10 +231,21 @@
   {
    "event_id": "401917731",
    "date": "2026-11-30",
-   "tip_utc": "2026-12-01T02:00Z",
+   "tip_utc": "2026-12-01T00:00Z",
    "opponent": "Grand Canyon Lopes",
    "opponent_short": "Grand Canyon",
    "opponent_id": "2253",
+   "site": "H",
+   "conference_game": false,
+   "season_type": 2
+  },
+  {
+   "event_id": "401917739",
+   "date": "2026-12-04",
+   "tip_utc": "2026-12-05T02:00Z",
+   "opponent": "Boise State Broncos",
+   "opponent_short": "Boise St",
+   "opponent_id": "68",
    "site": "H",
    "conference_game": false,
    "season_type": 2
