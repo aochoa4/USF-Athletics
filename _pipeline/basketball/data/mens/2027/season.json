@@ -2,7 +2,7 @@
  "league": "mens",
  "season": 2027,
  "team_id": "2539",
- "fetched": "2026-11-24 01:49",
+ "fetched": "2026-11-24 23:36",
  "games": [
   {
    "event_id": "401921060",
@@ -201,20 +201,42 @@
     "name_checks": 9,
     "name_mismatches": []
    }
-  }
- ],
- "upcoming": [
+  },
   {
    "event_id": "401917676",
    "date": "2026-11-24",
-   "tip_utc": "2026-11-24T19:00Z",
    "opponent": "Oregon State Beavers",
    "opponent_short": "Oregon St",
-   "opponent_id": "204",
    "site": "N",
    "conference_game": false,
-   "season_type": 2
-  },
+   "season_type": 2,
+   "usf_score": 73,
+   "opp_score": 87,
+   "result": "L",
+   "check": {
+    "box_assists": 14,
+    "pbp_assists": 14,
+    "matches_box": true,
+    "box_fgm": 29,
+    "pbp_made_fg": 29,
+    "pbp_unassisted": 15,
+    "unassisted_matched_by_name": 0,
+    "unassisted_without_scorer": 0,
+    "court_periods": [
+     1200,
+     1200
+    ],
+    "court_sub_anomalies": 0,
+    "court_not_five_seconds": 0,
+    "court_minutes_max_dev": 0.73,
+    "court_players_off_over_1min": 0,
+    "assist_text_without_ids": 0,
+    "name_checks": 14,
+    "name_mismatches": []
+   }
+  }
+ ],
+ "upcoming": [
   {
    "event_id": "401921065",
    "date": "2026-11-28",
@@ -233,6 +255,17 @@
    "opponent": "UNLV Rebels",
    "opponent_short": "UNLV",
    "opponent_id": "2439",
+   "site": "H",
+   "conference_game": false,
+   "season_type": 2
+  },
+  {
+   "event_id": "401921067",
+   "date": "2026-12-05",
+   "tip_utc": "2026-12-06T00:00Z",
+   "opponent": "South Dakota Coyotes",
+   "opponent_short": "South Dakota",
+   "opponent_id": "233",
    "site": "H",
    "conference_game": false,
    "season_type": 2
