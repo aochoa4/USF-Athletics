@@ -2,7 +2,7 @@
  "league": "womens",
  "season": 2027,
  "team_id": "2539",
- "fetched": "2026-11-24 01:49",
+ "fetched": "2026-11-25 23:14",
  "games": [
   {
    "event_id": "401917685",
@@ -214,20 +214,44 @@
     "name_checks": 22,
     "name_mismatches": []
    }
-  }
- ],
- "upcoming": [
+  },
   {
    "event_id": "401917722",
    "date": "2026-11-25",
-   "tip_utc": "2026-11-25T19:00Z",
    "opponent": "Cal State East Bay Pioneers",
    "opponent_short": "Cal State EB",
-   "opponent_id": "499",
    "site": "H",
    "conference_game": false,
-   "season_type": 2
-  },
+   "season_type": 2,
+   "usf_score": 81,
+   "opp_score": 45,
+   "result": "W",
+   "check": {
+    "box_assists": 24,
+    "pbp_assists": 24,
+    "matches_box": true,
+    "box_fgm": 31,
+    "pbp_made_fg": 31,
+    "pbp_unassisted": 7,
+    "unassisted_matched_by_name": 0,
+    "unassisted_without_scorer": 0,
+    "court_periods": [
+     600,
+     600,
+     600,
+     600
+    ],
+    "court_sub_anomalies": 0,
+    "court_not_five_seconds": 0,
+    "court_minutes_max_dev": 1.13,
+    "court_players_off_over_1min": 1,
+    "assist_text_without_ids": 0,
+    "name_checks": 24,
+    "name_mismatches": []
+   }
+  }
+ ],
+ "upcoming": [
   {
    "event_id": "401917731",
    "date": "2026-11-30",
@@ -247,6 +271,17 @@
    "opponent_short": "Boise St",
    "opponent_id": "68",
    "site": "H",
+   "conference_game": false,
+   "season_type": 2
+  },
+  {
+   "event_id": "401917745",
+   "date": "2026-12-08",
+   "tip_utc": "2026-12-09T02:30Z",
+   "opponent": "Sacramento State Hornets",
+   "opponent_short": "Sacramento St",
+   "opponent_id": "16",
+   "site": "A",
    "conference_game": false,
    "season_type": 2
   }
